@@ -8,6 +8,7 @@ body{
   width: 100%;
   height: 100vh;
 }
+/* Header y botones de login y sinup */
 .header{
   width: 100%;
   height: 78px;
@@ -81,7 +82,7 @@ height: 46px;
   width: 54px;
   height: 54px;
 }
-/* Encuentra Comida */
+/* Seccion Encuentra Comida */
 .Encuentra-Comida{
   width: 100%;
   height:550px;
@@ -178,17 +179,74 @@ text-align: center;
   border: transparent;
   border-radius: 10px;
 }
+/* Componentes En Descuento */
 .tarjetas{
+  width: 100%;
+  height: 550px;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 20px;
+
 }
-/* En Descuento */
 .ComidaDescuento{
   width:300px;
   height:400px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: solid 1px black;
+  border: solid 1px transparent;
+  border-radius: 15px;
+}
+.CartasDescuento img{
+  width:100%;
+  height: 300px;
+  border-radius: 20px;
+}
+.CartasDescuento h3{
+  width:50%;
+  height: 80px;
+  background-color:#FFAE00;
+  position: relative;
+  bottom:84px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  font-family: "Source Sans 3", sans-serif;
+  text-align: center;
+  color: white;
+  font-size: 50px;
+  font-weight: 600;
+  
+}
+.CartasDescuento p{
+  font-family: "Source Sans 3", sans-serif;
+  color: white;
+  font-size:22px;
+  position: relative;
+  bottom:110px;
+  left:90px;
+}
+.TituloBoton{
+  position: relative;
+  bottom: 100px;
+  margin-right:150px;
+
+}
+.TituloBoton h4{
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+.TituloBoton button{
+  width: 140px;
+  height: 40px;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 24px;
+  border: transparent;
+  border-radius: 10px;
+  background: linear-gradient(to bottom, #FFEDE5, #FFDAC2);
+  color: #F26722;
+
 }
