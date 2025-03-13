@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+  width: 100%;
+  height: 100vh;
+}
+.header{
+  width: 100%;
+  height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
+  top:0;
+}
+.ubicacion{
+width: 397px;
+height: 25px;
+font-family: "Source Sans 3", sans-serif;
+font-size: 18px;
+font-weight: 600;
+}
+
+.registro{
+  width: 164px;
+  height: 46px;
+  background-color:#FFAE00 ;
+  color: #ffff;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  border: transparent;
+  box-shadow: 0 5px 15px #FFAE00 ;
+}
+.registro img{
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+
+}
+
+.inicio-sesion input{
+ border: none;
+ font-family: "Source Sans 3", sans-serif;
+ font-size: 18px;
+ font-weight: 600; 
+ color: black;
+}
+.inicio-sesion button{
+  width: 164px;
+  height: 46px;
+  background-color:#ffff;
+  color:#FFAE00 ;
+  border-radius: 8px;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  border: transparent;
+  box-shadow: 0 5px 15px #FFAE00 ;
+}
+.inicio-sesion img{
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+}
+.logo-header{
+display: flex;
+height: 46px;
+}
+.logo-header h1{
+  font-weight: 700;
+  font-size: 36px;
+  color: #FC7054;
+  font-family: "Source Sans 3", sans-serif;
+}
+.logo-header img{
+  width: 54px;
+  height: 54px;
+}
+/* Encuentra Comida */
+.Encuentra-Comida{
+  width: 100%;
+  height:550px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color:#FFAE00 ;
+}
+.Titulo-Encuentra-Comida h1{
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 58px;
+  font-weight: 600; 
+  color: white;
+}
+.Titulo-Encuentra-Comida p{
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 18px;
+  color: black;
+}
+.fondo-fideos{
+  width: 550px;
+  height: 400px;
+  position: relative;
+  top: 76px;
+}
+.Card-Encuentra-comida{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 24px;
+  gap: 20px;
+  width: 600px;
+  height: 180px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.Entrega{
+  width: 140px;
+  height: 40px;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 24px;
+  border: transparent;
+  border-radius: 10px;
+  margin-left: -100px;
+  background: linear-gradient(to bottom, #FFEDE5, #FFDAC2);
+  color: #F26722;
+}
+.Entrega img{
+  width: 20px;
+  height: 18px;
+  margin-right: 10px;
+  
+}
+.Recogida{
+  width: 140px;
+  height: 40px;
+  text-align: center;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 24px;
+  background: none;
+  border: none;
+  margin-right: 100px;
+}
+.Recogida img{
+  width: 20px;
+  height: 18px;
+  margin-right: 10px;
+}
+
+.Boton-Encuentra{
+width: 160px;
+height: 50px;
+background-color:#F65900 ;
+color: white;
+border-radius: 8px;
+font-family: "Source Sans 3", sans-serif;
+font-size: 14px;
+font-weight: 600;
+border: transparent;
+text-align: center;
+}
+.Ubicacion{
+  width: 380px;
+  height: 50px;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: #F5F5F5;
+  border: transparent;
+  border-radius: 10px;
+}
+.tarjetas{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* En Descuento */
+.ComidaDescuento{
+  width:300px;
+  height:400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid 1px black;
+}
