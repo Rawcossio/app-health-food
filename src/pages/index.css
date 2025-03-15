@@ -277,3 +277,59 @@ text-align: center;
   top:150px;
 }
 /* Populares cerca de ti */
+.Populares{
+  width: 100%;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Populares h2{
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 40px;
+  text-align: center;
+  position: absolute;
+  bottom:-1100px;
+
+}
+.Populares section{
+  position: relative;
+  top: 150px;
+  margin: 10px;
+}
+
+.Card-populares{
+  width: 17%;
+  height: 460px;
+}
+.Card-populares img{
+width: 100%;
+height: 280px;
+border-radius: 20px;
+}
+.Card-populares div{
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  gap:5px;
+  margin-bottom: 5px;
+}
+.Card-populares div p{
+color:#F65900 ;
+}
+ .Card-populares button{
+width: 100%;
+height: 50px;
+background-color:#F65900 ;
+color: white;
+border-radius: 8px;
+font-family: "Source Sans 3", sans-serif;
+font-size: 14px;
+font-weight: 600;
+border: transparent;
+border-radius: 10px;
+text-align: center; 
+ }
+

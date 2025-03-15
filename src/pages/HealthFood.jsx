@@ -3,6 +3,7 @@ import EnDescuento from "../Components/EnDescuento"
 import EncuentraComida from "../Components/EncuentraComida"
 import Header from "../Components/Header"
 import ComoFunciona from "../components/ComoFunciona"
+import PopularesCerca from "../components/PopularesCerca"
 
 const HealthFood=()=>{
     let pedidos=[
@@ -54,6 +55,38 @@ const HealthFood=()=>{
         parrafo:"La comida se prepara y se entrega directamente en tu casa."
         }
     ]
+    let populares=[
+        {
+        img:"/hamburguesa_queso.png",
+        titulo:"Hamburguesa con queso",
+        parrafo:"📍Arena hamburguesa.",
+        precio:"$12.800"
+        },
+        {
+        img:"/pastel_toffe.png",
+        titulo:"Pastel de toffe",
+        parrafo:"📍La Chagra.",
+        precio:"$20.000"
+        },
+        {
+        img:"/pastelito.png",
+        titulo:"Pastelito",
+        parrafo:"📍Cake World.",
+        precio:"$2.000"
+        },
+        {
+        img:"/sandwiches_crujiente.png",
+        titulo:"Sándwich crujiente",
+        parrafo:"📍Seré.",
+        precio:"$9.000"
+        },
+        {
+        img:"/sopa_tailandesa.png",
+        titulo:"Sopa tailandesa",
+        parrafo:"📍El Cielo.",
+        precio:"$12.000"
+        }
+    ]
     return(
         <html>
         <body>
@@ -64,16 +97,20 @@ const HealthFood=()=>{
         <div className="tarjetas">
             {pedidos.map((pedido)=>{
                 return<EnDescuento info={pedido}/>
-            })
-            }
+            })}
         </div>
         <section className="Comofunciona">
             <h2>Como funciona?</h2>
             {funciona.map((funcion)=>{
                 return <ComoFunciona datos={funcion}/>
-            })
-            }
+            })}
         </section>
+        <div className="Populares">
+            <h2>Populares cerca de ti</h2>
+            {populares.map((popular)=>{
+                return <PopularesCerca cerca={popular}/>
+            })}
+        </div>
         </body> 
         </html>
         
