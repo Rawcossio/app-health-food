@@ -250,3 +250,30 @@ text-align: center;
   color: #F26722;
 
 }
+/* Como funciona */
+.Comofunciona{
+  width: 100%;
+  height: 520px;
+  background: linear-gradient(to bottom, #fffbe6 10%, #ffff);
+  display: flex;
+  justify-content: space-evenly;
+}
+.Comofunciona h2{
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 40px;
+  color:#F26722;
+  text-align: center;
+  position: absolute;
+  bottom:-540px;
+}
+
+.Card-ComoFunciona{
+  width: 15%;
+  height: 230px;
+  text-align: center;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 18px;
+  position: relative;
+  top:150px;
+}
+/* Populares cerca de ti */
