@@ -1,7 +1,7 @@
  function Header() {
 
     return(
-        <section className="header">
+        <header className="header">
             <div className="logo-header">
             <h1>Nutri</h1>
             <img src="public/go.png" alt=""/>
@@ -12,7 +12,7 @@
             <button><img src="./public/usuario.png" alt="" />Iniciar Sesión</button>
             </div>
             <button className="registro"> <img src="./public/usuario.png" alt="" />Registrarse</button>
-        </section>
+        </header>
     )
     
 }
