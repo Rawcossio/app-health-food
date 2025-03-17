@@ -1,7 +1,7 @@
 
 import EnDescuento from "../Components/EnDescuento"
 import EncuentraComida from "../Components/EncuentraComida"
-import Header from "../Components/Header"
+import Header from "../components/Header"
 import ComoFunciona from "../components/ComoFunciona"
 import PopularesCerca from "../components/PopularesCerca"
 import { pedidos, restaurantes } from "../services/dataBase"
