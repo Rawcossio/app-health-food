@@ -4,7 +4,7 @@ import EncuentraComida from "../Components/EncuentraComida"
 import Header from "../Components/Header"
 import ComoFunciona from "../components/ComoFunciona"
 import PopularesCerca from "../components/PopularesCerca"
-import { pedidos } from "../services/dataBase"
+import { pedidos, restaurantes } from "../services/dataBase"
 import { funciona } from "../services/dataBase"
 import { populares } from "../services/dataBase"
 import Restaurantes from "../components/Restarantes"
@@ -35,12 +35,17 @@ const HealthFood=()=>{
                 return <PopularesCerca cerca={popular}/>
             })}
         </div>
-        <section>
+        <section className="Restaurantes">
             <h2>Restaurantes Destacados</h2>
             <div>
                 {tiendas.map((tienda)=>{
                     return<Restaurantes destacado={tienda}/>})}
             </div>
+            <div>
+                {restaurantes.map((restaurante)=>{
+                    return<Restaurantes destacado={restaurante}/>})}
+            </div>
+            <button className="verTodo">Ver todo</button>
         </section>
         </body> 
         </html>

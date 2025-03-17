@@ -1,3 +1,4 @@
+import Restaurantes from "../components/Restarantes"
 
     export let pedidos=[
         {
@@ -87,6 +88,7 @@
         logo:"/foodworld_logo.png",
         titulo:"foodworld", 
         estrellas:"46",
+        boton:"Abre mañana"
         },
         {
         off:"20%",
@@ -100,7 +102,7 @@
         off:"10%",
         img:"/donuts_hot.png",
         logo:"/donuts_hot_logo.png",
-        titulo:"Donuts hot", 
+        titulo:"Donuts", 
         estrellas:"20",
         boton:"Abierto ahora"
         },
@@ -108,8 +110,42 @@
         off:"20%",
         img:"/subway.png",
         logo:"/subway_logo.png",
-        titulo:"foodworld_logo", 
-        estrellas:"46",
+        titulo:"Subway", 
+        estrellas:"50",
         boton:"Abierto ahora"
         }
     ]
+   export let restaurantes=[
+    {
+        off:"20%",
+        img:"/Ruby_tuesday.png",
+        logo:"/Ruby_logo.png",
+        titulo:"Ruby Tuesday", 
+        estrellas:"26",
+        boton:"Abierto ahora"
+        },
+        {
+        off:"25%",
+        img:"/Kuakata_Fried.png",
+        logo:"/Kuakata_logo.png",
+        titulo:"Fried Chicken", 
+        estrellas:"53",
+        boton:"Abierto ahora"
+        },
+        {
+        off:"10%",
+        img:"/Red_square.png",
+        logo:"/Red_logo.png",
+        titulo:"Red Square", 
+        estrellas:"45",
+        boton:"Abierto ahora"
+        },
+        {
+        off:"10%",
+        img:"/Taco_bell.png",
+        logo:"/Taco_logo.png",
+        titulo:"Taco Bell", 
+        estrellas:"35",
+        boton:"Abierto ahora"
+        }
+   ]
