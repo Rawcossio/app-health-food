@@ -283,6 +283,7 @@ text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
+  background:linear-gradient(180deg, #FFAE00 10%, #ffff);
 }
 .Populares h2{
   font-family: "Source Sans 3", sans-serif;
@@ -339,24 +340,23 @@ text-align: center;
   display: flex;
   align-items: center;
   flex-direction: column;
+  justify-content: center;
   position: relative;
   top: 300px;
-  left: 120px;
 }
 .Restaurantes h2{
   font-family: "Source Sans 3", sans-serif;
   font-size: 40px;
   text-align: center;
-  position: absolute;
+  position:relative;
   top:-120px;
-  right:42%;
-  
 }
 .Restaurantes div{
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content:center;
-  gap:20px;
+  justify-content:space-evenly;
+  gap:5px;
 
 }
 .Card-restaurantes{
@@ -391,7 +391,7 @@ text-align: center;
   height: 45px;
   position:relative;
   bottom:105px;
-  right:290px;
+  right:280px;
   padding-right:25px;
   padding-left: 25px;
   font-family: "Source Sans 3", sans-serif;
@@ -418,16 +418,15 @@ text-align: center;
   border-radius: 10px;
   background: linear-gradient(to bottom, #FFEDE5, #FFDAC2);
   color: #F26722;
-  margin-right:200px;
+  margin-right:150px;
 }
 .Card-estrella{
   position:relative;
-  right:50px;
+  right:30px;
   display: flex;
   align-items:center;
   margin-top: 15px;
-  margin-right: 150px;
-  gap: 20px;
+  gap:5px;
   font-family: "Source Sans 3", sans-serif;
   font-size:18px;
 }
@@ -452,7 +451,4 @@ color: #F26722;
   font-weight: 600;
   border: transparent;
   box-shadow: 0 5px 15px #FFAE00 ;
-  position: relative;
-  top: 50px;
-  right: 110px;
 }
