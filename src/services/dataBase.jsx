@@ -149,3 +149,29 @@ import Restaurantes from "../components/Restarantes"
         boton:"Abierto ahora"
         }
    ]
+   export let tipos=[
+    {
+    img:'/pizza.png',
+    titulo:"pizza" 
+    },
+    {
+    img:'/hamburguesa.png',
+    titulo:"hamburguesa"
+    },
+    {
+    img:'/fideos.png',
+    titulo:"Fideos" 
+    },
+    {
+    img:'/sub_sandwich.png',
+    titulo:"Sub-sándwich"
+    },
+    {
+    img:'/chow_mein.png',
+    titulo:"chow mein" 
+    },
+    {
+    img:'/bistec.png',
+    titulo:"Bistec" 
+    },
+   ]

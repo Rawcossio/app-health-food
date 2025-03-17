@@ -9,6 +9,9 @@ import { funciona } from "../services/dataBase"
 import { populares } from "../services/dataBase"
 import Restaurantes from "../components/Restarantes"
 import { tiendas } from "../services/dataBase"
+import InstalarApp from "../components/InstalarApp"
+import TipoComida from "../components/TipoComida"
+import { tipos } from "../services/dataBase"
 
 const HealthFood=()=>{
     return(
@@ -47,6 +50,19 @@ const HealthFood=()=>{
             </div>
             <button className="verTodo">Ver todo</button>
         </section>
+        <div className="TiposComida">
+            <section className="Tipotitulo">
+                <h2>Buscar Tipo de comida</h2>
+                <button>Ver todo</button>
+            </section>
+            <section className="Card-tipo">
+            {tipos.map((tipo)=>{
+                return <TipoComida type={tipo}/>})}
+            </section>
+        </div>
+        <div>
+            <InstalarApp/>
+        </div>
         </body> 
         </html>
         
