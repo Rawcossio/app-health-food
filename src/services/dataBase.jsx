@@ -189,3 +189,23 @@ import Restaurantes from "../components/Restarantes"
      titulo:"Rápida Entrega"   
     }
 ]
+export let ofertas=[
+    {
+        img:'/sandwich.png',
+        strong:'Mejores ofertas en',
+        titulo:'Sandwiches crujientes',
+        parrafo:'Disfruta del gran tamaño de los sándwiches. Completo Rebanada perfecta de sándwiches.'
+    },
+    {
+        img:'/pollo_al_horno.png',
+        strong:'Celebra las fiestas con',
+        titulo:'Pollo al Horno',
+        parrafo:'Consigue el mejor pollo al horno con un delicioso sabor a chile con limón. Echa un vistazo las mejores ofertas de pollo.'
+    },
+    {
+        img:'/pizza_pepperoni.png',
+        strong:'Pizza de pepperoni',
+        titulo:'Caliente?',
+        parrafo:'Disfruta del gran tamaño de los sándwiches. Completo Rebanada perfecta de sándwiches.'
+    }
+]

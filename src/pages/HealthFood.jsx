@@ -13,6 +13,8 @@ import InstalarApp from "../components/InstalarApp"
 import TipoComida from "../components/TipoComida"
 import { tipos } from "../services/dataBase"
 import CardEntrega from "../components/CardEntrega"
+import MejoresOfertas from "../components/MejoresOfertas"
+import { ofertas } from "../services/dataBase"
 
 const HealthFood=()=>{
     return(
@@ -69,6 +71,10 @@ const HealthFood=()=>{
         <div className="InstalarApp">
             <InstalarApp/>
         </div>
+        <section className="MejoresOfertas">
+            {ofertas.map((oferta)=>{
+                return<MejoresOfertas mejor={oferta}/>})}
+        </section>
         </body> 
         </html>
         

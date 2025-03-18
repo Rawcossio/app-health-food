@@ -521,7 +521,7 @@ margin-left: 100px;
   font-family: "Source Sans 3", sans-serif;
   font-size: 22px;
   font-weight: 600;
-  color: #F26722;
+  color: #FFAE00;
   padding-left: 20px;
 }
 .seccion-CardEntrega img{
@@ -532,7 +532,7 @@ margin-left: 100px;
 .InstalarApp{
   width: 100%;
   height: 580px;
-  background-color: #FFEDE5;
+  background-color:#FFEDE5;
   position: relative;
   top: 300px;
   display: flex;
@@ -565,4 +565,63 @@ color:#FFAE00;
   position: relative;
   right:50px;
   top:20px;
+}
+/* Mejores Ofertas */
+.MejoresOfertas{
+  width: 100%;
+  height: 1400px;
+  position: relative;
+  top:400px;
+}
+.Card-MejoresOfertas{
+  width: 80%;
+  height:400px;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  margin-bottom:50px;
+  border-radius: 20px;
+  border-radius: 20px;
+  box-shadow: 5px 5px 20px gray;
+  position: relative;
+  left: 150px;
+}
+.Card-MejoresOfertas img{
+  width:900px;
+  height:400px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.card-mejores-texto{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Source Sans 3", sans-serif;
+}
+.card-mejores-texto strong{
+  font-size:38px;
+}
+.card-mejores-texto h3{
+  font-size: 38px;
+  color:#FFAE00;
+}
+.card-mejores-texto p{
+  width: 400px;
+  height: 75px;
+  font-size:18px;
+  margin: 20px;
+  padding-left: 30px;
+}
+
+.card-mejores-texto button{
+  width: 280px;
+  height: 46px;
+  background-color:#FFAE00 ;
+  color: #ffff;
+  border-radius: 8px;
+  font-family: "Source Sans 3", sans-serif;
+  font-size:12px;
+  font-weight:bold;
+  border: transparent;
+  box-shadow: 0 5px 15px #FFAE00 ;
 }
