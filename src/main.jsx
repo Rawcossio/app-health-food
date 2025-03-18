@@ -2,14 +2,16 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import InicioSesion from './pages/InicioSesion'
 import HealthFood from './pages/HealthFood'
-import './pages/index.css'
-import'./pages/InicioSesion.css'
+/*import './pages/index.css'*/
+/*import'./pages/InicioSesion.css'*/
+import Registro from './pages/Registro'
+import './pages/Registro.css'
 
 
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <InicioSesion />
+    <Registro />
    </StrictMode>, 
 )

@@ -94,7 +94,7 @@ height: 46px;
   align-items: center;
 }
 
-.formulario-conteendor{
+.formulario-inicio{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -102,7 +102,7 @@ height: 46px;
   width: 600px;
 }
 
-form{
+.formulario-inicio form{
   background-color: rgba(255, 255, 255, 0.9);
   padding: 20px;
   margin-right: 30px;
@@ -113,19 +113,19 @@ form{
   height: 100%;
 }
 
-form h1{
+.formulario-inicio form h1{
   margin-top: 50px;
   font-size: 1.5rem;
 }
 
-form label{
+.formulario-inicio form label{
   display:block;
   text-align: left;
   margin: 10px 0 5px; 
   margin-top: 30px;
 }
 
-form input{
+.formulario-inicio form input{
   width: 100%;
   height: 70px;
   padding: 10px;
@@ -136,12 +136,12 @@ form input{
   background-color: #B0BAC3;
 }
 
-form input::placeholder {
+.formulario-inicio form input::placeholder {
   padding-left: 30px;
   padding: 10px;
 }
 
-form button{
+.formulario-inicio form button{
   width: 290px;
   height: 70px;
   padding: 10px;
@@ -153,12 +153,12 @@ form button{
   cursor: pointer;
 }
 
-form button:hover{
+.formulario-inicio form button:hover{
   background-color: #E59103;
 }
 
 
-form p{
+.formulario-inicio form p{
   margin-top: 55px;
   background-color: #E0DFDF;
   font-size: 12px;
@@ -169,12 +169,12 @@ form p{
   align-items: center;
 }
 
-form a{
+.formulario-inicio form a{
   color: #FFA101;
   text-decoration: none;
 }
 
-form a:hover{
+.formulario-inicio form a:hover{
   text-decoration: underline;
 }
 

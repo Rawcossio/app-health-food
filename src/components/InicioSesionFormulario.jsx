@@ -1,7 +1,7 @@
 function InicioSesionFormulario() {
 
     return(
-        <section className="formulario-conteendor">
+        <section className="formulario-inicio">
             <form>
                 <h1>Inicio de Sesión</h1>
                 <label htmlFor="nombre">Nombre:</label>

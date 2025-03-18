@@ -1,0 +1,250 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  .contenedor{
+    width: 100%;
+    height: 100vh;
+  }
+  /* Header y botones de login y sinup */
+  .header{
+    width: 100%;
+    height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+    top:0;
+  }
+  .ubicacion{
+  width: 397px;
+  height: 25px;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  }
+  
+  .registro{
+    width: 164px;
+    height: 46px;
+    background-color:#FFAE00 ;
+    color: #ffff;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    border: transparent;
+    box-shadow: 0 5px 15px #FFAE00 ;
+  }
+  .registro img{
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+  
+  }
+  
+  .inicio-sesion input{
+   border: none;
+   font-family: "Source Sans 3", sans-serif;
+   font-size: 18px;
+   font-weight: 600; 
+   color: black;
+  }
+  .inicio-sesion button{
+    width: 164px;
+    height: 46px;
+    background-color:#ffff;
+    color:#FFAE00 ;
+    border-radius: 8px;
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    border: transparent;
+    box-shadow: 0 5px 15px #FFAE00 ;
+  }
+  .inicio-sesion img{
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+  }
+  .logo-header{
+  display: flex;
+  height: 46px;
+  }
+  .logo-header h1{
+    font-weight: 700;
+    font-size: 36px;
+    color: #FC7054;
+    font-family: "Source Sans 3", sans-serif;
+  }
+  .logo-header img{
+    width: 54px;
+    height: 54px;
+  }
+
+  /* Formulario Registro*/
+
+  .main-Registro{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 787px;
+    background: url("/public/imagen-registro.jpg") no-repeat center center/cover;
+  }
+
+  .registro-contenedor form{
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px  rgba(0, 0, 0, 0.1);
+    width: 700px;
+    text-align: center;
+    height: 680px;
+  }
+
+  .registro-contenedor h2{
+    margin-bottom: 10px;
+    margin-left: 250px;
+    color: #333;
+  }
+
+  .registro-contenedor form label{
+    display: block;
+    text-align: left;
+    margin: 1px 0 0.2px;
+    color: #555;
+    margin-top: 30px;
+  }
+
+  .registro-contenedor form input{
+    width: 100%;
+    height: 35px;
+    padding: 0.5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .registro-contenedor form small{
+    display: block;
+    text-align: left;
+    color: #777;
+    margin: 0.5px 0;
+  }
+
+  .registro-contenedor form button{
+    width: 290px;
+    height: 63px;
+    background-color: #FFA101;
+    color: white;
+    border: none;
+    padding: 1px;
+    margin-top: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .registro-contenedor form button:hover{
+    background-color: #e49103;
+  }
+
+  .registro-contenedor form input::placeholder{
+    padding-left: 30px;
+    padding: 10px;
+  }
+
+  .registro-contenedor form p{
+    margin-top: 30px;
+    background-color: #E0DFDF;
+    width: 300px;
+    height: 50px;
+    margin-left: 170px;
+  }
+
+  .registro-contenedor form p a{
+    color: #FFA101;
+    text-decoration: none;
+  }
+
+  /* Footer*/
+
+  .footer{
+    background-color: #212121;
+    color: white;
+    padding: 40px;
+  }
+  
+  
+  
+  .ciudades-principales h3{
+    text-align: left;
+    margin-left: 100px;
+  }
+  
+  .lista-ciudades{
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 55px;
+  }
+  
+  .lista-ciudades ul{
+    list-style: none;
+    padding: 0;
+  }
+  
+  .lista-ciudades ul li{
+    margin-bottom: 15px;
+  }
+  
+  .contenedor-footer hr{
+    border: 1px solid gray;
+    margin: 60px 0;
+  }
+  
+  .secciones-footer{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .secciones-footer div h4{
+    margin-bottom: 10px;
+  }
+  
+  .secciones-footer ul{
+    list-style: none;
+    padding: 0;
+  }
+  
+  .redes-sociales span{
+    font-size: 20px;
+    margin-right: 10px;
+  }
+  
+  .caja-suscripcion{
+    display: felx;
+    gap: 5px;
+    margin-top: 10px;
+  }
+  
+  .caja-suscripcion input{
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  .caja-suscripcion button{
+    background-color: #FFB800;
+    border: none;
+    padding: 8px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 20px;
+  }
+  
+  .footer-final{
+    text-align: center;
+    margin-top: 20px;
+  }
