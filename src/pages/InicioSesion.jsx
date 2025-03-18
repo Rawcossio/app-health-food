@@ -1,15 +1,22 @@
 import Header from '../components/Header';
+import InicioSesionFormulario from '../components/InicioSesionFormulario';
+import Footer from '../components/footer';
+
 
 const InicioSesion=() => {
     
     return (
 
-        <section>
+        <section className='contenedor'>
             <Header />
 
-            <main>
-                
-            </main>
+            <div className='main'>
+            <InicioSesionFormulario/>    
+            </div>
+
+            <section className='footer'>
+                <Footer />
+            </section>
         </section>
 
         
