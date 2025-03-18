@@ -1,68 +1,98 @@
 function Footer() {
   return (
-    <div className="footer-sections">
-      <section>
-        <h3>Nuestras Ciudades Principales</h3>
-        <ul>
-          <li>San Francisco</li>
-          <li>Miami</li>
-          <li>Los Ángeles</li>
-          <li>Washington DC</li>
-          <li>Nueva York</li>
-          <li>Chicago</li>
-          <li>Phoenix</li>
-          <li>Las Vegas</li>
-        </ul>
-      </section>
+    <section className="contenedor-footer">
+      <div className="ciudades-principales">
+        <h3>Nuestras principales ciudades</h3>
 
-      <section>
-          <h3>Compañía</h3>
+        <div className="lista-ciudades">
           <ul>
-            <li><a href="#">Sobre nosotros</a></li>
-            <li><a href="#">Equipo</a></li>
-            <li><a href="#">Carreras</a></li>
-            <li><a href="#">Blog</a></li>
+            <li>San Francisco</li>
+            <li>Miami</li>
+            <li>San Diego</li>
+            <li>East Bay</li>
+            <li>Long Beach</li>
           </ul>
-        </section>
-        <section>
-          <h3>Contacto</h3>
+
           <ul>
-            <li><a href="#">Ayuda & Soporte</a></li>
-            <li><a href="#">Asóciate con nosotros</a></li>
-            <li><a href="#">Viaja con nosotros</a></li>
+            <li>Los Ángeles</li>
+            <li>Washington DC</li>
+            <li>Seattle</li>
+            <li>Portland</li>
+            <li>Nashville</li>
           </ul>
-        </section>
-        <section>
-          <h3>Legal</h3>
           <ul>
-            <li><a href="#">Términos & Condiciones</a></li>
-            <li><a href="#">Política de Privacidad</a></li>
-            <li><a href="#">Política de Cookies</a></li>
+            <li>New York</li>
+            <li>Orange County</li>
+            <li>Atlanta</li>
+            <li>Charlotte</li>
+            <li>Denver</li>
           </ul>
-        </section>
-        <section>
-          <h3>Síguenos</h3>
-          <div className="social-icons">
-            <a href="#"><i className="icon-instagram"></i> Instagram</a>
-            <a href="#"><i className="icon-facebook"></i> Facebook</a>
-            <a href="#"><i className="icon-twitter"></i> Twitter</a>
+          <ul>
+            <li>Chicago</li>
+            <li>Phoenix</li>
+            <li>Las Vegas</li>
+            <li>Sacramento</li>
+            <li>Oklahoma City</li>
+          </ul>
+          <ul>
+            <li>Columbus</li>
+            <li>Nuevo México</li>
+            <li>Albuquerque</li>
+            <li>Sacramento</li>
+            <li>New Orleans</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr />
+
+      <div className="secciones-footer">
+      <div>
+          <h4>Empresa</h4>
+          <ul>
+            <li>Sobre nosotros</li>
+            <li>Equipo</li>
+            <li>Trabajos</li>
+            <li>Blog</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contacto</h4>
+          <ul>
+            <li>Ayuda y soporte</li>
+            <li>Asóciate con nosotros</li>
+            <li>Viaja con nosotros</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li>Términos y condiciones</li>
+            <li>Reembolsos y cancelaciones</li>
+            <li>Política de privacidad</li>
+            <li>Política de cookies</li>
+          </ul>
+        </div>
+        <div className="suscribirse">
+          <h4>SÍGUENOS</h4>
+          <div className="redes-sociales">
+            <span>📷</span>
+            <span>🐦</span>
+            <span>📘</span>
           </div>
-        </section>
-
-        <div className="footer-suscripcion">
-        <p>Recibe ofertas exclusivas en tu correo:</p>
-        <form>
-          <input type="email" placeholder="Introduce tu email" />
-          <button type="submit">Suscribirse</button>
-        </form>
+          <h4>Recibe ofertas exclusivas en tu correo</h4>
+          <div className="caja-suscripcion">
+            <input type="email" placeholder="Ingresa tu correo" />
+            <button>Suscribirse</button>
+          </div>
+        </div>
       </div>
-      <div className="footer-bottom">
-        <p>© Tu Compañía, 2021. Todos los derechos reservados.</p>
-        <p>Hecho con ♥ por Themewagon</p>
-      </div>
-    </div>
 
-    
+      <div className="footer-final">
+        <p>Todos los derechos reservados &copy; NutriGo, 2025</p>
+        <p>Hecho con ❤️ por NutriGo</p>
+      </div>
+    </section>
   );
 }
 
