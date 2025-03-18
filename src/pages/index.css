@@ -499,3 +499,33 @@ margin-left: 100px;
 .TiposComida-tipos img{
   border-radius: 110px;
 }
+/* Card entrega */
+.CardEntrega{
+  width: 100%;
+  height: 456px;
+  background-color: #FFEDE5;
+  position: relative;
+  top: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.seccion-CardEntrega{
+  width:26%;
+  height:240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffff;
+  border-radius: 10px;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #F26722;
+  padding-left: 20px;
+}
+.seccion-CardEntrega img{
+  width: 120px;
+  height: 120px;
+
+}

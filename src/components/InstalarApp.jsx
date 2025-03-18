@@ -1,14 +1,5 @@
 const InstalarApp=()=>{
-    return(
-    <section>
-        <div>
-            <img src="" alt="" />
-            <h3>Descuentos diarios</h3>
-            <img src="" alt="" />
-            <h3>Ratreo en tiempo real</h3>
-            <img src="" alt="" />
-            <h3> Rápida Entrega</h3>
-        </div>
+    return( 
         <div>
             <img src="" alt="" />
             <section>
@@ -18,7 +9,6 @@ const InstalarApp=()=>{
                 <button></button>
             </section>
         </div>
-    </section>
     )
 }
 export default InstalarApp

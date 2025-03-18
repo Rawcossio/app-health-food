@@ -4,7 +4,7 @@ import EncuentraComida from "../Components/EncuentraComida"
 import Header from "../Components/Header"
 import ComoFunciona from "../components/ComoFunciona"
 import PopularesCerca from "../components/PopularesCerca"
-import { pedidos, restaurantes } from "../services/dataBase"
+import { entregas, pedidos, restaurantes } from "../services/dataBase"
 import { funciona } from "../services/dataBase"
 import { populares } from "../services/dataBase"
 import Restaurantes from "../components/Restarantes"
@@ -12,6 +12,7 @@ import { tiendas } from "../services/dataBase"
 import InstalarApp from "../components/InstalarApp"
 import TipoComida from "../components/TipoComida"
 import { tipos } from "../services/dataBase"
+import CardEntrega from "../components/CardEntrega"
 
 const HealthFood=()=>{
     return(
@@ -60,6 +61,11 @@ const HealthFood=()=>{
                 return <TipoComida type={tipo}/>})}
             </section>
         </div>
+        <section className="CardEntrega">
+            {entregas.map((entrega)=>{
+                return <CardEntrega delivery={entrega}/>  
+            })}
+        </section>
         <div>
             <InstalarApp/>
         </div>

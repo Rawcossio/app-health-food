@@ -175,3 +175,17 @@ import Restaurantes from "../components/Restarantes"
     titulo:"Bistec" 
     },
    ]
+   export let entregas=[
+    {
+     img:"/descuentos_diarios.png",
+     titulo:"Descuentos diarios"   
+    },
+    {
+     img:"/rastreo.png",
+     titulo:"Rastreo en tiempo real"   
+    },
+    {
+     img:"/tiempo-real.png",
+     titulo:"Rápida Entrega"   
+    }
+]
