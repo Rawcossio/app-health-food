@@ -66,7 +66,7 @@ const HealthFood=()=>{
                 return <CardEntrega delivery={entrega}/>  
             })}
         </section>
-        <div>
+        <div className="InstalarApp">
             <InstalarApp/>
         </div>
         </body> 
