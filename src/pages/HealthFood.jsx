@@ -15,6 +15,7 @@ import { tipos } from "../services/dataBase"
 import CardEntrega from "../components/CardEntrega"
 import MejoresOfertas from "../components/MejoresOfertas"
 import { ofertas } from "../services/dataBase"
+import ProcederPedido from "../components/ProcederPedido"
 
 const HealthFood=()=>{
     return(
@@ -75,6 +76,9 @@ const HealthFood=()=>{
             {ofertas.map((oferta)=>{
                 return<MejoresOfertas mejor={oferta}/>})}
         </section>
+        <div className="Proceder-pedido">
+            <ProcederPedido/>
+        </div>
         </body> 
         </html>
         

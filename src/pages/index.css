@@ -625,3 +625,41 @@ color:#FFAE00;
   border: transparent;
   box-shadow: 0 5px 15px #FFAE00 ;
 }
+/* Proceder Pedido */
+.Proceder-pedido{
+  width: 100%;
+  height: 400px;
+  background-image: url(/public/proceder_pedido.png);
+  background-position: center center;
+  position: relative;
+  top:500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Proceder-pedido-card{
+width: 45%;
+height: 240px;
+font-family: "Source Sans 3", sans-serif;
+font-size:32px;
+font-weight:bold;
+color:#ffff;
+display:flex;
+flex-direction: column;
+align-items: center;
+gap: 40px;
+text-align: center;
+}
+.Proceder-pedido-card button{
+width: 40%;
+height: 50px;
+background-color:#F65900 ;
+color: white;
+border-radius: 8px;
+font-family: "Source Sans 3", sans-serif;
+font-size: 14px;
+font-weight: 600;
+border: transparent;
+border-radius: 10px;
+text-align: center; 
+}
