@@ -1,4 +1,4 @@
-<h1 align="left">Hola👋 cono nuestra App de comida saludable NutriGO</h1>
+<h1 align="left">Hola👋 conoce nuestra App de comida saludable NutriGO</h1>
 
 ###
 
