@@ -1,16 +1,16 @@
 const Restaurantes=({destacado})=>{
     return(
-    <section>
-        <div>
+    <section className="Card-restaurantes">
+        <div className="Img-restaurantes">
             <img src={destacado.img} alt={destacado.titulo} />
-            <h3>{destacado.off}</h3>
-            <p>Fast</p>
+            <button>{destacado.off}off</button>
+            <p>🕓Fast</p>
         </div>
-        <div>
-            <section>
+        <div className="Card-restaurante-estrella">
+            <section className="Card-estrella">
             <img src={destacado.logo} alt="logo" />
             <h3>{destacado.titulo}</h3>
-            <p>{destacado.estrellas}</p>
+            <p>⭐{destacado.estrellas}</p>
             </section>
             <button>{destacado.boton}</button>            
         </div>
