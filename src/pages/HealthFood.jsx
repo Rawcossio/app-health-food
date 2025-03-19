@@ -2,20 +2,22 @@
 import EnDescuento from "../Components/EnDescuento"
 import EncuentraComida from "../Components/EncuentraComida"
 import Header from "../Components/Header"
-import ComoFunciona from "../components/ComoFunciona"
-import PopularesCerca from "../components/PopularesCerca"
-import { entregas, pedidos, restaurantes } from "../services/dataBase"
+import ComoFunciona from "../Components/ComoFunciona"
+import PopularesCerca from "../Components/PopularesCerca"
+import {entregas, pedidos, restaurantes } from "../services/dataBase"
 import { funciona } from "../services/dataBase"
 import { populares } from "../services/dataBase"
-import Restaurantes from "../components/Restarantes"
+import Restaurantes from "../Components/Restarantes"
 import { tiendas } from "../services/dataBase"
-import InstalarApp from "../components/InstalarApp"
-import TipoComida from "../components/TipoComida"
+import InstalarApp from "../Components/InstalarApp"
+import TipoComida from "../Components/TipoComida"
 import { tipos } from "../services/dataBase"
-import CardEntrega from "../components/CardEntrega"
-import MejoresOfertas from "../components/MejoresOfertas"
+import CardEntrega from "../Components/CardEntrega"
+import MejoresOfertas from "../Components/MejoresOfertas"
 import { ofertas } from "../services/dataBase"
-import ProcederPedido from "../components/ProcederPedido"
+import ProcederPedido from "../Components/ProcederPedido"
+import Footer from "../Components/Footer"
+import { cities } from "../services/dataBase"
 
 const HealthFood=()=>{
     return(
@@ -79,10 +81,12 @@ const HealthFood=()=>{
         <div className="Proceder-pedido">
             <ProcederPedido/>
         </div>
+        <section className="Footer">
+        <h3></h3>
+        {cities.map((city)=>{
+        <Footer pagina={city}/>})}
+        </section>
         </body> 
         </html>
-        
-        )
-            
-}
+        )}
 export default HealthFood

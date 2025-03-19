@@ -1,4 +1,4 @@
-import Restaurantes from "../components/Restarantes"
+import Restaurantes from "../Components/Restarantes"
 
     export let pedidos=[
         {
@@ -207,5 +207,42 @@ export let ofertas=[
         strong:'Pizza de pepperoni',
         titulo:'Caliente?',
         parrafo:'Disfruta del gran tamaño de los sándwiches. Completo Rebanada perfecta de sándwiches.'
+    }
+]
+export let cities=[
+    {
+        ciudadUno:"Barranquilla",
+        ciudadDos:"Bello",
+        ciudadTres:'Bogotá',
+        ciudadCuatro:'Bucaramanga',
+        ciudadCinco:'Cali'
+    },
+    {
+        ciudadUno:'Cali',
+        ciudadDos:'Cartagena',
+        ciudadTres:'Cúcuta',
+        ciudadCuatro:'Florencia',
+        ciudadCinco:'Ibague'
+    },
+    {
+        ciudadUno:'Manizales',
+        ciudadDos:'Medellin',
+        ciudadTres:'Monteria',
+        ciudadCuatro:'Neiva',
+        ciudadCinco:'Pasto'
+    },
+    {
+        ciudadUno:'Pereira',
+        ciudadDos:'Popayán',
+        ciudadTres:'Quibdó',
+        ciudadCuatro:'Rioacha',
+        ciudadCinco:'Santa Marta'
+    },
+    {
+        ciudadUno:'Sincelejo',
+        ciudadDos:'Tunja',
+        ciudadTres:'Valledupar',
+        ciudadCuatro:'Villavicencio',
+        ciudadCinco:'Yopal'
     }
 ]
