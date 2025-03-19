@@ -1,4 +1,4 @@
-import Restaurantes from "../components/Restarantes"
+import Restaurantes from "../Components/Restarantes"
 
     export let pedidos=[
         {
