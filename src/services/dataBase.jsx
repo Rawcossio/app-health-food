@@ -1,5 +1,6 @@
 import Restaurantes from "../components/Restarantes"
 
+
     export let pedidos=[
         {
             img:"/ensalada_10.png",
@@ -149,3 +150,5 @@ import Restaurantes from "../components/Restarantes"
         boton:"Abierto ahora"
         }
    ]
+
+   
