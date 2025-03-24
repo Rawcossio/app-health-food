@@ -2,9 +2,9 @@
 import EnDescuento from "../Components/EnDescuento"
 import EncuentraComida from "../Components/EncuentraComida"
 import Header from "../Components/Header"
-import ComoFunciona from "../Components/ComoFunciona"
-import PopularesCerca from "../Components/PopularesCerca"
-import {entregas, pedidos, restaurantes } from "../services/dataBase"
+import ComoFunciona from "../components/ComoFunciona"
+import PopularesCerca from "../components/PopularesCerca"
+import { entregas, pedidos, restaurantes } from "../services/dataBase"
 import { funciona } from "../services/dataBase"
 import { populares } from "../services/dataBase"
 import Restaurantes from "../Components/Restarantes"
@@ -15,14 +15,7 @@ import { tipos } from "../services/dataBase"
 import CardEntrega from "../Components/CardEntrega"
 import MejoresOfertas from "../Components/MejoresOfertas"
 import { ofertas } from "../services/dataBase"
-import ProcederPedido from "../Components/ProcederPedido"
-import { cities } from "../services/dataBase"
-import PiePagina from "../Components/PiePagina"
-import { contacto } from "../services/dataBase"
-import Company from "../Components/Company"
-import instagram from '/instagram.png'
-import facebook from '/facebook.png'
-import equis from '/equis.png'
+import ProcederPedido from "../components/ProcederPedido"
 
 const HealthFood=()=>{
     return(
