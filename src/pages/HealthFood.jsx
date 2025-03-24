@@ -16,8 +16,13 @@ import CardEntrega from "../Components/CardEntrega"
 import MejoresOfertas from "../Components/MejoresOfertas"
 import { ofertas } from "../services/dataBase"
 import ProcederPedido from "../Components/ProcederPedido"
-import Footer from "../Components/Footer"
 import { cities } from "../services/dataBase"
+import PiePagina from "../Components/PiePagina"
+import { contacto } from "../services/dataBase"
+import Company from "../Components/Company"
+import instagram from '/instagram.png'
+import facebook from '/facebook.png'
+import equis from '/equis.png'
 
 const HealthFood=()=>{
     return(
@@ -82,9 +87,27 @@ const HealthFood=()=>{
             <ProcederPedido/>
         </div>
         <section className="Footer">
-        <h3></h3>
+        <h3>Nuestras Principales Ciudades</h3>
         {cities.map((city)=>{
-        <Footer pagina={city}/>})}
+        return <PiePagina pagina={city}/>})}
+        </section>
+        <section className="Footer-dos">
+        {contacto.map((contact)=>{
+            return <Company soporte={contact}/>})
+        }
+        <div className="siguenos">
+            <h3>SIGUENOS</h3>
+            <div>
+                <img src={instagram} alt="instagram" />
+                <img src={facebook} alt="facebook" />
+                <img src={equis} alt="equis" />
+            </div>
+            <p>Recibe ofertas exclusivas en tu correo</p>
+            <section>
+                <input type="search" placeholder=" ✉️ Ingresa tu correo"/>
+                <button>Suscribirse</button>
+            </section>
+        </div>
         </section>
         </body> 
         </html>

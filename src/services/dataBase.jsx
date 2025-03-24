@@ -211,8 +211,8 @@ export let ofertas=[
 ]
 export let cities=[
     {
-        ciudadUno:"Barranquilla",
-        ciudadDos:"Bello",
+        ciudadUno:'Barranquilla',
+        ciudadDos:'Bello',
         ciudadTres:'Bogotá',
         ciudadCuatro:'Bucaramanga',
         ciudadCinco:'Cali'
@@ -245,4 +245,27 @@ export let cities=[
         ciudadCuatro:'Villavicencio',
         ciudadCinco:'Yopal'
     }
+]
+export let contacto=[
+    {
+    titulo:"Company",
+    parrafoUno:"Sobre nosotros",
+    parrafoDos:"Equipo",
+    parrafoTres:"Carreras",
+    parrafoCuatro:"Blog"
+    },
+    {
+    titulo:"Contacto",
+    parrafoUno:"Ayuda y soporte",
+    parrafoDos:"Acompañanos",
+    parrafoTres:"Trabaja con nosotros"
+    },
+    {
+    titulo:"Legal",
+    parrafoUno:"Terminos y condiciones",
+    parrafoDos:"Cancelacion",
+    parrafoTres:"Politica Privacidad",
+    parrafoCuatro:"Cookies"
+    },
+    
 ]
