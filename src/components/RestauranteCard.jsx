@@ -14,8 +14,7 @@ const RestauranteCard = ()=>{
           <span>Entrega a domicilio 35-50Min</span>
           <span className="precio">$ 7.000</span>
         </div>
-
-        <h1>Promociones</h1>
+        
       </section>
     );
 }

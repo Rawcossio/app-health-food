@@ -1,5 +1,6 @@
 import Restaurantes from "../components/Restarantes"
 import CardPromociones from "../components/CardPromociones"
+import CardFavoritos from "../components/CardFavoritos"
 
 
     export let pedidos=[
@@ -182,6 +183,35 @@ import CardPromociones from "../components/CardPromociones"
         descuento:"50"
     },
 
+   ]
+
+   export const Favoritos=[
+    {
+        numero: "1",
+        imagen: "PAN-DE-QUESO.png",
+        titulo: "Pan de Queso",
+        precio: "$12.000",
+        antiguo: "$15.000",
+        descuento: "20% OFF"
+    },
+    {
+        numero: "2",
+        imagen: "CERDO-A-LA-CERVEZA.jpg",
+        titulo: "Pulpa de cerdo al horno con cerveza",
+        precio: "$30.000",
+    },
+    {
+        numero: "3",
+        imagen: "PAPAS-SMASH.jpg",
+        titulo: "Canastas de papas rellenas",
+        precio: "$20.000"
+    },
+    {
+        numero: "4",
+        imagen: "KUTCHEN.jpg",
+        titulo: "Kuchen del sur con frutos rojos",
+        precio: "$15.000"
+    }
    ]
 
    
