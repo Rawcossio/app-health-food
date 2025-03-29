@@ -1,4 +1,5 @@
 import Restaurantes from "../components/Restarantes"
+import CardPromociones from "../components/CardPromociones"
 
 
     export let pedidos=[
@@ -149,6 +150,38 @@ import Restaurantes from "../components/Restarantes"
         estrellas:"35",
         boton:"Abierto ahora"
         }
+   ]
+
+   export const Cards=[
+    {
+        imagen:"/Nidosdezapallo.jpg",
+        titulo:"Nidos de zapallo italiano con huevo",
+        precio:"$12.000",
+        antiguo:"$15.000",
+        descuento:"20"
+    },
+    {
+        imagen:"/LENTEJAS.png",
+        titulo:"Curry de Lentejas y Coco",
+        precio:"$24.000",
+        antiguo:"$30.000",
+        descuento:"20"
+    },
+    {
+        imagen:"/CHULETAS-2.jpg",
+        titulo:"Chuletas de cerdo en salsa de manzana y canela",
+        precio:"$25.500",
+        antiguo:"$30.000",
+        descuento:"15"
+    },
+    {
+        imagen:"/Curry.jpg",
+        titulo:"Pollo al Curry con Salsa de Maní",
+        precio:"$22.500",
+        antiguo:"$45.000",
+        descuento:"50"
+    },
+
    ]
 
    

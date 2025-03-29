@@ -7,6 +7,7 @@
 .restaurante{
     width: 100%;
     height: 100vh;
+    font-family: 'Poppins', sans-serif;
 }
 
 .header-restaurante{
@@ -47,7 +48,7 @@
 
 .header-restaurante ul li{
     font-size: 20px;
-    margin-right: 50px;
+    margin-right: 30px;
 }
 
 .header-restaurante ul li a{
@@ -114,9 +115,8 @@
 
 
 .dellate-entrega{
-    margin-left: 150px;
     height: 70px;
-    width: 1500px;
+    width: 100%;
     margin-top: 40px;
     background-color: #E7E7E7;
     display: flex;
@@ -130,6 +130,69 @@
     margin-right: 50px;
     font-size: 20px;
     font-weight: bold;
+}
+
+.contenedor-card-restaurante h1{
+    font-size: 25px;
+    margin-top: 30px;
+    margin-left: 40px;
+}
+
+/* promociones*/
+
+.contenedor-card-promociones{
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+
+
+.contenedor-card-promocion{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 350px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
+    justify-content: space-around;
+}
+
+.contenedor-card-promocion img{
+    width: 100%;
+    height: 150px;
+    border-radius: 10px;
+    margin-top: 0px;
+}
+
+.contenedor-card-promocion h3{
+    font-size: 20px;
+    margin-top: 2.5px;
+    font-size: 25px;
+}
+
+.contenedor-card-promocion p{
+    font-size: 15px;
+    color: #FFAE00;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.contenedor-card-promocion .antiguo{
+    color:#8F9698;
+    text-decoration: line-through;
+    font-size: 20px;
+}
+
+.contenedor-card-promocion span{
+    background-color: #FFAE00;
+    width: 90px;
+    border-radius: 10px;
+    font-size: 20px;
 }
 
 

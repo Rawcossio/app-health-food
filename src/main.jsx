@@ -6,14 +6,14 @@ import HealthFood from './pages/HealthFood'
 import'./pages/InicioSesion.css'
 /*import Registro from './pages/Registro'*/
 /*import './pages/Registro.css'*/
-/*import Restaurante from './pages/Restaurante'*/
-/*import './pages/Restaurante.css'*/
+import Restaurante from './pages/Restaurante'
+import './pages/Restaurante.css'
 
 
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <InicioSesion />
+    <Restaurante/>
    </StrictMode>, 
 )
