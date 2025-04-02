@@ -37,7 +37,7 @@
   font-weight: 600;
   font-size: 30px;
 }
-.carrito-producto {
+.carrito-item {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -49,6 +49,7 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  border-bottom: black;
 }
 
 .precio{

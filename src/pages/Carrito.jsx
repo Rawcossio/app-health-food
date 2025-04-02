@@ -10,11 +10,14 @@ function Carrito() {
                     <h1>Mi carrito</h1>
                 </header>
                 
-                <section className="carrito-producto">
+               <div className="carrito-item">
+
                     {productoCarrito.map((producto, index) => (
                         <CarritoCompra key={index} infor={producto} />
                     ))}
-                </section>
+
+               </div>
+               
                 
                 <section className="carrito-precio">
                     <div className="precio">
@@ -28,12 +31,12 @@ function Carrito() {
                     </div>
                     
                     <div className="precio">
-                        <h1>Total</h1>
+                        <h1>Total a pagar</h1>
                         <h1>$11.000</h1>
                     </div>
                     
                     <div className="carrito-boton">
-                        <button className="boton-carrito">Comprar</button>
+                        <button className="boton-carrito">Realizar pedido</button>
                     </div>
                 </section>
             </div>
