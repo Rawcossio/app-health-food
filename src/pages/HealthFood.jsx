@@ -15,14 +15,15 @@ import { tipos } from "../services/dataBase"
 import CardEntrega from "../Components/CardEntrega"
 import MejoresOfertas from "../Components/MejoresOfertas"
 import { ofertas } from "../services/dataBase"
-import ProcederPedido from "../components/ProcederPedido"
+import ProcederPedido from "../Components/ProcederPedido"
 import Company from "../components/Company"
-import PiePagina from "../components/PiePagina"
+import PiePagina from "../Components/PiePagina"
 import { cities } from "../services/dataBase"
 import { contacto } from "../services/dataBase"
 import instagram from '/instagram.png'
 import facebook from '/facebook.png'
 import equis from '/equis.png'
+import './index.css'
 
 
 const HealthFood=()=>{

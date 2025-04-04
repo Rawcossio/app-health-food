@@ -631,8 +631,6 @@ color:#FFAE00;
   height: 400px;
   background-image: url(/public/proceder_pedido.png);
   background-position: center center;
-  position: relative;
-  top:500px;
   display: flex;
   align-items: center;
   justify-content: center;
