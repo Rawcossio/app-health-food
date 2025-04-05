@@ -5,6 +5,8 @@ import Roles from '../pages/Roles'
 import InicioRepartidor from "../pages/InicioRepartidor";
 import Registrarse from "../Components/Registrarse";
 import RegistroRepartidor from "../pages/RegistroRepartidor";
+import InicioSesionRestaurante from "../pages/InicioSesionRestaurante";
+
 
 let enrutador = createBrowserRouter([
     {
@@ -26,6 +28,10 @@ let enrutador = createBrowserRouter([
     {
       path:'/RegistroRepartidor',
       element:<RegistroRepartidor/>
+    },
+    {
+      path:'/InicioRestaurante',
+      element:<InicioSesionRestaurante/>
     }
   ])
 

@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+  width: 100%;
+  height: 100vh;
+}
+/* Header y botones de login y sinup */
+.header{
+  width: 100%;
+  height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
+  top:0;
+}
+.ubicacion{
+width: 397px;
+height: 25px;
+font-family: "Source Sans 3", sans-serif;
+font-size: 18px;
+font-weight: 600;
+}
+
+.registro{
+  width: 164px;
+  height: 46px;
+  background-color:#FFAE00 ;
+  color: #ffff;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  border: transparent;
+  box-shadow: 0 5px 15px #FFAE00 ;
+}
+.registro img{
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+
+}
+
+.inicio-sesion input{
+ border: none;
+ font-family: "Source Sans 3", sans-serif;
+ font-size: 18px;
+ font-weight: 600; 
+ color: black;
+}
+.inicio-sesion button{
+  width: 164px;
+  height: 46px;
+  background-color:#ffff;
+  color:#FFAE00 ;
+  border-radius: 8px;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  border: transparent;
+  box-shadow: 0 5px 15px #FFAE00 ;
+}
+.inicio-sesion img{
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+}
+.logo-header{
+display: flex;
+height: 46px;
+}
+.logo-header h1{
+  font-weight: 700;
+  font-size: 36px;
+  color: #FC7054;
+  font-family: "Source Sans 3", sans-serif;
+}
+.logo-header img{
+  width: 54px;
+  height: 54px;
+}
+/* Inicio Sesion */
+.fondo-login{
+    width: 100%;
+    height: 700px;
+    background-color:#FCCD23;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.img-login{
+  width:90%;
+  height: 600px;
+  background-color: #E6F3FF;
+  position: relative;
+  left: 250px;
+  border-radius: 20px;
+}
+.img-login img{
+  width: 300px;
+  height: 400px;
+  position: relative;
+  left:50px;
+  top:100px;
+}
+.form-login{
+    width: 50%;
+    height: 600px;
+    background-color: white;
+    position: relative;
+    right:350px;
+}
+.formulario{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Source Sans 3", sans-serif;
+  gap: 30px;
+  margin-top: 60px;
+}
+.formulario div input{
+  width: 380px;
+  height: 50px;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: #F5F5F5;
+  border: transparent;
+  border-radius: 10px;
+  padding-left: 10px;
+  
+}
+.formulario div:nth-child(-n+3){
+  margin-left: 80px;
+}
+.formulario div button{
+width: 240px;
+height: 45px;
+background-color:#F65900 ;
+color: white;
+border-radius: 8px;
+font-family: "Source Sans 3", sans-serif;
+font-size: 22px;
+font-weight: 400;
+border: transparent;
+text-align: center;
+margin-bottom:10px;
+margin-top: 10px;
+}
+.formulario div p strong{
+  font-weight: 400;
+  color:#FFAE00;
+}
+.google{
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border: gray;
+  border-radius: 20px;
+}
+.google img{
+    width: 30px;
+    height: 30px;
+}
+    
+/* Proceder Pedido */
+.Proceder-pedido-repartidor{
+    width: 100%;
+    height: 400px;
+    background-image: url(/public/proceder_pedido.png);
+    background-position: center center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .Proceder-pedido-card{
+  width: 45%;
+  height: 240px;
+  font-family: "Source Sans 3", sans-serif;
+  font-size:32px;
+  font-weight:bold;
+  color:#ffff;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  text-align: center;
+  }
+  .Proceder-pedido-card button{
+  width: 40%;
+  height: 50px;
+  background-color:#F65900 ;
+  color: white;
+  border-radius: 8px;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  border: transparent;
+  border-radius: 10px;
+  text-align: center; 
+  }
+  /* footer */
+  .Footer-repartidor{
+    width:100%;
+    height:420px;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    font-family: "Source Sans 3", sans-serif;
+    border-bottom: 1px solid white;
+  }
+  .Footer-repartidor h3{
+    position: relative;
+    bottom: 100px;
+    left: 120px;
+  }
+  .Nombre-ciudades{
+  width: 10%;
+  height: 150px;
+  position:relative;
+  right: 200px;
+  top: 50px;
+  }
+  .Footer-dos-repartidor{
+    width:100%;
+    height:420px;
+    background-color:black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    font-family: "Source Sans 3", sans-serif;
+  }
+  .Soporte{
+    position: relative;
+    left:50px;
+  }
+  .Soporte H3{
+    position: relative;
+    bottom: 30px;
+  }
+  .siguenos{
+  width: 28%;
+  height:200px;
+  display:flex;
+  flex-direction: column;
+  }
+  .siguenos div img{
+   margin-right: 20px;
+   margin-top: 20px;
+   margin-bottom: 20px;
+  }
+  .siguenos section input{
+    width: 250px;
+    height:40px;
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: #424242;
+    border: transparent;
+    border-radius: 5px;
+    margin-right: 20px;
+  }
+  .siguenos section button{
+    width: 150px;
+    height: 46px;
+    background-color:#FFAE00 ;
+    color: #ffff;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    border: transparent;
+    box-shadow: 0 5px 15px #FFAE00;}
