@@ -7,6 +7,7 @@ import Registrarse from "../Components/Registrarse";
 import RegistroRepartidor from "../pages/RegistroRepartidor";
 import InicioSesionRestaurante from "../pages/InicioSesionRestaurante";
 import RegistroRestaurante from "../pages/RegistroRestaurante";
+import RolesRegistro from "../pages/RolesRegistro";
 
 
 let enrutador = createBrowserRouter([
@@ -21,6 +22,10 @@ let enrutador = createBrowserRouter([
     {
       path:'/Roles',
       element:<Roles/>
+    },
+    {
+      path:'/RolesRegistro',
+      element:<RolesRegistro/>
     },
     {
       path:'/InicioRepartidor',
