@@ -120,6 +120,7 @@ height: 46px;
   font-family: "Source Sans 3", sans-serif;
   gap: 30px;
   margin-top: 60px;
+  margin-right: 70px;
 }
 .formulario div input{
   width: 380px;
@@ -131,10 +132,6 @@ height: 46px;
   border: transparent;
   border-radius: 10px;
   padding-left: 10px;
-  
-}
-.formulario div:nth-child(-n+3){
-  margin-left: 80px;
 }
 .formulario div button{
 width: 240px;
@@ -160,6 +157,7 @@ margin-top: 10px;
   padding: 12px;
   border: gray;
   border-radius: 20px;
+  margin-left: 30px;
 }
 .google img{
     width: 30px;

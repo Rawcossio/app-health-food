@@ -1,19 +1,19 @@
 import google from '/google.png'
 const Registrarse=()=>{
     return(            
-            <form action="" className='formulario'>
+            <form className='formulario-registro'>
             <h2>Reparte a través de NutriGo y empieza a obtener ganancias</h2>
             <div>
             <label htmlFor="">Ciudad</label>
-            <input type="search" placeholder="Ingresa la ciudad donde estas" />
+            <input type="text" placeholder="Ingresa la ciudad donde estas" />
             </div>
             <div>
             <label htmlFor="">Nombre</label>
-            <input type="search" placeholder="Ingresa tu nombre" />
+            <input type="text" placeholder="Ingresa tu nombre" />
             </div>
             <div>
             <label htmlFor="">Telefono</label>
-            <input type="search" placeholder="Ingresa tu telefono" />
+            <input type="text" placeholder="Ingresa tu telefono" />
             </div>
             <div>
             <button type="submit">¡Comencemos!</button>
