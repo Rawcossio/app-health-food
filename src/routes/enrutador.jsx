@@ -1,13 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
-import HealthFood from '../pages/HealthFood'
-import HomeUser from '../pages/HomeUser'
-import Roles from '../pages/Roles'
+import HealthFood from '../pages/HealthFood';
+import HomeUser from '../pages/HomeUser';
+import Roles from '../pages/Roles';
 import InicioRepartidor from "../pages/InicioRepartidor";
-import Registrarse from "../Components/Registrarse";
 import RegistroRepartidor from "../pages/RegistroRepartidor";
 import InicioSesionRestaurante from "../pages/InicioSesionRestaurante";
 import RegistroRestaurante from "../pages/RegistroRestaurante";
 import RolesRegistro from "../pages/RolesRegistro";
+import Orden from "../pages/Orden";
 
 
 let enrutador = createBrowserRouter([
@@ -42,6 +42,10 @@ let enrutador = createBrowserRouter([
     {
       path:'/RegistroRestaurante',
       element:<RegistroRestaurante/>
+    },
+    {
+      path:'/Orden',
+      element:<Orden/>
     }
   ])
 
