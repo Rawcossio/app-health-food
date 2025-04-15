@@ -87,7 +87,7 @@ function Pago({ infor }) {
                     </div>
 
                 </section>
-                <section className='boton-carrito'>
+                <section className='boton-pago'>
                 <button >Paga ahora</button>
                 </section>
 

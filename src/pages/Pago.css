@@ -24,7 +24,7 @@ body {
 /* Contenedor del modal (responsive) */
 .pago-contenido {
     background: white;
-    width: 90%;
+    width: 30%;
     max-width: 500px;
     max-height: 90vh;
     border-radius: 10px;
@@ -290,7 +290,7 @@ body {
 }
 
 /* seccion Pagar */
-.boton-carrito {
+.boton-pago {
     width: 100%;
     padding: 20px 0;
     display: flex;
@@ -304,13 +304,12 @@ body {
     z-index: 10;
 }
 
-.boton-carrito button {
-    all: unset;
+.boton-pago button {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 150px;
-    height: 50px;
+    width: 130px;
+    height: 40px;
     background-color: #FFAE00;
     color: white;
     border-radius: 20px;
@@ -319,6 +318,7 @@ body {
     cursor: pointer;
     text-align: center;
     position: sticky;
+    border: none;
 }
 
 

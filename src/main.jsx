@@ -10,6 +10,6 @@ import VistaProducto from './pages/VistaProducto'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <VistaProducto/>
+    <Pago/>
   </StrictMode>,
 )
