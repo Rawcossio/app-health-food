@@ -1,10 +1,12 @@
-import './VistaProducto.css';
+import { useState } from "react";
+import "./VistaProducto.css";
+import { useEffect } from "react";
 
 function VistaProducto() {
+
   return (
     <section className="vista">
       <div className="vista__contenido">
-        
         {/* Header */}
         <header className="vista__header">
           <div className="vista__logo-nutri">
@@ -12,9 +14,15 @@ function VistaProducto() {
             <img src="/go.png" alt="Nutri Logo" className="vista__logo" />
           </div>
           <div className="vista__restaurante-info">
-            <img src="/restaurante-logo.png" alt="Restaurante" className="vista__logo-restaurante" />
+            <img
+              src="/restaurante-logo.png"
+              alt="Restaurante"
+              className="vista__logo-restaurante"
+            />
             <div>
-              <h3>Sabor Élite <br /> (Medellín)</h3>
+              <h3>
+                Sabor Élite <br /> (Medellín)
+              </h3>
               <p>⭐ 4.5 (200 reseñas)</p>
             </div>
           </div>
@@ -29,7 +37,8 @@ function VistaProducto() {
         <main className="vista__info">
           <h1 className="vista__titulo">Huevos rotos con boletus y trufa</h1>
           <p className="vista__ingredientes">
-            patatas, boletus, cebolleta, manojito de ajetes, trufa, cebollino, aceite de oliva, 8 huevos
+            patatas, boletus, cebolleta, manojito de ajetes, trufa, cebollino,
+            aceite de oliva, 8 huevos
           </p>
           <div className="vista__precio">
             <h2>$15.000</h2>
@@ -46,7 +55,6 @@ function VistaProducto() {
           </div>
           <button className="vista__cart-btn">Ir al carrito</button>
         </footer>
-
       </div>
     </section>
   );
