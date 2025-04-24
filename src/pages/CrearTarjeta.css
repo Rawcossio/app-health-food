@@ -1,0 +1,122 @@
+header{
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  font-family: sans-serif;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #e76f51;
+    margin-left: 30px;
+}
+
+.logo-icon {
+    width: 28px;
+    height: 28px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 24px;
+    font-size: 0.9rem;
+    margin-right: 30px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: orange;
+    cursor: pointer;
+    margin-right: 30px;
+}
+  
+  .nav-item:hover {
+    text-decoration: underline;
+}
+
+/* main*/
+
+.tarjeta-container {
+    padding: 30px 20px;
+    max-width: 400px;
+    margin: auto;
+    background: #fff;
+  }
+  
+  .titulo-tarjeta {
+    text-align: center;
+    color: #ffb300;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .card-visual {
+    background: linear-gradient(135deg, #ff3e3e, #ffca28);
+    border-radius: 20px;
+    padding: 20px;
+    color: white;
+    margin-bottom: 25px;
+  }
+  
+  .numero-tarjeta {
+    font-size: 1.2em;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+  
+  .card-detalles {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+  }
+  
+  .form-tarjeta label {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .form-tarjeta input {
+    width: 100%;
+    padding: 10px;
+    background: #fff9c4;
+    border: none;
+    border-radius: 10px;
+    font-size: 1em;
+    margin-top: 5px;
+  }
+  
+  .fila {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .fila label {
+    flex: 1;
+  }
+  
+  .btn-guardar {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 1em;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .btn-guardar:hover {
+    background-color: #e64a19;
+  }
+  

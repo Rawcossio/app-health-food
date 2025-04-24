@@ -11,12 +11,13 @@ import './pages/Restaurante.css'
 import MetodoPago from './pages/MetodoPago'
 import AgregarDireccion from './pages/AgregarDireccion'
 import CrearDireccion from './pages/CrearDireccion'
+import CrearTarjeta from './pages/CrearTarjeta'
 
 
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <CrearDireccion/>
+    <CrearTarjeta/>
    </StrictMode>, 
 )
