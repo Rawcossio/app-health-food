@@ -1,17 +1,22 @@
 import React, { useState } from "react";
 
 const CrearTarjetacard = () => {
+
+  /* useState para manejar los datos del formulario: nombre del titular, 
+   número de tarjeta, fecha de expiración y CVV*/
     const [form, setForm] = useState({
       nombre: "",
       numero: "",
       fecha: "",
       cvv: "",
     });
-  
+
+    /*Esta función se ejecuta cuando se escribe en un input*/
     const handleChange = (e) => {
       setForm({ ...form, [e.target.name]: e.target.value });
     };
-  
+
+    /*Esta función se ejecuta cuando se envía el formulario y tin */
     const handleSubmit = (e) => {
       e.preventDefault();
       console.log("Tarjeta guardada:", form);
