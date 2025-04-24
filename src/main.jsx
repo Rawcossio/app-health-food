@@ -8,12 +8,13 @@ import'./pages/InicioSesion.css'
 /*import './pages/Registro.css'*/
 import Restaurante from './pages/Restaurante'
 import './pages/Restaurante.css'
+import MetodoPago from './pages/MetodoPago'
 
 
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Restaurante/>
+    <MetodoPago/> 
    </StrictMode>, 
 )
