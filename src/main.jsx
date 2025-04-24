@@ -9,12 +9,13 @@ import'./pages/InicioSesion.css'
 import Restaurante from './pages/Restaurante'
 import './pages/Restaurante.css'
 import MetodoPago from './pages/MetodoPago'
+import AgregarDireccion from './pages/AgregarDireccion'
 
 
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <MetodoPago/> 
+    <AgregarDireccion/>
    </StrictMode>, 
 )
