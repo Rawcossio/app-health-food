@@ -740,3 +740,157 @@ flex-direction: column;
   border: transparent;
   box-shadow: 0 5px 15px #FFAE00 ;
 }
+
+/* Media Queries */
+@media screen and (max-width: 1200px) {
+  .Card-MejoresOfertas {
+    width: 90%;
+    left: 50px;
+  }
+
+  .Card-populares {
+    width: 22%;
+  }
+
+  .Card-restaurantes {
+    width: 23%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .header {
+    flex-wrap: wrap;
+    height: auto;
+    padding:20px;
+  }
+  .ubicacion{
+    display: none;
+  }
+
+  .Encuentra-Comida {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .fondo-fideos {
+    display: none;
+  }
+
+  .Card-Encuentra-comida {
+    width: 90%;
+  }
+
+  .tarjetas {
+    flex-wrap: wrap;
+    margin-top:20px;
+    margin-bottom:370px;
+  }
+
+  .ComidaDescuento {
+    max-width: 30%;
+    margin: 20px;
+  }
+  .Comofunciona{
+    margin-bottom: 100px;    
+  }
+  .Comofunciona h2{
+   margin-bottom: -280px;
+  }
+  .Card-ComoFunciona{
+    max-width: 20%;
+  }
+  .Populares{
+    flex-wrap:wrap;
+  }  
+  .Populares h2{
+   margin-bottom: -350px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .Titulo-Encuentra-Comida h1 {
+    font-size: 42px;
+  }
+
+  .ubicacion {
+    width: 100%;
+  }
+
+  .ComidaDescuento {
+    width: 90%;
+  }
+
+  .Card-populares {
+    width: 90%;
+  }
+
+  .Card-restaurantes {
+    width: 90%;
+  }
+
+  .Card-MejoresOfertas {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .Card-MejoresOfertas img {
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .Footer {
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+  }
+
+  .Footer-dos {
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .registro, .inicio-sesion button {
+    width: 140px;
+  }
+
+  .Ubicacion {
+    width: 90%;
+  }
+
+  .Card-Encuentra-comida {
+    height: auto;
+    padding: 15px;
+  }
+
+  .Entrega, .Recogida {
+    margin: 10px 0;
+  }
+
+  .TiposComida-tipos {
+    width: 150px;
+  }
+
+  .seccion-CardEntrega {
+    width: 90%;
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .instala-app-card {
+    flex-direction: column;
+  }
+
+  .instala-app-texto p {
+    width: 90%;
+  }
+}

@@ -13,10 +13,11 @@ import amarillo_uno from '/amarillo_uno.png'
 import amarillo_dos from '/amarillo_dos.png'
 import amarillo_tres from '/amarillo_tres.png'
 import './InicioRepartidor.css'
+import { useState } from 'react'
 
 const InicioRepartidor=()=>{
     return(
-        <body>
+        <>
             <Header/>
                 <section className='fondo-login'>
                     <div className='img-login'>
@@ -50,7 +51,7 @@ const InicioRepartidor=()=>{
             </section>
         </div>
         </section>
-        </body>
+        </>
     )
 }
 export default InicioRepartidor;
