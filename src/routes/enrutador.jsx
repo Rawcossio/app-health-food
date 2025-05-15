@@ -7,7 +7,10 @@ import RegistroRepartidor from "../pages/RegistroRepartidor";
 import InicioSesionRestaurante from "../pages/InicioSesionRestaurante";
 import RegistroRestaurante from "../pages/RegistroRestaurante";
 import RolesRegistro from "../pages/RolesRegistro";
-import Orden from "../pages/Orden";
+
+import VistaProducto from "../pages/VistaProducto";
+import Pago from "../pages/Pago";
+import Carrito from "../pages/Carrito";
 
 
 let enrutador = createBrowserRouter([
@@ -44,8 +47,16 @@ let enrutador = createBrowserRouter([
       element:<RegistroRestaurante/>
     },
     {
-      path:'/Orden',
-      element:<Orden/>
+      path:'/vistaproducto',
+      element:<VistaProducto/>
+    },
+    {
+      path:'/pago',
+      element:<Pago/>
+    },
+    {
+      path:'/carrito',
+      element:<Carrito/>
     }
   ])
 

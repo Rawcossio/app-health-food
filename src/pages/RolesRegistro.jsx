@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './Roles.css'
 import user from '/user.png'
 const RolesRegistro=()=>{
@@ -5,14 +6,14 @@ const RolesRegistro=()=>{
        <body>
         <section className='roles'>
         <div className="logo-roles">
-            <h1>Nutri</h1>
+            <Link to="/"className='titulo-roles'>Nutri</Link>
             <img src="public/go.png" alt=""/>
         </div>
         <p>Ingresa el rol con el que deseas <strong>Registrarte</strong></p>
         <div className='boton-roles'>
-        <button><img src={user} alt="" /> CLIENTE</button>
-        <button><img src={user} alt="" /> RESTAURANTE</button>
-        <button><img src={user} alt="" /> REPARTIDOR</button>
+        <Link className='button' to=""><img src={user} alt="" /> CLIENTE</Link>
+        <Link className='button' to="/RegistroRestaurante"><img src={user} alt="" /> RESTAURANTE</Link >
+        <Link className='button'to="/RegistroRepartidor"><img src={user} alt="" /> REPARTIDOR</Link >
         </div>
         </section>
        </body>
