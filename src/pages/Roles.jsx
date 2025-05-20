@@ -3,7 +3,7 @@ import './Roles.css'
 import user from '/user.png'
 const Roles=()=>{
     return(
-       <body>
+       <>
         <section className='roles'>
         <div className="logo-roles">
             <Link to="/"className='titulo-roles'>Nutri</Link>
@@ -16,7 +16,7 @@ const Roles=()=>{
         <Link className='button'to="/InicioRepartidor"><img src={user} alt="" /> REPARTIDOR</Link>
         </div>
         </section>
-       </body>
+       </>
     )
 }
 export default Roles 
