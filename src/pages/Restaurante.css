@@ -1,0 +1,293 @@
+.contenedor-principal {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* HEADER */
+header{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+
+.logo{
+    width: 20%;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+}
+
+.logo h1{
+    color: #FC7054;
+    margin-right: -11px;
+    font-size: 36px
+}
+
+.logo img{
+    width: 70px;
+    height: 70px;
+}
+
+.menu{
+    width: 80%;
+    height: 25px;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.menu a{
+    text-decoration: none;
+}
+
+.menu span {
+    color: #FFB800;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.menu span:hover{
+    transform: translateY(-4px);
+  color: orange;
+}
+
+/*MAIN*/
+
+.main{
+    
+    width: 100%;
+    height: 650px;
+    background-image: url('/fondo-restaurante.jpg');
+    border-radius: 0 0 50px 50px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ffcc80;
+}
+
+.main img{
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    margin: 0px 50px 0px 50px;
+}
+
+.titulo-restaurante{
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo-restaurante h1{
+    font-size: 50px;
+}
+
+.titulo-restaurante p{
+    font-size: 32px;
+    font-weight: bold;
+}
+
+
+/*PRECIO DOMICILIO*/
+
+.precio-domicilio{
+    margin-left: 120px;
+    margin-top: 20px;
+    width: 80%;
+    height: 40px;
+    background-color: #E7E7E7;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    transition: box-shadow 0.3s, transform 0.2s;
+    cursor: pointer;
+    position: relative;
+}
+
+.uno{
+    margin-left: 25px;
+    box-sizing: 15px;
+    font-weight: bold;
+}
+
+.dos{
+    margin-right: 25px;
+    box-sizing: 15px;
+    font-weight: bold;
+}
+
+.precio-domicilio:hover, .precio-domicilio:active{
+    box-shadow: 0 0 20px 4px rgba(109, 100, 87, 0.7);
+    transform: scale(1.02);
+}
+
+
+/*Cards*/
+
+.productos{
+    width: 100%;
+    height: 950px;
+    
+}
+
+.productos h1{
+    margin-top: 40px;
+    margin-left: 90px;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.Promociones{
+    width: 100%;
+    height: 400px;
+}
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.nav-button {
+  background-color: black;
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.cards-wrapper {
+  display: flex;
+  gap: 1.5rem;
+  overflow: hidden;
+}
+
+.card {
+  width: 250px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 1rem;
+  text-align: left;
+  font-family: sans-serif;
+  transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.card:hover, .card:active{
+    box-shadow: 0 0 20px 4px rgba(235, 186, 118, 0.7);
+    transform: scale(1.02);
+}
+
+.card img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  font-size: 1rem;
+  margin: 0 0 0.5rem;
+}
+
+.precios {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+}
+
+.precio {
+  color: #F39C12;
+  font-weight: bold;
+  margin: 0;
+}
+
+.precio-original {
+  color: #999;
+  text-decoration: line-through;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.descuento {
+  background-color: #F1C40F;
+  color: black;
+  font-weight: bold;
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  width: fit-content;
+  border-radius: 4px;
+}
+
+.comprar{
+    margin-top: 10px;
+    background-color: #FC7054;
+    border-radius: 10px;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    transition: box-shadow 0.3s, transform 0.2s;
+    cursor: pointer;
+    position: relative;
+    border: none;
+}
+
+.comprar a{
+    font-size: 25px;
+    margin-top: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+.comprar:hover, .comprar:active{
+    box-shadow: 0 0 20px 4px rgba(235, 186, 118, 0.7);
+    transform: scale(1.02);
+}
+
+
+
+
+
+
+
+/*.card {
+  width: 200px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 1rem;
+  text-align: left;
+  font-family: sans-serif;
+  position: relative;
+  cursor: pointer;
+  transition: border 0.3s ease;
+}*/
+
+
+
+
+
+
+/* Número en la esquina superior izquierda */
+.numero {
+  
+ 
+  background: none;
+  color: #f1c40f;
+  font-size: 3rem;
+  font-weight: bold;
+ 
+}
+
+
+
+
