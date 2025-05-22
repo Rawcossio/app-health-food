@@ -28,7 +28,6 @@ import './index.css'
 
 const HealthFood=()=>{
     return(
-        <html>
         <body>
         <Header/>
             <section>
@@ -112,6 +111,5 @@ const HealthFood=()=>{
         </div>
         </section>
         </body> 
-        </html>
         )}
 export default HealthFood

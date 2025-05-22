@@ -28,8 +28,7 @@ import './HomeUser.css'
 
 const HomeUser=()=>{
     return(
-        <html>
-        <body>
+        <>
         <HeaderHome/>
             <section>
                 <EncuentraComida/>
@@ -111,7 +110,6 @@ const HomeUser=()=>{
             </section>
         </div>
         </section>
-        </body> 
-        </html>
+        </>
         )}
 export default HomeUser

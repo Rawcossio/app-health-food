@@ -16,7 +16,7 @@ import './InicioSesionRestaurante.css'
 
 const InicioSesionRestaurante=()=>{
     return(
-        <body>
+        <>
             <Header/>
                 <section className='fondo-login'>
                     <div className='img-login'>
@@ -50,7 +50,7 @@ const InicioSesionRestaurante=()=>{
             </section>
         </div>
         </section>
-        </body>
+        </>
     )
 }
 export default InicioSesionRestaurante;

@@ -12,7 +12,7 @@ import repartidor from '/repartidor.png'
 import './RegistroRepartidor.css'
 const RegistroRepartidor=()=>{
     return(
-        <body>
+        <>
             <Header/>
                 <section className='fondo-login'>
                     <div className='img-login'>
@@ -46,7 +46,7 @@ const RegistroRepartidor=()=>{
             </section>
         </div>
         </section>
-        </body>
+        </>
     )
 }
 export default RegistroRepartidor;

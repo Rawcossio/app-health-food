@@ -2,7 +2,7 @@ import go from '/go.png'
 import './Orden.css'
 const Orden=()=>{
     return(
-        <body>
+        <>
         <section className='orden'>
             <div className='logo-orden'>
                 <h2>Nutri</h2>
@@ -14,7 +14,7 @@ const Orden=()=>{
                 <button>SIGUE TU ORDEN</button>
             </div>
         </section>
-    </body>
+    </>
     )
 }
 export default Orden 
