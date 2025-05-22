@@ -1,4 +1,5 @@
-import Navbar from "../Components/Navbar"
+import HeaderHome from "../Components/HeaderHome"
+
 import NumeroCardSlider from "../Components/NumeroCardSlider"
 
 import ProductSlider from "../Components/ProductoSlider"
@@ -8,7 +9,7 @@ const Restaurante =()=>{
     return(
         <section className="contenedor-principal">
             <div>
-                <Navbar/>
+                <HeaderHome/>
             </div>
 
             <main className="main">
