@@ -11,6 +11,7 @@ import RolesRegistro from "../pages/RolesRegistro";
 import VistaProducto from "../pages/VistaProducto";
 import Pago from "../pages/Pago";
 import Carrito from "../pages/Carrito";
+import Restaurante from "../pages/Restaurante";
 
 
 let enrutador = createBrowserRouter([
@@ -57,6 +58,10 @@ let enrutador = createBrowserRouter([
     {
       path:'/carrito',
       element:<Carrito/>
+    },
+    {
+      path:'/restaurante',
+      element: <Restaurante/>
     }
   ])
 

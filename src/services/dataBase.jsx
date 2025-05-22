@@ -344,3 +344,81 @@ export let contacto=[
       basura: "/Remove.png"
     }
   ];
+
+  export let productos = [
+  {
+    id: 1,
+    nombre: "Huevos rotos con boletus y trufa",
+    descripcion: "",
+    imagen: "public/Huevos-rotos.jpg",
+    precio: 15000,
+    precioOriginal: 20000,
+    descuento: "25% OFF"
+  },
+  {
+    id: 2,
+    nombre: "Pudin de roscón de reyes",
+    descripcion: "",
+    imagen: "public/Pudin-GRANDE.jpg",
+    precio: 22500,
+    precioOriginal: 30000,
+    descuento: "25% OFF"
+  },
+  {
+    id: 3,
+    nombre: "Rape con ragout de verduras y manitas de cerdo",
+    descripcion: "",
+    imagen: "public/Rape-GRANDE.jpg",
+    precio: 36700,
+    precioOriginal: 49000,
+    descuento: "25% OFF"
+  },
+  {
+    id: 4,
+    nombre: "Codorniz escabechada",
+    descripcion: "",
+    imagen: "public/Codorniz-GRANDE.jpg",
+    precio: 26250,
+    precioOriginal: 35000,
+    descuento: "25% OFF"
+  },
+  {
+    id: 5,
+    nombre: "Rollitos de lenguado",
+    descripcion: "",
+    imagen: "public/rollo-GRANDE.jpg",
+    precio: 30000,
+    precioOriginal: 40000,
+    descuento: "25% OFF"
+  },
+  {
+    id: 6,
+    nombre: "Puerros a la plancha",
+    descripcion: "",
+    imagen: "public/Puerros-GRANDE.jpg",
+    precio: 36700,
+    precioOriginal: 49000,
+    descuento: "25% OFF"
+  },
+  {
+    id: 7,
+    nombre: "Lasaña de verduras",
+    descripcion: "",
+    imagen: "public/LASAÑA-GRANDE.jpg",
+    precio: 37500,
+    precioOriginal: 50000,
+    descuento: "25% OFF"
+  },
+  {
+    id: 8,
+    nombre: "Quesadilla de jamón y dos quesos con pico de gallo",
+    descripcion: "",
+    imagen: "public/Quesadilla-GRANDE.jpg",
+    precio: 36700,
+    precioOriginal: 49000,
+    descuento: "25% OFF"
+  },
+  
+  
+];
+
