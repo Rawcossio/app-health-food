@@ -1,0 +1,139 @@
+.metodo-pago {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.metodo-contenido {
+  background: white;
+  width: 30%;
+  height: 90%;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.metodo-header {
+  width: 100%;
+  height: 80px;
+  color: white;
+  background-color: #ffae00;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px 10px 0 0;
+}
+
+.metodo-header h2 {
+  font-weight: 600;
+  font-size: 30px;
+}
+
+.metodo-lista{
+    width: 100%;
+    height: 65%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: start;
+    background-color: white;
+    padding: 40px;
+    color: white;
+    gap: 20px;
+}
+
+input{
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+label{
+   flex: 1;
+   margin-right: 10px;
+   color: black;
+   font-weight: 700;
+}
+
+.metodo-opcion {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.metodo-opcion input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #ffae00;
+    border-radius: 50%;
+    margin-left: 15px;
+    position: relative;
+    cursor: pointer;
+}
+
+.metodo-opcion input[type="radio"]::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ffae00;
+    transition: transform 0.2s ease;
+}
+
+.metodo-opcion input[type="radio"]:checked::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.metodo-opcion input[type="radio"]:hover {
+    border-color: #e69d00;
+}
+
+.metodo-opcion label {
+    flex: 1;
+    color: black;
+    cursor: pointer;
+}
+
+.metodo-opcion img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.metodo-contenido button {
+    width: 90%;
+    height: 50px;
+    margin: 20px auto;
+    display: block;
+    background-color: #ffae00;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.metodo-contenido button:hover {
+    background-color: #e69d00;
+}
+
+.metodo-contenido button:active {
+    transform: scale(0.98);
+}
