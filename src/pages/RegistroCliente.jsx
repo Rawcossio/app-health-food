@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import HeaderRegistro from "../Components/HeaderRegistro"
 import "./RegistroCliente.css"
 
@@ -37,7 +38,7 @@ const RegistroCliente =() =>{
           <button type="submit" className="btn-registrarse">Registrarse</button>
         </form>
         
-        <p>Ya tengo una cuenta <a href="#" className="link-login">Inicio de Sesión</a></p>
+        <p>Ya tengo una cuenta <Link className="link-login" to="/InicioSesion">Inicio de Sesión</Link></p>
       </section>
     </main>
         </section>

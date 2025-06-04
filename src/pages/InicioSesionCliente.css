@@ -17,6 +17,7 @@
 .logo-text {
   color: #F17228;
   font-weight: bold;
+  text-decoration: none;
   margin-right: 8px;
   font-size: 30px;
 }
@@ -68,6 +69,7 @@
   font-weight: bold;
   cursor: pointer;
   display: flex;
+  text-decoration: none;
   align-items: center;
   gap: 6px;
 }
