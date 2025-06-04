@@ -7,11 +7,6 @@ import RegistroRepartidor from "../pages/RegistroRepartidor";
 import InicioSesionRestaurante from "../pages/InicioSesionRestaurante";
 import RegistroRestaurante from "../pages/RegistroRestaurante";
 import RolesRegistro from "../pages/RolesRegistro";
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 5d10dd6 (se crea los formulario y se enlazan con las pestañas necesarias)
 import VistaProducto from "../pages/VistaProducto";
 import Pago from "../pages/Pago";
 import Carrito from "../pages/Carrito";
@@ -21,6 +16,7 @@ import MetodoPago from "../Components/MetodoPago";
 import Restaurante from "../pages/Restaurante";
 import InicioSesionCliente from "../pages/InicioSesionCliente";
 import RegistroCliente from "../pages/RegistroCliente";
+import ProtectedRoute from "./ProtectedRoute";
 
 
 let enrutador = createBrowserRouter([
@@ -30,7 +26,9 @@ let enrutador = createBrowserRouter([
     },
     {
       path:'/HomeUser',
-      element:<HomeUser/>
+      element:<ProtectedRoute>
+        <HomeUser/>
+      </ProtectedRoute>
     },
     {
       path:'/Roles',

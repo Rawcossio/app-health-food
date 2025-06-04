@@ -7,7 +7,7 @@ const HeaderRegistro =() =>{
     return(
     <header className="header">
                 <div className="header-left">
-                    <h1 className="logo-text">Nutri</h1>
+                    <Link className="logo-text" to="/">Nutri</Link>
                     <img src="public\go.png" alt="Logo" className="logo-img" />
                 </div>
                 <div className="header-right">
