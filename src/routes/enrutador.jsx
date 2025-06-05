@@ -14,6 +14,7 @@ import Direcciones from "../Components/Direcciones";
 import AgregarDireccion from "../Components/AgregarDireccion";
 import MetodoPago from "../Components/MetodoPago";
 import Restaurante from "../pages/Restaurante";
+import AgregarTarjeta from "../Components/AgregarTarjeta";
 
 
 let enrutador = createBrowserRouter([
@@ -23,7 +24,7 @@ let enrutador = createBrowserRouter([
     },
     {
       path:'/HomeUser',
-      element:<HomeUser/>
+      element:<HomeUser/>,
     },
     {
       path:'/Roles',
@@ -77,6 +78,14 @@ let enrutador = createBrowserRouter([
     { 
       path:'/restaurante',
       element: <Restaurante/>
+    },
+    {
+      path:'/agregar-tarjeta',
+      element: <AgregarTarjeta/>
+    },
+    {
+      path: '/producto/:id', // Cambiar esto para incluir el parámetro id
+      element: <VistaProducto />
     }
   ])
 

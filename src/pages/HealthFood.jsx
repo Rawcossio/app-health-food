@@ -3,10 +3,8 @@ import EnDescuento from "../Components/EnDescuento"
 import EncuentraComida from "../Components/EncuentraComida"
 import Header from "../Components/Header"
 import ComoFunciona from "../components/ComoFunciona"
-import PopularesCerca from "../components/PopularesCerca"
 import { entregas, pedidos, restaurantes } from "../services/dataBase"
 import { funciona } from "../services/dataBase"
-import { populares } from "../services/dataBase"
 import Restaurantes from "../Components/Restarantes"
 import { tiendas } from "../services/dataBase"
 import InstalarApp from "../Components/InstalarApp"
@@ -24,6 +22,7 @@ import instagram from '/instagram.png'
 import facebook from '/facebook.png'
 import equis from '/equis.png'
 import './index.css'
+import PopularesCerca from "../Components/PopularesCerca"
 
 
 const HealthFood=()=>{
@@ -45,10 +44,7 @@ const HealthFood=()=>{
             })}
         </section>
         <div className="Populares">
-            <h2>Populares cerca de ti</h2>
-            {populares.map((popular)=>{
-                return <PopularesCerca cerca={popular}/>
-            })}
+              <PopularesCerca/>
         </div>
         <section className="Restaurantes">
             <h2>Restaurantes Destacados</h2>
