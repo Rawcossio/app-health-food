@@ -11,7 +11,7 @@ const Roles=()=>{
         </div>
         <p>Ingresa el rol con el que deseas <strong>Iniciar Sesión</strong></p>
         <div className='boton-roles'>
-        <Link className='button'><img src={user} alt="" /> CLIENTE</Link>
+        <Link className='button' to="/InicioSesion"><img src={user} alt="" /> CLIENTE</Link>
         <Link className='button' to="/InicioRestaurante"><img src={user} alt="" /> RESTAURANTE</Link>
         <Link className='button'to="/InicioRepartidor"><img src={user} alt="" /> REPARTIDOR</Link>
         </div>
