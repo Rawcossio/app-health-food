@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import carrito from "/carrito.png"
 
  function Header() {
 
@@ -14,6 +15,7 @@ import { Link } from "react-router-dom"
             <Link className="boton" to="/Roles"><img src="./public/usuario.png" alt=""/>Iniciar Sesión</Link>
             </div>
             <Link className="registro" to="/RolesRegistro"> <img src="./public/usuario.png" alt="" to="" />Registrarse</Link>
+             <Link><img  className="carrito_compras" src={carrito} alt="" /></Link>
         </section>
     )
     

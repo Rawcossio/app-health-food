@@ -3,6 +3,7 @@ import direccion from '/direccion.png'
 import metodos from '/metodos.png'
 import contactenos from '/contactenos.png'
 import perfil from '/perfil.png'
+import carrito from '/carrito.png'
 function HeaderHome() {
 
     return(
@@ -18,6 +19,7 @@ function HeaderHome() {
                 <a href=""><img src={contactenos} alt="" /> Contactenos</a>
                 <a href=""><img src={perfil} alt="" /> Mi perfil</a>
             </nav>
+            <img className='carrito_compras' src={carrito} alt="" />
         </section>
     )
     

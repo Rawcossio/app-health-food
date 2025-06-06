@@ -27,7 +27,7 @@ import PopularesCerca from "../Components/PopularesCerca"
 
 const HealthFood=()=>{
     return(
-        <body>
+        <>
         <Header/>
             <section>
                 <EncuentraComida/>
@@ -106,6 +106,6 @@ const HealthFood=()=>{
             </section>
         </div>
         </section>
-        </body> 
+        </> 
         )}
 export default HealthFood
