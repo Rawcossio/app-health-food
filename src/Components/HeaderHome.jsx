@@ -4,6 +4,7 @@ import metodos from '/metodos.png'
 import contactenos from '/contactenos.png'
 import perfil from '/perfil.png'
 import { Link } from 'react-router-dom'
+import carrito from '/carrito.png'
 function HeaderHome() {
 
    
