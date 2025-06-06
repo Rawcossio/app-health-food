@@ -46,6 +46,10 @@ font-weight: 600;
   height: 18px;
   margin-right: 10px;
 
+}.inicio-sesion{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .inicio-sesion input{
@@ -56,7 +60,7 @@ font-weight: 600;
  color: black;
 }
 .boton{
-  width: 164px;
+  width: 250px;
   height: 46px;
   background-color:#ffff;
   color:#FFAE00 ;
