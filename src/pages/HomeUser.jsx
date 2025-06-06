@@ -42,7 +42,7 @@ const HomeUser = () => {
         })}
       </section>
       <div className="Populares">
-        return <PopularesCerca />
+         <PopularesCerca />
       </div>
       <section className="Restaurantes">
         <h2>Restaurantes Destacados</h2>

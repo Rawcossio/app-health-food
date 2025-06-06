@@ -9,7 +9,6 @@ import RegistroRestaurante from "../pages/RegistroRestaurante";
 import RolesRegistro from "../pages/RolesRegistro";
 import VistaProducto from "../pages/VistaProducto";
 import Pago from "../pages/Pago";
-import Carrito from "../pages/Carrito";
 import Direcciones from "../Components/Direcciones";
 import Perfil from "../Components/Perfil"
 import AgregarDireccion from "../Components/AgregarDireccion";
@@ -64,10 +63,7 @@ let enrutador = createBrowserRouter([
       path:'/pago',
       element:<Pago/>
     },
-    {
-      path:'/carrito',
-      element:<Carrito/>
-    },
+   
     {
       path:'/metodopago',
       element:<MetodoPago/>
@@ -88,6 +84,10 @@ let enrutador = createBrowserRouter([
     {
       path: '/InicioSesion',
       element: <InicioSesionCliente/>
+    },
+    {
+      path: '/producto/:id', // Cambiar esto para incluir el parámetro id
+      element: <VistaProducto />
     },
     {
       path: '/RegistroCliente',

@@ -85,25 +85,26 @@ const HealthFood=()=>{
         </div>
         <section className="Footer">
         <h3>Nuestras Principales Ciudades</h3>
-        {cities.map((city)=>{
-        return <PiePagina pagina={city}/>})}
-        </section>
-        <section className="Footer-dos">
-        {contacto.map((contact)=>{
-            return <Company soporte={contact}/>})
-        }
+        {cities.map((city) => {
+          return <PiePagina pagina={city} />;
+        })}
+      </section>
+      <section className="Footer-dos">
+        {contacto.map((contact) => {
+          return <Company soporte={contact} />;
+        })}
         <div className="siguenos">
-            <h3>SIGUENOS</h3>
-            <div>
-                <img src={instagram} alt="instagram" />
-                <img src={facebook} alt="facebook" />
-                <img src={equis} alt="equis" />
-            </div>
-            <p>Recibe ofertas exclusivas en tu correo</p>
-            <section>
-                <input type="search" placeholder=" ✉️ Ingresa tu correo"/>
-                <button>Suscribirse</button>
-            </section>
+          <h3>SIGUENOS</h3>
+          <div>
+            <img src={instagram} alt="instagram" />
+            <img src={facebook} alt="facebook" />
+            <img src={equis} alt="equis" />
+          </div>
+          <p>Recibe ofertas exclusivas en tu correo</p>
+          <section>
+            <input type="search" placeholder=" ✉️ Ingresa tu correo" />
+            <button>Suscribirse</button>
+          </section>
         </div>
         </section>
         </> 
