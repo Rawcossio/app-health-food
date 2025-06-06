@@ -13,6 +13,8 @@ function HeaderHome() {
         setCarritoAbierto(!carritoAbierto)
     }
 
+   
+
     return(
         <section className="header">
             <div className="logo-header">

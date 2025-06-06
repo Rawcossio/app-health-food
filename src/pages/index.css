@@ -46,9 +46,14 @@ font-weight: 600;
   height: 18px;
   margin-right: 10px;
 
+}.inicio-sesion{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .inicio-sesion input{
+
  border: none;
  font-family: "Source Sans 3", sans-serif;
  font-size: 18px;
@@ -56,7 +61,7 @@ font-weight: 600;
  color: black;
 }
 .boton{
-  width: 164px;
+  width: 250px;
   height: 46px;
   background-color:#ffff;
   color:#FFAE00 ;
@@ -88,6 +93,16 @@ height: 46px;
 .logo-header img{
   width: 54px;
   height: 54px;
+}
+
+.carrito_compras{
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #FFAE00;
 }
 /* Seccion Encuentra Comida */
 .Encuentra-Comida{
@@ -746,10 +761,27 @@ flex-direction: column;
   font-weight: 600;
   border: transparent;
   box-shadow: 0 5px 15px #FFAE00 ;
+  margin-top: 10px;
 }
 
 /* Media Queries  tablet*/
 @media (min-width:768px) and (max-width:1024px){
+
+  .inicio-sesion{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+  }
+  .inicio-sesion input{
+    max-width: 220px;
+  }
+  .boton{
+    max-width: 164px;
+    min-width: 150px;
+    max-height: 46px;
+    min-height: 40px;
+  }
 
  .ubicacion{
     display: none;
