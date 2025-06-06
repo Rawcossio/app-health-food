@@ -15,6 +15,7 @@ import Perfil from "../Components/Perfil"
 import AgregarDireccion from "../Components/AgregarDireccion";
 import MetodoPago from "../Components/MetodoPago";
 import Restaurante from "../pages/Restaurante";
+import AgregarTarjeta from "../Components/AgregarTarjeta";
 import InicioSesionCliente from "../pages/InicioSesionCliente";
 import RegistroCliente from "../pages/RegistroCliente";
 import ProtectedRoute from "./ProtectedRoute";
@@ -30,7 +31,7 @@ let enrutador = createBrowserRouter([
       path:'/HomeUser',
       element:<ProtectedRoute>
         <HomeUser/>
-      </ProtectedRoute>
+      <ProtectedRoute/>
     },
     {
       path:'/Roles',
@@ -86,8 +87,8 @@ let enrutador = createBrowserRouter([
       element: <Restaurante/>
     },
     {
-      path: '/InicioSesion',
-      element: <InicioSesionCliente/>
+      path:'/agregar-tarjeta',
+      element: <AgregarTarjeta/>
     },
     {
       path: '/RegistroCliente',
@@ -100,6 +101,9 @@ let enrutador = createBrowserRouter([
     {
       path: '/Perfil',
       element: <Perfil/>
+    },
+      path: '/producto/:id', // Cambiar esto para incluir el parámetro id
+      element: <VistaProducto />
     }
 
     
