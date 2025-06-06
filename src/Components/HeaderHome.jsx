@@ -3,7 +3,10 @@ import direccion from '/direccion.png'
 import metodos from '/metodos.png'
 import contactenos from '/contactenos.png'
 import perfil from '/perfil.png'
+import { Link } from 'react-router-dom'
 function HeaderHome() {
+
+   
 
     return(
         <section className="header">
@@ -12,11 +15,11 @@ function HeaderHome() {
             <img src="public/go.png" alt=""/>
             </div>
             <nav className='nav-header'>
-                <a href=""><img src={ordenes} alt="ordenes" /> Mis Ordenes</a>
-                <a href=""><img src={direccion} alt="" /> Dirección de envio</a>
-                <a href=""><img src={metodos} alt="" /> Metodos de pago</a>
-                <a href=""><img src={contactenos} alt="" /> Contactenos</a>
-                <a href=""><img src={perfil} alt="" /> Mi perfil</a>
+                <Link to="/Orden"><img src={ordenes} alt="ordenes" /> Mis Ordenes</Link>
+                <Link to="/direccion"><img src={direccion} alt="" /> Dirección de envio</Link>
+                <Link to="/metodopago"><img src={metodos} alt="" /> Metodos de pago</Link>
+                <Link to="https://web.whatsapp.com/"><img src={contactenos} alt="" /> Contactenos</Link>
+                <Link to="/Perfil"><img src={perfil} alt="" /> Mi perfil</Link>
             </nav>
         </section>
     )
