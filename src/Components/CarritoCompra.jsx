@@ -24,18 +24,15 @@ function CarritoCompra({ abierto, cerrado }) {
     const eliminarDelCarrito = (id_producto) => {
     const nuevoCarrito = carrito.filter(item => item.id_producto !== id_producto);
     setCarrito(nuevoCarrito);
-    localStorage.setItem("carrito", JSON.stringify(nuevoCarrito));
-  };
+    localStorage.setItem("carrito", JSON.stringify(nuevoCarrito));};
 
     const aumentarCantidad = (id_producto) => {
     const nuevoCarrito = carrito.map(item =>
       item.id_producto === id_producto
         ? { ...item, cantidad: item.cantidad + 1 }
-        : item
-    );
+        : item);
     setCarrito(nuevoCarrito);
-    localStorage.setItem("carrito", JSON.stringify(nuevoCarrito));
-  };
+    localStorage.setItem("carrito", JSON.stringify(nuevoCarrito));};
   
   const disminuirCantidad = (id_producto) => {
     const nuevoCarrito = carrito
@@ -46,8 +43,7 @@ function CarritoCompra({ abierto, cerrado }) {
       )
       .filter(item => item.cantidad > 0); // Elimina si la cantidad llega a 0
     setCarrito(nuevoCarrito);
-    localStorage.setItem("carrito", JSON.stringify(nuevoCarrito));
-  };
+    localStorage.setItem("carrito", JSON.stringify(nuevoCarrito));};
 
   return (
   <div className="carrito-compra">

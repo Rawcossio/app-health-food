@@ -319,9 +319,12 @@ text-align: center;
   top:20px;
 }
 .Populares section{
-  position: relative;
-  top: 70px;
-}
+  height: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+} 
 
 .Card-populares{
   width: 17%;
@@ -366,6 +369,8 @@ border: transparent;
 border-radius: 10px;
 text-align: center; 
 cursor: pointer;
+position: relative;
+bottom:200px;
 }
 /* Restaurantes Destacados */
 .Restaurantes{
