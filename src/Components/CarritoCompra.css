@@ -1,5 +1,4 @@
-/* Estilos generales */
-
+/* ========== Fondo modal general ========== */
 .carrito-compra {
   position: fixed;
   top: 0;
@@ -13,58 +12,60 @@
   z-index: 1000;
 }
 
-/* Contenedor del modal */
+/* ========== Contenedor del modal ========== */
 .carrito-contenido {
-  background: white;
+  background-color:white;
   width: 90%;
   max-width: 450px;
   height: 90vh;
   max-height: 700px;
   border-radius: 10px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  position: relative;
 }
 
+/* ========== Header ========== */
 .carrito-header {
   width: 100%;
-  padding: 15px 0;
+  height: 100px;
+  padding: 15px;
+  background-color: #ffae00;
   color: white;
-  background-color: #FFAE00;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  font-weight: 600;
+}
+.carrito__cerrar {
+  background: none;
+  border: none;
   font-size: 24px;
+  color: white;
+  cursor: pointer;
 }
 
-.carrito-header h1 {
-  margin: 0;
-  font-size: 24px;
-}
-
+/* ========== Lista de productos ========== */
 .carrito-producto {
+  flex: 1;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   width: 100%;
-  flex: 1;
-  overflow-y: auto;
 }
 
-/* Componente CarritoCompra */
+/* Cada tarjeta del carrito */
 .carrito-tarjeta {
-  width: 100%;
-  padding: 10px;
   display: flex;
-  background-color: white;
-  border-bottom: solid 2px #FFAE00;
   justify-content: space-between;
   align-items: center;
+  padding: 12px;
+  border-bottom: 2px solid #ffae00;
   gap: 10px;
 }
 
-.carrito-tarjeta img {
+.imagen-comida {
   width: 70px;
   height: 70px;
   object-fit: cover;
@@ -72,15 +73,21 @@
 }
 
 .tarjeta-info {
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 5px;
-  flex: 1;
+  overflow: hidden;
   min-width: 100px;
   max-width: 150px;
+}
+
+.tarjeta-info h3 {
+  font-size: 16px;
+  margin: 0;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .tarjeta-info span {
@@ -89,51 +96,33 @@
   font-weight: bold;
 }
 
-.tarjeta-info h3 {
-  color: black;
-  font-size: 16px;
-  margin: 0;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
+/* ========== Acciones ========== */
 .acciones-carrito {
   display: flex;
   align-items: center;
   gap: 10px;
-  flex-shrink: 0;
 }
 
 .controles-cantidad-carrito {
   display: flex;
   align-items: center;
   gap: 5px;
-  
 }
 
-.controles-cantidad-carrito img {
-  width: 29px;
-  height: 29px;
-  cursor: pointer;
-  margin-left: 5px;
-}
-
-.boton-menos, .boton-mas {
+.boton-menos,
+.boton-mas {
   width: 24px;
   height: 24px;
-  background-color: #FFAE00;
+  background-color: #ffae00;
   color: white;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 50%;
   border: none;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0;
-  flex-shrink: 0;
 }
 
 .cantidad {
@@ -141,75 +130,77 @@
   font-weight: bold;
   min-width: 20px;
   text-align: center;
-  color: #FFAE00;
+  color: #ffae00;
 }
 
-/* Sección de precio */
+.carrito-contador {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+    color: white;
+    border-radius: 100%;}
+
+/* ========== Sección de precio y botón ========== */
 .carrito-precio {
   width: 100%;
   padding: 15px;
+  border-top: 2px solid #ffae00;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  border-top: 2px solid #FFAE00;
-  background-color: white;
+  background-color: #fff;
 }
 
 .precio {
-  width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-}
-
-.precio h1 {
   font-size: 18px;
-  margin: 5px 0;
 }
 
 .carrito-boton {
-  width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 15px;
 }
 
 .boton-carrito {
-  background-color: #FFAE00;
+  background-color: #ffae00;
   color: white;
-  font-size: 16px;
   font-weight: bold;
-  padding: 12px 30px;
   border: none;
   border-radius: 25px;
+  padding: 12px 30px;
   cursor: pointer;
   width: 80%;
   max-width: 250px;
 }
 
-/* Responsive */
+/* ========== Responsive ========== */
 @media (max-width: 768px) {
   .carrito-contenido {
-      width: 95%;
-      height: 95vh;
+    width: 95%;
+    height: 95vh;
   }
 }
 
 @media (max-width: 480px) {
-  .carrito-tarjeta img {
-      width: 60px;
-      height: 60px;
+  .imagen-comida {
+    width: 60px;
+    height: 60px;
   }
-  
-  .tarjeta-info span {
-      font-size: 16px;
-  }
-  
+
   .tarjeta-info h3 {
-      font-size: 14px;
+    font-size: 14px;
   }
-  
-  .precio h1 {
-      font-size: 16px;
+
+  .tarjeta-info span {
+    font-size: 16px;
+  }
+
+  .precio {
+    font-size: 16px;
   }
 }

@@ -1,7 +1,7 @@
 import HeaderHome from "../Components/HeaderHome";
 import EnDescuento from "../Components/EnDescuento";
 import EncuentraComida from "../Components/EncuentraComida";
-import ComoFunciona from "../components/ComoFunciona";
+import ComoFunciona from "../Components/ComoFunciona";
 import { entregas, pedidos, restaurantes } from "../services/dataBase";
 import { funciona } from "../services/dataBase";
 import Restaurantes from "../Components/Restarantes";
@@ -13,7 +13,7 @@ import CardEntrega from "../Components/CardEntrega";
 import MejoresOfertas from "../Components/MejoresOfertas";
 import { ofertas } from "../services/dataBase";
 import ProcederPedido from "../Components/ProcederPedido";
-import Company from "../components/Company";
+import Company from "../Components/Company"; // Notar la C mayúscula
 import PiePagina from "../Components/PiePagina";
 import { cities } from "../services/dataBase";
 import { contacto } from "../services/dataBase";
@@ -46,7 +46,7 @@ const HomeUser = () => {
         })}
       </section>
       <div className="Populares">
-        return <PopularesCerca />
+         <PopularesCerca />
       </div>
       <section className="Restaurantes">
         <h2>Restaurantes Destacados</h2>
