@@ -88,3 +88,15 @@ small {
 Link{
   color: orange;
 }
+
+.btn-vista{
+  width: 20%;
+  background: #ffa500;
+  color: white;
+  border: none;
+  padding: 0.7rem;
+  margin-top: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}

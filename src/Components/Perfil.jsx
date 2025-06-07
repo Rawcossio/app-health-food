@@ -1,9 +1,47 @@
 
+import { useEffect, useState } from 'react';
 import './Perfil.css'
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
-function Perfil() {
+function Perfil({onClose}) {
+
+    
+
+        const navigate = useNavigate()
+
+        const cerrarSesion = () =>{
+            Swal.fire({
+                title: '¿Deseas cerrar sesión?',
+                icon: 'warning',
+                showCloseButton: true,
+                confirmButtonText: 'sí, cerrar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) =>{
+                if (result.isConfirmed) {
+                    //Eliminar datos del local
+                    localStorage.removeItem('token')
+                    localStorage.removeItem('usuario')
+
+                    //redirigir al login
+                    navigate('/InicioSesion')
+                }
+            })
+        }
+    
+
+    const [usuario, setUsuario] = useState(null);
+
+    useEffect(() =>{
+        const usuarioGuardado = localStorage.getItem('usuario')
+        if (usuarioGuardado) {
+            setUsuario(JSON.parse(usuarioGuardado))
+        }
+    }, [])
+
+    if (!usuario) return null
+
     return (
-
         <div className="modal-overlay">
             <div className="modal-content">
                 <section className='content-logo'>
@@ -14,21 +52,33 @@ function Perfil() {
                 <table>
                     <tbody>
                         <tr>
-                            <td>Nombre:</td>
-                            <td>Juan Escobar</td>
+                            <th>Nombre</th>
+                            <td>{usuario.nombre}</td>
                         </tr>
                         <tr>
-                            <td>Correo:</td>
-                            <td>juan@gmail.com</td>
+                            <th>Correo</th>
+                            <td>{usuario.correo}</td>
                         </tr>
                         <tr>
-                            <td>Teléfono:</td>
-                            <td>3008244233</td>
+                            <th>Teléfono</th>
+                            <td>{usuario.telefono}</td>
                         </tr>
-                        {/* Añade más filas según tus datos */}
+                        <tr>
+                            <th>Contraseña</th>
+                            <td>{usuario.contraseña}</td>
+                        </tr>
                     </tbody>
                 </table>
-                <button>Cerrar</button>
+            
+                <section className='contenedor-boton'>
+                     <button onClick={cerrarSesion}>
+                    Cerrar
+                </button>
+
+                <button onClick={onClose} >
+                    Bolver a inicio
+                </button>
+                </section>
             </div>
         </div>
     );

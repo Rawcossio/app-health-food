@@ -1,5 +1,46 @@
 {
-  "usuarios":[],
-  "restaurantes":[],
-  "repartidor":[]  
+  "usuarios": [
+    {
+      "id": "d2d0",
+      "nombre": "Damaris Escobar",
+      "telefono": "3008244233",
+      "correo": "damaris@gmail.com",
+      "contraseña": "1032012528",
+      "confirmarContraseña": "1032012528"
+    },
+    {
+      "id": "6cbe",
+      "nombre": "Juan Diego",
+      "telefono": "3024277850",
+      "correo": "juanescobardavid2007@gmail.com",
+      "contraseña": "Juan.1020",
+      "confirmarContraseña": "Juan.1020"
+    },
+    {
+      "id": "93c6",
+      "nombre": "Carolina",
+      "telefono": "3204567834",
+      "correo": "carolina@gmail.com",
+      "contraseña": "Carolina.1032",
+      "confirmarContraseña": "Carolina.1032"
+    },
+    {
+      "id": "409c",
+      "nombre": "Estefany",
+      "telefono": "30253768763",
+      "correo": "estefa@gmail.com",
+      "contraseña": "Estefa.2020",
+      "confirmarContraseña": "Estefa.2020"
+    },
+    {
+      "id": "004b",
+      "nombre": "Raul",
+      "telefono": "36258621",
+      "correo": "raul@gmail.com",
+      "contraseña": "1234",
+      "confirmarContraseña": "1234"
+    }
+  ],
+  "restaurantes": [],
+  "repartidor": []
 }

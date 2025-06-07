@@ -1,5 +1,10 @@
+import { useState } from "react";
 import "./MetodoPago.css";
-const MetodoPago = () => {
+import AgregarTarjeta from "./AgregarTarjeta";
+const MetodoPago = ({onClose}) => {
+
+  const [mostrarAgregarTarjeta, setMostrarAgregarTarjeta] = useState()
+
   return (
     <section className="metodo-pago">
       <div className="metodo-contenido">
@@ -31,10 +36,18 @@ const MetodoPago = () => {
             <input type="radio" name="pago" id="googleplay" />
           </div>
         </section>
-        <button>Agregar nueva Tarjeta </button>
+        <button onClick={() => setMostrarAgregarTarjeta(true)}>
+          Agregar nueva Tarjeta 
+          </button>{mostrarAgregarTarjeta &&(
+            <AgregarTarjeta onClose={() => setMostrarAgregarTarjeta(false)}/>
+          )}
+
+        <button onClick={onClose}>Volver</button>
       </div>
     </section>
   );
+
+
 };
 
 export default MetodoPago;
