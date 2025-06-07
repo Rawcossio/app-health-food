@@ -2,7 +2,7 @@
 import EnDescuento from "../Components/EnDescuento"
 import EncuentraComida from "../Components/EncuentraComida"
 import Header from "../Components/Header"
-import ComoFunciona from "../Components/ComoFunciona"
+import ComoFunciona from '../Components/ComoFunciona'
 import { entregas, pedidos, restaurantes } from "../services/dataBase"
 import { funciona } from "../services/dataBase"
 import Restaurantes from "../Components/Restarantes"
