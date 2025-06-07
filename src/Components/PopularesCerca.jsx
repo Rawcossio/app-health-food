@@ -52,8 +52,7 @@ const PopularesCerca = () => {
         <section className="Card-populares" key={item.id_producto}>
           <Link to={`/producto/${item.id_producto}`}>
           <img src={item.imagenUrl} alt={item.nombre} />
-
-          <div>
+          <div className="Card-populares">
             <h3>{item.nombre}</h3>
             <strong>${item.precio.toLocaleString("es-CO")}</strong>
           </div>

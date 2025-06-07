@@ -21,6 +21,34 @@ function CarritoCompra({ abierto, cerrado }) {
 
   if (!abierto) return null;
 
+    const eliminarDelCarrito = (id_producto) => {
+    const nuevoCarrito = carrito.filter(item => item.id_producto !== id_producto);
+    setCarrito(nuevoCarrito);
+    localStorage.setItem("carrito", JSON.stringify(nuevoCarrito));
+  };
+
+    const aumentarCantidad = (id_producto) => {
+    const nuevoCarrito = carrito.map(item =>
+      item.id_producto === id_producto
+        ? { ...item, cantidad: item.cantidad + 1 }
+        : item
+    );
+    setCarrito(nuevoCarrito);
+    localStorage.setItem("carrito", JSON.stringify(nuevoCarrito));
+  };
+  
+  const disminuirCantidad = (id_producto) => {
+    const nuevoCarrito = carrito
+      .map(item =>
+        item.id_producto === id_producto
+          ? { ...item, cantidad: item.cantidad - 1 }
+          : item
+      )
+      .filter(item => item.cantidad > 0); // Elimina si la cantidad llega a 0
+    setCarrito(nuevoCarrito);
+    localStorage.setItem("carrito", JSON.stringify(nuevoCarrito));
+  };
+
   return (
   <div className="carrito-compra">
     <div className="carrito-contenido">
@@ -42,10 +70,12 @@ function CarritoCompra({ abierto, cerrado }) {
               </div>
               <div className="acciones-carrito">
                 <div className="controles-cantidad-carrito">
-                  <button className="boton-menos">-</button>
+                  <button className="boton-menos" onClick={() => disminuirCantidad(item.id_producto)}>-</button>
                   <span className="cantidad">{item.cantidad}</span>
-                  <button className="boton-mas">+</button>
-                  <img src="/img/icono-basura.svg" alt="Eliminar" />
+                  <button className="boton-mas" onClick={() => aumentarCantidad(item.id_producto)}>+</button>
+                  <img src="public\incono-basura.png" alt="Eliminar"  className="icono-eliminar"
+                  style={{ cursor: "pointer" }}
+                  onClick={() => eliminarDelCarrito(item.id_producto)}/>
                 </div>
               </div>
             </section>

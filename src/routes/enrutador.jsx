@@ -18,6 +18,7 @@ import InicioSesionCliente from "../pages/InicioSesionCliente";
 import RegistroCliente from "../pages/RegistroCliente";
 import ProtectedRoute from "./ProtectedRoute";
 import Orden from "../pages/Orden";
+import CarritoCompra from "../Components/CarritoCompra";
 
 
 let enrutador = createBrowserRouter([
@@ -100,8 +101,7 @@ let enrutador = createBrowserRouter([
     {
       path: '/Perfil',
       element: <Perfil/>
-    }
-    
+    }    
   ])
 
   export default enrutador
