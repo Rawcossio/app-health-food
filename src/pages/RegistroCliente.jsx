@@ -1,8 +1,15 @@
 import { Link } from "react-router-dom"
 import HeaderRegistro from "../Components/HeaderRegistro"
 import "./RegistroCliente.css"
+import { useState } from "react"
 
 const RegistroCliente = () => {
+
+  const  [formulario, setFormulario] = useState({
+    nombre:"",
+    correoElectronico:"",
+    contrasena:""
+  }  )
 
   return (
     <section className="contenedor">

@@ -7,4 +7,4 @@ const ComoFunciona=({datos})=>{
         </div>
     )
 }
-export default ComoFunciona
+export default ComoFunciona;

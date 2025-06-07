@@ -19,6 +19,7 @@ import RegistroCliente from "../pages/RegistroCliente";
 import ProtectedRoute from "./ProtectedRoute";
 import Orden from "../pages/Orden";
 import CarritoCompra from "../Components/CarritoCompra";
+import AgregarTarjeta from "../Components/AgregarTarjeta";
 
 
 let enrutador = createBrowserRouter([
@@ -101,7 +102,11 @@ let enrutador = createBrowserRouter([
     {
       path: '/Perfil',
       element: <Perfil/>
-    }    
+    },
+    {
+      path: 'agregar-tarjeta',
+      element: <AgregarTarjeta/>
+    } 
   ])
 
   export default enrutador
