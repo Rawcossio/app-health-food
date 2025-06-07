@@ -1,7 +1,6 @@
 import Header from '../Components/Header'
 import ProcederPedido from '../Components/ProcederPedido'
 import PiePagina from '../Components/PiePagina'
-import Company from "../Components/Company" // Cambiar components por Components
 import { cities } from "../services/dataBase"
 import { contacto } from "../services/dataBase"
 import instagram from '/instagram.png'
@@ -14,7 +13,7 @@ import amarillo_dos from '/amarillo_dos.png'
 import amarillo_tres from '/amarillo_tres.png'
 import './InicioRepartidor.css'
 import { useState } from 'react'
-
+import Company from '../Components/Company'
 const InicioRepartidor=()=>{
     return(
         <>

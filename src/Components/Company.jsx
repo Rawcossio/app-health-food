@@ -9,4 +9,4 @@ const Company=({soporte})=>{
         </section>
     )
 }
-export default Company
+export default Company;

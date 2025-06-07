@@ -42,8 +42,8 @@ function Header() {
           Registrarse
         </Link>
 
-        <div className="carrito-icono" onClick={toggleCarrito} style={{ cursor: "pointer" }}>
-          🛒 Carrito
+        <div className="carrito-icono" onClick={toggleCarrito} style={{ cursor: "pointer" }} to="/Carrito">
+          <img src="./carrito.png" alt="" /> Carrito
           {carritoItems.length > 0 && (
             <span className="carrito-contador">
               {carritoItems.reduce((acc, item) => acc + item.cantidad, 0)}
@@ -51,7 +51,6 @@ function Header() {
           )}
         </div>
       </section>
-
       {/* MODAL AQUÍ, fuera del flujo del header */}
       {carritoAbierto && (
         <CarritoCompra
