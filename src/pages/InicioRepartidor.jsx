@@ -1,7 +1,7 @@
 import Header from '../Components/Header'
 import ProcederPedido from '../Components/ProcederPedido'
 import PiePagina from '../Components/PiePagina'
-import Company from "../components/Company"
+import Company from "../Components/Company" // Cambiar components por Components
 import { cities } from "../services/dataBase"
 import { contacto } from "../services/dataBase"
 import instagram from '/instagram.png'
