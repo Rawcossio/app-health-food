@@ -46,9 +46,14 @@ font-weight: 600;
   height: 18px;
   margin-right: 10px;
 
+}.inicio-sesion{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .inicio-sesion input{
+
  border: none;
  font-family: "Source Sans 3", sans-serif;
  font-size: 18px;
@@ -56,7 +61,7 @@ font-weight: 600;
  color: black;
 }
 .boton{
-  width: 164px;
+  width: 250px;
   height: 46px;
   background-color:#ffff;
   color:#FFAE00 ;
@@ -88,6 +93,16 @@ height: 46px;
 .logo-header img{
   width: 54px;
   height: 54px;
+}
+
+.carrito_compras{
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #FFAE00;
 }
 /* Seccion Encuentra Comida */
 .Encuentra-Comida{
@@ -270,8 +285,6 @@ text-align: center;
   font-size: 40px;
   color:#F26722;
   text-align: center;
-  position: absolute;
-  bottom:-540px;
 }
 
 .Card-ComoFunciona{
@@ -289,15 +302,16 @@ text-align: center;
   height: 600px;
   display: flex;
   align-items: center;
-  justify-content: center;
   background:linear-gradient(180deg, #FFAE00 10%, #ffff);
+  
 }
 .Populares h2{
   font-family: "Source Sans 3", sans-serif;
   font-size: 40px;
   text-align: center;
   position: absolute;
-  bottom:-1100px;
+  bottom: -1150px;
+  margin-bottom: 50px;
 
 }
 .Populares section{
@@ -339,6 +353,7 @@ font-weight: 600;
 border: transparent;
 border-radius: 10px;
 text-align: center; 
+cursor: pointer;
 }
 /* Restaurantes Destacados */
 .Restaurantes{
@@ -746,158 +761,740 @@ flex-direction: column;
   font-weight: 600;
   border: transparent;
   box-shadow: 0 5px 15px #FFAE00 ;
+  margin-top: 10px;
 }
 
-/* Media Queries */
-@media screen and (max-width: 1200px) {
-  .Card-MejoresOfertas {
-    width: 90%;
-    left: 50px;
+/* Media Queries  tablet*/
+@media (min-width:768px) and (max-width:1024px){
+
+  .inicio-sesion{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+  }
+  .inicio-sesion input{
+    max-width: 220px;
+  }
+  .boton{
+    max-width: 164px;
+    min-width: 150px;
+    max-height: 46px;
+    min-height: 40px;
   }
 
-  .Card-populares {
-    width: 22%;
+ .ubicacion{
+    display: none;
+  }
+  .fondo-fideos{
+    display: none;
+  }
+  .tarjetas{
+    max-height:400px;
+  }
+  .ComidaDescuento{
+  max-width:220px;
+  min-width:180px;
+  max-height:300px;
+  min-height: 200px;
+  }
+  .CartasDescuento{
+  max-width:80%;
+  max-height:18em;
+  }
+  .CartasDescuento img{
+  max-height:190px;
+  }
+  .CartasDescuento p{
+    display: none;
+  }
+  .CartasDescuento h3{
+  padding-right: 20px;
+  }
+  .TituloBoton{
+   margin-left:150px;
+   margin-top: 20px;
+  }
+  .Comofunciona h2{
+   margin-bottom: 100px;
+  }
+  .Card-ComoFunciona img{
+    max-width:90%;
+    max-height: 100px;
+    min-width: 10%;
+    min-height: 150px;
+    margin-top: 20px;
+  }
+  .Card-ComoFunciona p{
+    display: none;
+  }
+  .Populares{
+    max-height: 300px;
+    margin-top: 120px; 
+  }
+  .Populares h2{
+    margin-bottom:60px;
+  }
+  .Populares section{
+   padding-top:40px;
+  }
+ 
+  .Card-populares{
+    max-width:15%;
+    max-height:400px;
+    min-width:10%;
+    min-height:200px;
+  }
+  .Card-populares h3{
+    max-width: 90%;
+    max-height: 50px;
+    font-size: 1rem !important;
   }
 
-  .Card-restaurantes {
-    width: 23%;
+  .Card-populares img{
+    max-width: 90%;
+    max-height: 160px;
   }
+  .Card-populares div p {
+    display: none;
+  }
+  .Card-populares button{
+   max-width: 90%;
+   max-height:35px;
+  }
+  .Card-restaurantes{
+    max-width: 18%;
+    max-height:350px;
+  }
+  .Card-estrella{
+    max-width: 50%;
+  }
+  .Card-estrella img{
+    max-width: 50px;
+    max-height: 50px;
+  }
+  .Card-estrella h3{
+    max-width: 100px;
+    max-height: 50px;
+    font-size: 1rem !important;
+  }
+  .Card-estrella p{
+    max-width: 100px;
+    max-height: 50px;
+    font-size: 1rem !important;
+    margin-bottom: 20px;
+  }
+  .Img-restaurantes img{
+    min-width:100%;
+    max-height:200px;
+  }
+  .Img-restaurantes p, .Img-restaurantes button{
+    display: none;
+  }
+ .Card-restaurante-estrella button{
+  max-width: 120px;
+  margin-left:150px;
+ }
+ .TiposComida-tipos{
+  max-width: 150px;
+  min-width: 100px;
+  min-height:150px; 
+  max-height: 200px;
+ }
+ .TiposComida-tipos img{
+  max-width: 100%;
+  min-width: 100px;
+  min-height:100px; 
+  max-height: 100px;
+ }
+ .TiposComida-tipos h3{
+ font-size: 1.1rem !important;
+ }
+ .seccion-CardEntrega{
+  min-width:30%;
+ }
+
+ .seccion-CardEntrega img {
+  max-width:90px;
+  max-height:90px;
+ }
+ .seccion-CardEntrega h3{
+  max-width: 200px;
+  max-height: 50px;
+  font-size: 1rem !important;
+ }
+ .instala-app-card{
+  display:flex;
+  flex-direction:column-reverse;
+ }
+ .instala-app-card img{
+  max-width: 555px;
+  max-height:324px;
+  margin-right: 50px;
+ }
+ .instala-app-texto div img{
+  max-width: 250px;
+ }
+ .Card-MejoresOfertas{
+  max-width:73%;
+  padding-right: 50px;
+ }
+ .Card-MejoresOfertas img{
+  max-width:350px;
+ }
+.card-mejores-texto{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  left: -20px;
+}
+  
+ .card-mejores-texto p{
+  max-width:290px;
+  max-height: 80px;
+  font-size:1rem !important;
+ }
+ .card-mejores-texto h3,.card-mejores-texto strong{
+  max-width: 290px;
+  max-height: 80px;
+  font-size:1.5rem !important;
+ }
+  .card-mejores-texto button{
+    max-width: 150px;
+  }
+.Proceder-pedido-card{
+ font-size: 1.5rem !important;
+}
+.Footer{
+   display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.Nombre-ciudades{
+  padding-left: 40px;
+}
+.siguenos{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-left:30px;
+}
+.siguenos section input,button{
+max-width: 200px;
+max-height: 40px;
+margin-bottom: 10px;
+}
 }
 
-@media screen and (max-width: 992px) {
-  .header {
-    flex-wrap: wrap;
-    height: auto;
-    padding:20px;
-  }
+@media (min-width:375px) and (max-width:767px){
   .ubicacion{
     display: none;
   }
-
-  .Encuentra-Comida {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  .fondo-fideos {
+ 
+  .registro{
     display: none;
   }
+ .inicio-sesion{
+  display: none;
+ }
 
-  .Card-Encuentra-comida {
-    width: 90%;
+  .fondo-fideos{
+    display: none;
   }
-
-  .tarjetas {
+  .Titulo-Encuentra-Comida{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .Titulo-Encuentra-Comida h1{
+    font-size: 30px !important;
+  }
+  .Titulo-Encuentra-Comida p{
+    max-width: 300px;
+    min-width: 200px;
+    max-height: 50px;
+    min-height: 50px;
+    font-size:14px !important;
+  }
+  .Card-Encuentra-comida{
+    max-width: 50%;
+    max-height: 300px;
+    min-width: 40%;
+    min-height: 200px;
+  }
+  .Entrega{
+    max-width: 100px;
+    min-width: 100px;
+    max-height: 40px;
+    min-height: 40px;
+    position: relative;
+    left:80px;
+  }
+  .Entrega img{
+    display: none;
+  }
+  .Recogida{
+    max-width: 100px;
+    min-width: 100px;
+    max-height: 40px;
+    min-height: 40px;
+    position: relative;
+    left:80px;
+  }
+  .Recogida img{
+    display: none;
+  }
+  .Ubicacion{
+    max-width:200px;
+    min-width: 100px;
+    max-height: 40px;
+    margin-left:60px;
+  }
+  .Boton-Encuentra{
+    max-width: 200px;
+    min-width: 150px;
+    max-height: 40px;
+    margin-left: 70px;
+    margin-top: 20px;
+  }
+  .tarjetas{
+    max-width: none;
+    max-height:500px;
+    min-height: 500px;
+    margin-bottom: 100px;
     flex-wrap: wrap;
-    margin-top:20px;
-    margin-bottom:370px;
   }
-
-  .ComidaDescuento {
-    max-width: 30%;
-    margin: 20px;
+  .ComidaDescuento{
+  max-width:140px;
+  min-width:140px;
+  max-height:120px;
+  min-height:120px;
   }
-  .Comofunciona{
-    margin-bottom: 100px;    
+  .CartasDescuento{
+  max-width:80%;
+  max-height:12em !important;
   }
-  .Comofunciona h2{
-   margin-bottom: -280px;
+  .CartasDescuento img{
+  max-width: 90%;
+  max-height:100px;
+  }
+  .CartasDescuento p{
+    display: none;
+  }
+  .CartasDescuento h3{
+    max-width: 35%;
+    max-height: 40px;
+  font-size: 1.2rem !important;
+  margin-top:40px;
+  }
+  .TituloBoton{
+   margin-left:150px;
+   margin-top: 20px;
+  }
+  .TituloBoton h4{
+   max-width: 100px;
+   max-height: 40px;
+   font-size: 14px !important;
+  }
+  .TituloBoton button{
+    max-width: 100px;
+    min-width: 100px;
+    max-height: 40px;
+    min-height: 40px;
+   
   }
   .Card-ComoFunciona{
-    max-width: 20%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+  }
+   
+  .Comofunciona h2{
+    margin-bottom: -150px;
+    font-size: 2em !important;
+  }
+  .Comofunciona img{
+  max-width: 90px;
+  max-height: 90px;
+  }
+  .Comofunciona h4{
+    font-size:0.9rem;
+  }
+  .Comofunciona p{
+    display: none;
   }
   .Populares{
-    flex-wrap:wrap;
-  }  
+    min-height: 700px;
+    max-height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+  }
   .Populares h2{
-   margin-bottom: -350px;
-  }
-}
+    margin-bottom: -80px;
+    font-size:2em !important;
 
-@media screen and (max-width: 768px) {
-  .Titulo-Encuentra-Comida h1 {
-    font-size: 42px;
   }
-
-  .ubicacion {
-    width: 100%;
+  .Card-populares{
+    max-width: 20%;
+    min-width: 20%;
+    max-height: 300px;
+    min-height: 300px;
   }
-
-  .ComidaDescuento {
-    width: 90%;
+  .Card-populares img{
+    max-width: 90%;
+    max-height: 90px;
   }
-
-  .Card-populares {
-    width: 90%;
+  .Card-populares div{
+    max-width: 90%;
+    max-height: 50px;
+    font-size: 0.8rem !important;
   }
-
-  .Card-restaurantes {
-    width: 90%;
+  .Card-populares button{
+    max-width: 90%;
+    max-height: 35px;
+    min-width: 90%;
+    min-height: 35px;
+    font-size: 0.8rem !important;
+    margin-top: 60px;
   }
-
-  .Card-MejoresOfertas {
+  .Restaurantes{
+    max-height: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .Restaurantes h2{
+    font-size:1.8em !important;
+  }
+  .Img-restaurantes button{
+    display: none;
+  }	
+  .Img-restaurantes p{
+    display: none;
+  }
+  .Img-restaurantes img{
+    max-width: 100%;
+    max-height: 100px;
+  }
+  .Card-estrella img{
+    max-width: 30px;
+    max-height: 30px;
+    margin-left: 140px;
+  }
+  .Card-estrella h3{
+    margin-left: -19px;
+    font-size: 0.8rem !important;
+  }
+  .Card-estrella p{
+    font-size: 0.8rem !important;
+  }
+  .Card-restaurantes{
+    max-width: 20%;
+    min-width: 20%;
+    max-height: 300px;
+    min-height: 200px;
+  }
+  .Card-restaurante-estrella{
+    max-width: 50%;
+    min-width: 50%;
+    max-height: 100px;
+    min-height: 180px;
+  }
+  .Card-restaurante-estrella button{
+    max-width: 80px;
+    min-width: 80px;
+    max-height: 30px;
+    margin-left:190px;
+    font-size: 0.8rem !important;
+  }
+  .Card-estrella button{
+    max-width: 100px;
+    min-width: 100px;
+    max-height: 20px;
+    font-size: 1rem !important;
+  }
+  .verTodo{
+    max-width: 100px;
+    min-width: 100px;
+    max-height: 40px;
+    font-size: 0.8rem !important;
+  }
+  .Card-tipo{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .Tipotitulo h2{
+    margin-right:20px;
+    font-size:1em !important;
+  }
+  .Tipotitulo button{
+    font-size: 0.8rem !important;
+  }
+  .TiposComida-tipos{
+    max-width: 90px;
+    min-width: 50px;
+    max-height: 90px;
+    min-height: 100px;
+  }
+  .TiposComida-tipos img{
+    max-width:50px;
+    max-height: 100px;
+  }
+  .TiposComida-tipos h3{
+    font-size: 0.8rem !important;
+  }
+  .seccion-CardEntrega{
+    max-width:26%;
+    min-width: 26%;
+    max-height: 200px;
+    min-height: 200px;
     flex-direction: column;
-    height: auto;
+    gap:10px;
   }
-
-  .Card-MejoresOfertas img {
-    width: 100%;
-    border-radius: 20px 20px 0 0;
+  .seccion-CardEntrega img{
+    max-width: 60px;
+    max-height: 60px;
+    margin-right: 20px;
   }
-
-  .Footer {
+  .seccion-CardEntrega h3{
+    max-width: 200px;
+    min-width: 100px;
+    max-height: 50px;
+    min-height: 50px;
+    font-size: 0.8rem !important;
+  }
+  .instala-app-card{
+    display:flex;
+    flex-direction:column-reverse;
+  }
+  .instala-app-texto{
+    display: flex;
     flex-direction: column;
-    height: auto;
-    text-align: center;
-  }
-
-  .Footer-dos {
-    flex-direction: column;
-    height: auto;
-    text-align: center;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .header {
+    align-items: center;
     justify-content: center;
-    gap: 10px;
   }
-
-  .registro, .inicio-sesion button {
-    width: 140px;
+  .instala-app-texto h2{
+    font-size: 2rem !important;
   }
-
-  .Ubicacion {
-    width: 90%;
+  .instala-app-texto p{
+    max-width: 300px;
+    min-width: 200px;
+    max-height: 50px;
+    min-height: 50px;
+    font-size:14px !important;
   }
-
-  .Card-Encuentra-comida {
-    height: auto;
-    padding: 15px;
+  .instala-app-texto div img{
+    max-width: 100px;
+    min-width: 150px;
+    max-height: 100px;
+    min-height: 80px;
+    position: relative;
+    left: 50px;
+  } 
+  .instala-app-card img{
+    max-width: 100%;
+    max-height: 300px;
+    margin-top: 20px;
+    margin-right:10px;
   }
-
-  .Entrega, .Recogida {
-    margin: 10px 0;
-  }
-
-  .TiposComida-tipos {
-    width: 150px;
-  }
-
-  .seccion-CardEntrega {
-    width: 90%;
+  .MejoresOfertas{
+    max-width:100%;
+    min-width: 50%;
+    display: flex;
     flex-direction: column;
-    text-align: center;
-    padding: 15px;
+    align-items: center;
+    justify-content: center;
+    margin-right: 300px;
   }
-
-  .instala-app-card {
-    flex-direction: column;
+  .Card-MejoresOfertas{
+    max-width: 90%;
+    min-width: 70%;
+    /* max-height:500px;
+    min-height:250px; */
   }
-
-  .instala-app-texto p {
-    width: 90%;
+  .Card-MejoresOfertas img{
+  display: none;
+  }
+  .card-mejores-texto h3, .card-mejores-texto strong{ 
+    max-width: 290px;
+    min-width: 290px;
+    max-height: 80px;
+    min-height: 80px;
+    font-size:1.5rem !important;
+    margin-left: 50px;
+    margin-top:-40px;
+  }
+  .card-mejores-texto p{
+    max-width: 270px;
+    min-width: 270px;
+    max-height: 90px;
+    min-height: 90px;
+    font-size:1rem !important;
+  }
+  .card-mejores-texto button{
+    max-width: 150px;
+    min-width: 150px;
+    max-height: 40px;
+    min-height: 40px;
+    font-size: 0.8rem !important;
   }
 }
+@media (min-width:375px) and (max-width:767px){
+  .MejoresOfertas {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0;
+  }
+  .Card-MejoresOfertas {
+    width: 90% !important;
+    max-width: 80% !important;
+    min-width: 80% !important;
+    margin-top: 0 auto !important;
+    left: 0 !important;
+    position: static !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .Proceder-pedido-card h2{
+    max-width:400px;
+    font-size:1.8rem;
+  }
+  .Proceder-pedido-card button{
+    min-width:100px;
+    min-height: 40px;
+    font-size:0.8rem !important;
+  }
+ .Footer{
+  min-height: 250px;
+  max-height: 200px;
+  padding-top:50px;
+  }
+  .Nombre-ciudades{
+    min-width:20%;
+    margin-left:35px;
+    margin-right:-15px;
+    font-size: 0.5rem;
+  }
+  .Footer-dos{
+    min-height: 200px;
+    max-height: 250px;
+  }
+  .Soporte{
+    min-width: 20%;
+    font-size: 0.5rem;
+    padding-right: 20px;
+    margin-right: -10px;
+  }
+  .siguenos{
+    width:25%;
+    height:auto;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    font-size: 0.5rem;
+    margin-left: 35px;
+    margin-right:15px;
+  }
+  .siguenos div img{
+   max-width:15px;
+   max-height:20px;
+   margin-right:0px;
+   margin-top:0px;
+   margin-bottom:0px;
+  }
+  .siguenos section input{    
+    max-width: 100px;
+    max-height: 20px;
+    font-size: 0.6rem !important;
+    margin-bottom: 10px;
+  }
+  .siguenos section button{
+    max-width: 90px;
+    max-height: 25px;
+    font-size: 0.8rem !important;
+    margin-right: 0px;
+  }
+}
+
+/* Carrito contador */
+.carrito-contador {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.contador {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #ffae00;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.carrito-dropdown {
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 15px;
+  min-width: 300px;
+  z-index: 1000;
+}
+
+.carrito-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.carrito-item img {
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.carrito-item h4 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.carrito-item p {
+  margin: 5px 0;
+  color: #ffae00;
+  font-weight: bold;
+}
+
+.ver-carrito-btn {
+  width: 100%;
+  padding: 10px;
+  background: #ffae00;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+

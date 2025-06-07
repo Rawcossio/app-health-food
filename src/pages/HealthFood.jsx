@@ -2,11 +2,9 @@
 import EnDescuento from "../Components/EnDescuento"
 import EncuentraComida from "../Components/EncuentraComida"
 import Header from "../Components/Header"
-import ComoFunciona from "../components/ComoFunciona"
-import PopularesCerca from "../components/PopularesCerca"
+import ComoFunciona from "../Components/ComoFunciona"
 import { entregas, pedidos, restaurantes } from "../services/dataBase"
 import { funciona } from "../services/dataBase"
-import { populares } from "../services/dataBase"
 import Restaurantes from "../Components/Restarantes"
 import { tiendas } from "../services/dataBase"
 import InstalarApp from "../Components/InstalarApp"
@@ -16,7 +14,7 @@ import CardEntrega from "../Components/CardEntrega"
 import MejoresOfertas from "../Components/MejoresOfertas"
 import { ofertas } from "../services/dataBase"
 import ProcederPedido from "../Components/ProcederPedido"
-import Company from "../components/Company"
+import Company from "../Components/Company"
 import PiePagina from "../Components/PiePagina"
 import { cities } from "../services/dataBase"
 import { contacto } from "../services/dataBase"
@@ -24,12 +22,12 @@ import instagram from '/instagram.png'
 import facebook from '/facebook.png'
 import equis from '/equis.png'
 import './index.css'
+import PopularesCerca from "../Components/PopularesCerca"
 
 
 const HealthFood=()=>{
     return(
-        <html>
-        <body>
+        <>
         <Header/>
             <section>
                 <EncuentraComida/>
@@ -46,10 +44,7 @@ const HealthFood=()=>{
             })}
         </section>
         <div className="Populares">
-            <h2>Populares cerca de ti</h2>
-            {populares.map((popular)=>{
-                return <PopularesCerca cerca={popular}/>
-            })}
+              <PopularesCerca/>
         </div>
         <section className="Restaurantes">
             <h2>Restaurantes Destacados</h2>
@@ -90,28 +85,28 @@ const HealthFood=()=>{
         </div>
         <section className="Footer">
         <h3>Nuestras Principales Ciudades</h3>
-        {cities.map((city)=>{
-        return <PiePagina pagina={city}/>})}
-        </section>
-        <section className="Footer-dos">
-        {contacto.map((contact)=>{
-            return <Company soporte={contact}/>})
-        }
+        {cities.map((city) => {
+          return <PiePagina pagina={city} />;
+        })}
+      </section>
+      <section className="Footer-dos">
+        {contacto.map((contact) => {
+          return <Company soporte={contact} />;
+        })}
         <div className="siguenos">
-            <h3>SIGUENOS</h3>
-            <div>
-                <img src={instagram} alt="instagram" />
-                <img src={facebook} alt="facebook" />
-                <img src={equis} alt="equis" />
-            </div>
-            <p>Recibe ofertas exclusivas en tu correo</p>
-            <section>
-                <input type="search" placeholder=" ✉️ Ingresa tu correo"/>
-                <button>Suscribirse</button>
-            </section>
+          <h3>SIGUENOS</h3>
+          <div>
+            <img src={instagram} alt="instagram" />
+            <img src={facebook} alt="facebook" />
+            <img src={equis} alt="equis" />
+          </div>
+          <p>Recibe ofertas exclusivas en tu correo</p>
+          <section>
+            <input type="search" placeholder=" ✉️ Ingresa tu correo" />
+            <button>Suscribirse</button>
+          </section>
         </div>
         </section>
-        </body> 
-        </html>
+        </> 
         )}
 export default HealthFood

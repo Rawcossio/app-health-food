@@ -1,0 +1,121 @@
+.tarjeta {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.tarjeta__contenido {
+  background: white;
+  width: 30%;
+  height: 90%;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+.tarjeta__header {
+  width: 100%;
+  height: 80px;
+  background-color: #ffae00;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px 10px 0 0;
+}
+
+.tarjeta__header h2 {
+  font-weight: 600;
+  font-size: 30px;
+  color: white;
+}
+
+.tarjeta__imagen {
+  width: 100%;
+  padding: 15px;  /* Reduced from 20px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tarjeta__imagen img {
+  width: 80%;  /* Reduced from 90% */
+  height: 160px;  /* Reduced from 180px */
+  object-fit: contain;
+}
+
+.tarjeta__form {
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;  /* Reduced from 20px */
+}
+
+.tarjeta__grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;  /* Reduced from 8px */
+}
+
+.tarjeta__grupo label {
+  color: #333;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.tarjeta__grupo input {
+  width: 100%;
+  height: 45px;  /* Reduced from 50px */
+  padding: 0 15px;
+  border: 2px solid #ffae00;
+  border-radius: 8px;
+  background-color: #fff;
+  font-size: 15px;  /* Reduced from 16px */
+}
+
+.tarjeta__minimo {
+  padding: 0 40px;
+  display: flex;
+  gap: 20px;
+  margin-top: 15px;  /* Reduced from 20px */
+}
+
+.tarjeta__minimo label {
+  color: #333;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.tarjeta__minimo input {
+  width: 100%;
+  height: 30px;  
+  padding: 0 15px;
+  border: 2px solid #ffae00;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.tarjeta__footer {
+  margin-top: auto;
+  padding: 20px 40px;
+}
+
+.tarjeta__boton {
+  width: 100%;
+  height: 50px;
+  background-color: #ffae00;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}

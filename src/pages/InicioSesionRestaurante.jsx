@@ -1,7 +1,7 @@
 import Header from '../Components/Header'
 import ProcederPedido from '../Components/ProcederPedido'
 import PiePagina from '../Components/PiePagina'
-import Company from "../components/Company"
+import Company from "../Components/Company"
 import { cities } from "../services/dataBase"
 import { contacto } from "../services/dataBase"
 import instagram from '/instagram.png'
@@ -16,7 +16,7 @@ import './InicioSesionRestaurante.css'
 
 const InicioSesionRestaurante=()=>{
     return(
-        <body>
+        <>
             <Header/>
                 <section className='fondo-login'>
                     <div className='img-login'>
@@ -50,7 +50,7 @@ const InicioSesionRestaurante=()=>{
             </section>
         </div>
         </section>
-        </body>
+        </>
     )
 }
 export default InicioSesionRestaurante;

@@ -1,0 +1,135 @@
+.direcciones {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.direcciones-contenido {
+  background: white;
+  width: 30%;
+  height: 90%;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.direcciones-header {
+  width: 100%;
+  height: 80px;
+  color: white;
+  background-color: #ffae00;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px 10px 0 0;
+}
+
+.direcciones-header h2 {
+  font-weight: 600;
+  font-size: 30px;
+}
+
+.direcciones-lista {
+  width: 100%;
+  height: 65%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 40px;
+  gap: 20px;
+}
+
+.direccion-opcion {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.direccion-contenido {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.direccion-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.direccion-opcion img {
+  width: 30px;
+  height: 30px;
+}
+
+.direccion-opcion label {
+  color: black;
+  cursor: pointer;
+}
+
+.direccion-opcion input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #ffae00;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+}
+
+.direccion-opcion input[type="radio"]::before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  border-radius: 50%;
+  background-color: #ffae00;
+  transform: scale(0);
+  transition: transform 0.2s ease;
+}
+
+.direccion-opcion input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+.direccion-opcion p {
+  margin: 0;
+  padding-left: 40px;
+  font-size: 14px;
+  color: #666;
+}
+
+.direcciones-contenido button {
+    width: 90%;
+    height: 50px;
+    margin: 20px auto;
+    display: block;
+    background-color: #ffae00;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.metodo-contenido button:hover {
+    background-color: #e69d00;
+}
+
+.metodo-contenido button:active {
+    transform: scale(0.98);
+}
