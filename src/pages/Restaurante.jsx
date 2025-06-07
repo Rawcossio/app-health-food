@@ -1,4 +1,4 @@
-import Company from "../components/Company"
+import Company from "../Components/Company"
 import HeaderHome from "../Components/HeaderHome"
 import NumeroCardSlider from "../Components/NumeroCardSlider"
 import PiePagina from "../Components/PiePagina"
