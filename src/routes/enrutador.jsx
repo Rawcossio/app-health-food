@@ -20,6 +20,7 @@ import InicioSesionCliente from "../pages/InicioSesionCliente";
 import RegistroCliente from "../pages/RegistroCliente";
 import ProtectedRoute from "./ProtectedRoute";
 import Orden from "../pages/Orden";
+import MisOrdenes from "../Components/MisOrdenes";
 
 
 let enrutador = createBrowserRouter([
@@ -31,7 +32,7 @@ let enrutador = createBrowserRouter([
       path:'/HomeUser',
       element:<ProtectedRoute>
         <HomeUser/>
-      <ProtectedRoute/>
+      </ProtectedRoute>
     },
     {
       path:'/Roles',
@@ -65,10 +66,7 @@ let enrutador = createBrowserRouter([
       path:'/pago',
       element:<Pago/>
     },
-    {
-      path:'/carrito',
-      element:<Carrito/>
-    },
+   
     {
       path:'/metodopago',
       element:<MetodoPago/>
@@ -87,8 +85,12 @@ let enrutador = createBrowserRouter([
       element: <Restaurante/>
     },
     {
-      path:'/agregar-tarjeta',
-      element: <AgregarTarjeta/>
+      path: '/InicioSesion',
+      element: <InicioSesionCliente/>
+    },
+    {
+      path: '/producto/:id', // Cambiar esto para incluir el parámetro id
+      element: <VistaProducto />
     },
     {
       path: '/RegistroCliente',
@@ -100,11 +102,19 @@ let enrutador = createBrowserRouter([
     },
     {
       path: '/Perfil',
-      element: <Perfil/>
+      element: <ProtectedRoute>
+        <Perfil/>
+      </ProtectedRoute>
     },
+    {
       path: '/producto/:id', // Cambiar esto para incluir el parámetro id
       element: <VistaProducto />
+    },
+    {
+      path: '/MisOrdenes',
+      element: <MisOrdenes/>
     }
+    
 
     
   ])

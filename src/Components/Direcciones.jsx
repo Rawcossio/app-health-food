@@ -1,6 +1,13 @@
+import { Navigate, useNavigate } from 'react-router-dom';
 import './Direcciones.css';
+import AgregarDireccion from './AgregarDireccion';
+import { useState } from 'react';
 
-const Direcciones = () => {
+const Direcciones = ({onClose}) => {
+
+  const [mostrarAgregarDireccion, setMostrarAgregarDireccion] = useState(false)
+
+
   return (
     <section className="direcciones">
       <div className="direcciones-contenido">
@@ -40,11 +47,21 @@ const Direcciones = () => {
             </div>
           </div>
         </section>
-        <button>Agregar nueva Dirección</button>
+        
+        <button onClick={() => setMostrarAgregarDireccion(true)}>
+          Agregar nueva Dirección
+          </button>{mostrarAgregarDireccion &&(
+            <AgregarDireccion onClose={() => setMostrarAgregarDireccion(false)} />
+          )}
+
+          <button className='btn-volver' onClick={onClose}>
+          volver
+        </button>
         
       </div>
     </section>
   );
+
 };
 
 export default Direcciones;

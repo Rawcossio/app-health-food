@@ -23,7 +23,11 @@ import equis from "/equis.png";
 import "./HomeUser.css";
 import PopularesCerca from "../Components/PopularesCerca";
 
+
 const HomeUser = () => {
+
+  
+
   return (
     <>
       <HeaderHome />

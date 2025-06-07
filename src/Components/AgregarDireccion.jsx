@@ -1,6 +1,6 @@
 import './AgregarDireccion.css';
 
-const AgregarDireccion = () => {
+const AgregarDireccion = ({onClose}) => {
   return (
     <section className="agregar-direccion">
       <div className="agregar-contenido">
@@ -38,6 +38,7 @@ const AgregarDireccion = () => {
 
         <div className="agregar-footer">
           <button>Guardar Dirección</button>
+          <button onClick={onClose}>Volver</button>
         </div>
       </div>
     </section>

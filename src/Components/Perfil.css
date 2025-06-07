@@ -60,3 +60,9 @@
 .modal-content button:hover {
   background-color: #FC7054;
 }
+
+.contenedor-boton{
+  display: flex;
+  justify-content: space-between;
+}
+
