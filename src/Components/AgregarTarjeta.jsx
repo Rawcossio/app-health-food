@@ -1,6 +1,7 @@
 import "./AgregarTarjeta.css";
 
-const AgregarTarjeta = () => {
+const AgregarTarjeta = ({onClose}) => {
+
   return (
     <section className="tarjeta">
       <div className="tarjeta__contenido">
@@ -45,6 +46,7 @@ const AgregarTarjeta = () => {
 
         <div className="tarjeta__footer">
           <button className="tarjeta__boton">Guardar Tarjeta</button>
+          <button className="tarjeta__boton" onClick={onClose}>Volver</button>
         </div>
       </div>
     </section>

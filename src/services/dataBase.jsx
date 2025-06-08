@@ -417,3 +417,28 @@ export let productos = [
     descuento: "25% OFF",
   },
 ];
+
+export let Ordenes =[
+  {
+    id: 1,
+    fecha: '2025-06-06',
+    productos: ['Huevo Cocido', 'Té Herbal Concentrado'],
+    total: 45.000,
+    estado: 'Entregado'
+  },
+  {
+    id: 2,
+    fecha: '2025-06-03',
+    productos: ['Arroz con jamon', 'Jugo Natural Mango'],
+    total: 45.000,
+    estado: 'Entregado'
+  },
+  {
+    id: 3,
+    fecha: '2025-05-28',
+    productos: ['Pollo', 'Jugo Natural Fresa'],
+    total: 45.000,
+    estado: 'Entregado'
+  }
+
+]

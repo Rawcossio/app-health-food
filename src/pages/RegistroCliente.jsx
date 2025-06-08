@@ -124,3 +124,4 @@ const RegistroCliente = () => {
 };
 
 export default RegistroCliente;
+
