@@ -330,6 +330,11 @@ text-align: center;
   width: 17%;
   height: 460px;
 }
+.Card-populares a	{
+  text-decoration: none;
+  color: black;
+  font-family: "Source Sans 3", sans-serif;
+}
 .Card-populares img{
 width: 100%;
 height: 280px;

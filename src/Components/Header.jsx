@@ -1,17 +1,19 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import CarritoCompra from "./CarritoCompra";
+import { use } from "react";
 
 function Header() {
   const [carritoItems, setCarritoItems] = useState([]);
   const [carritoAbierto, setCarritoAbierto] = useState(false);
-
+  
   useEffect(() => {
-    if (carritoAbierto) {
-      const carritoGuardado = JSON.parse(localStorage.getItem("carrito") || "[]");
-      setCarritoItems(carritoGuardado);
-    }
-  }, [carritoAbierto]);
+  
+     const carritoGuardado = JSON.parse(localStorage.getItem("carrito") || "[]");
+     setCarritoItems(carritoGuardado);
+
+  }, [ carritoAbierto]);
+
 
   const toggleCarrito = () => {
     setCarritoAbierto(!carritoAbierto);

@@ -4,6 +4,7 @@ import './CarritoCompra.css';
 function CarritoCompra({ abierto, cerrado }) {
   const [carrito, setCarrito] = useState([]);
 
+
   useEffect(() => {
     if (abierto) {
       const carritoGuardado = JSON.parse(
@@ -44,6 +45,8 @@ function CarritoCompra({ abierto, cerrado }) {
       .filter(item => item.cantidad > 0); // Elimina si la cantidad llega a 0
     setCarrito(nuevoCarrito);
     localStorage.setItem("carrito", JSON.stringify(nuevoCarrito));};
+
+    
 
   return (
   <div className="carrito-compra">
