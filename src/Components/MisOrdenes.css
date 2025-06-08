@@ -1,66 +1,97 @@
-.Ordenes {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+.ordenes-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.ordenes-modal {
+  background: #fff;
+  width: 600px;
+  max-width: 90%;
+  border-radius: 10px;
+  padding: 1.5rem;
+  position: relative;
+  max-height: 80vh;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.btn-cerrar {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #666;
+}
+
+.btn-cerrar:hover {
+  color: red;
+}
+
+.ordenes-scroll {
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 10px;
+  margin-top: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
 }
 
 .ordenes-grid {
-    background: white;
-    width: 50%;
-    height: 90%;
-    border-radius: 10px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #ffae00;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 1rem;
 }
 
-.ordenes-grid h2{
-   margin-top: 10px;
+.orden-card {
+  background: #fefefe;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  height: 250px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.orden-card{
-    background: #fefefe;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    width: 100%;
-    padding: 1rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+.estado.entregado {
+  color: green;
 }
 
-.orden-card h3{
-    margin-top: 0;
+.estado.en {
+  color: orange;
 }
 
-.estado{
-    font-weight: bold;
-    padding: 0.2rem 0.5rem;
-    border-radius: 5px;
+.estado.cancelado {
+  color: red;
 }
 
-.estado.entregado{
-    color: green;
+.orden-producto {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
 }
 
-.estado.en{
-    color: orange;
+.orden-producto img {
+  width: 60px;
+  height: 60px;
+  border-radius: 0.5rem;
 }
 
-.estado.cancelado{
-    color: red;
-}
-
-.ordenes-grid button{
-    width: 100%;
-    height: 30px;
-    background-color: #ffae00;
+.producto-detalles {
+  display: flex;
+  flex-direction: column;
 }

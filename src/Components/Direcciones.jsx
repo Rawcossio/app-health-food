@@ -1,11 +1,32 @@
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Await, Navigate, useNavigate } from 'react-router-dom';
 import './Direcciones.css';
 import AgregarDireccion from './AgregarDireccion';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const Direcciones = ({onClose}) => {
 
   const [mostrarAgregarDireccion, setMostrarAgregarDireccion] = useState(false)
+
+   const [direcciones, setDirecciones] = useState([]);
+
+   useEffect(() => {
+    obtenerDirecciones();
+  }, []);
+
+  const obtenerDirecciones = async () => {
+    try {
+      const response = await axios.get('http://localhost:3000/direcciones');
+      setDirecciones(response.data);
+    } catch (error) {
+      console.error('Error al obtener direcciones:', error);
+    }
+  };
+
+  const handleDireccionGuardada = (nuevaDireccion) => {
+    setDirecciones([...direcciones, nuevaDireccion]);
+  };
+
+  
 
 
   return (
@@ -14,50 +35,35 @@ const Direcciones = ({onClose}) => {
         <header className="direcciones-header">
           <h2>Dirección de Entrega</h2>
         </header>
+
         <section className="direcciones-lista">
-          <div className="direccion-opcion">
-            <div className="direccion-contenido">
-              <div className="direccion-info">
-                <img src="public\casa-direccion-img.png" alt="Casa" />
-                <label htmlFor="casa">Casa</label>
+          {direcciones.map((dir) => (
+            <div className="direccion-opcion" key={dir.id}>
+              <div className="direccion-contenido">
+                <div className="direccion-info">
+                  <img src="/casa-direccion-img.png" alt="Casa" />
+                  <label>{dir.ciudad}</label>
+                </div>
+                <p>{dir.direccion}</p>
               </div>
-              <input type="radio" name="direccion" id="casa" />
             </div>
-            <p>Calle 123 #45-67</p>
-          </div>
-
-          <div className="direccion-opcion">
-            <div className="direccion-contenido">
-              <div className="direccion-info">
-                <img src="public\casa-direccion-img.png" alt="Trabajo" />
-                <label htmlFor="trabajo">Trabajo</label>
-              </div>
-              <input type="radio" name="direccion" id="trabajo" />
-            </div>
-            <p>Cra 22 #33</p>
-          </div>
-
-          <div className="direccion-opcion">
-            <div className="direccion-contenido">
-              <div className="direccion-info">
-                <img src="public\casa-direccion-img.png" alt="Otro" />
-                <label htmlFor="otro">Otro</label>
-              </div>
-              <input type="radio" name="direccion" id="otro" />
-            </div>
-          </div>
+          ))}
         </section>
-        
+
         <button onClick={() => setMostrarAgregarDireccion(true)}>
           Agregar nueva Dirección
-          </button>{mostrarAgregarDireccion &&(
-            <AgregarDireccion onClose={() => setMostrarAgregarDireccion(false)} />
-          )}
-
-          <button className='btn-volver' onClick={onClose}>
-          volver
         </button>
-        
+
+        <button className="btn-volver" onClick={onClose}>
+          Volver
+        </button>
+
+        {mostrarAgregarDireccion && (
+          <AgregarDireccion
+            onClose={() => setMostrarAgregarDireccion(false)}
+            onDireccionGuardada={handleDireccionGuardada}
+          />
+        )}
       </div>
     </section>
   );

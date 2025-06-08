@@ -33,10 +33,10 @@ function HeaderHome() {
             <nav className='nav-header'>
 
                 <button className='boton-header-HomeUser'
-                onClick={() => setMostrarOrdenes(true)}><img src={ordenes} alt="ordenes" />
+                onClick={() => setMostrarOrdenes(true)}><img src={ordenes} alt="" />
                  Mis Ordenes
                  </button>{mostrarOrdenes &&(
-                    <MisOrdenes onClose={() => setMostrarDireccion(false)}/>
+                    <MisOrdenes onClose={() => setMostrarOrdenes(false)}/>
                  )}
 
                 <button className='boton-header-HomeUser' 
@@ -60,6 +60,7 @@ function HeaderHome() {
                 </button> {mostrarPerfil && (
                     <Perfil onClose={() => setMostrarPerfil(false)} />
                 )}
+
                 {/* Botón del carrito */}
                 <div className="carrito-icono" onClick={toggleCarrito}>
                     <img src="./carrito.png" alt="" /> Carrito
