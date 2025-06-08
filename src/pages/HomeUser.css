@@ -32,12 +32,28 @@ height: 46px;
   width: 54px;
   height: 54px;
 }
+.nav-header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
 .nav-header a{
   font-weight: 700;
   color: #FC7054;
   font-family: "Source Sans 3", sans-serif;
   margin: 0 25px;
   text-decoration: none;
+}
+
+.boton-header-HomeUser{
+  font-weight: 700;
+  color: #FC7054;
+  font-family: "Source Sans 3", sans-serif;
+  margin: 0 25px;
+  text-decoration: none;
+  border: none;
+  background-color: white;
 }
 /* Seccion Encuentra Comida */
 .Encuentra-Comida{

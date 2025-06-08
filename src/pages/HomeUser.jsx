@@ -13,7 +13,7 @@ import CardEntrega from "../Components/CardEntrega";
 import MejoresOfertas from "../Components/MejoresOfertas";
 import { ofertas } from "../services/dataBase";
 import ProcederPedido from "../Components/ProcederPedido";
-import Company from "../Components/Company";
+import Company from "../Components/Company"; // Notar la C mayúscula
 import PiePagina from "../Components/PiePagina";
 import { cities } from "../services/dataBase";
 import { contacto } from "../services/dataBase";
@@ -23,7 +23,11 @@ import equis from "/equis.png";
 import "./HomeUser.css";
 import PopularesCerca from "../Components/PopularesCerca";
 
+
 const HomeUser = () => {
+
+  
+
   return (
     <>
       <HeaderHome />

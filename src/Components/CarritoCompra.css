@@ -14,7 +14,7 @@
 
 /* ========== Contenedor del modal ========== */
 .carrito-contenido {
-  background-color: black;
+  background-color:white;
   width: 90%;
   max-width: 450px;
   height: 90vh;
@@ -34,13 +34,10 @@
   padding: 15px;
   background-color: #ffae00;
   color: white;
-  font-size: 24px;
-  font-weight: 600;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
 .carrito__cerrar {
   background: none;
   border: none;
@@ -135,6 +132,17 @@
   text-align: center;
   color: #ffae00;
 }
+
+.carrito-contador {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+    color: white;
+    border-radius: 100%;}
 
 /* ========== Sección de precio y botón ========== */
 .carrito-precio {
