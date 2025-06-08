@@ -352,10 +352,12 @@ border-radius: 20px;
   margin-bottom: 5px;
 }
 .Card-populares div h3{
-  text-decoration: none
+  text-decoration: none;
+  font-size: 18px;
 }
 .Card-populares div strong{
-  text-decoration: none
+  font-size: 18px;
+  color: #F26722;
 }
 
 .Card-populares div p{
@@ -376,6 +378,11 @@ text-align: center;
 cursor: pointer;
 position: relative;
 bottom:200px;
+}
+
+.Card-populares button:hover{
+  background-color:#FFAE00;
+  transition: background-color 0.3s ease;
 }
 /* Restaurantes Destacados */
 .Restaurantes{

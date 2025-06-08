@@ -18,9 +18,7 @@ import InicioSesionCliente from "../pages/InicioSesionCliente";
 import RegistroCliente from "../pages/RegistroCliente";
 import ProtectedRoute from "./ProtectedRoute";
 import Orden from "../pages/Orden";
-
 import MisOrdenes from "../Components/MisOrdenes";
-
 import CarritoCompra from "../Components/CarritoCompra";
 import AgregarTarjeta from "../Components/AgregarTarjeta";
 
@@ -120,7 +118,11 @@ let enrutador = createBrowserRouter([
     {
       path: 'agregar-tarjeta',
       element: <AgregarTarjeta/>
-    } 
+    },
+    {
+      path: '/Carrito',
+      element: <CarritoCompra/>
+    }
  
   ])
 

@@ -12,7 +12,7 @@ function Header() {
      const carritoGuardado = JSON.parse(localStorage.getItem("carrito") || "[]");
      setCarritoItems(carritoGuardado);
 
-  }, [ carritoAbierto]);
+  }, [ carritoItems, carritoAbierto]);
 
 
   const toggleCarrito = () => {
