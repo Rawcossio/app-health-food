@@ -34,7 +34,7 @@ const InicioClienteFormulario = () => {
       })
       .then((data) => {
         localStorage.setItem("isAuthenticated", "true");
-        localStorage.setItem("usuario", JSON.stringify(data)); // que el backend te mande el nombre
+        localStorage.setItem("usuario", JSON.stringify(data)); 
         Swal.fire("¡Bienvenido!", "Inicio de sesión exitoso", "success");
         navigate("/HomeUser");
       })
