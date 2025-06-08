@@ -6,9 +6,7 @@ import contactenos from '/contactenos.png'
 import perfil from '/perfil.png'
 import CarritoCompra from "./CarritoCompra"
 import { Link } from 'react-router-dom'
-
 import Perfil from './Perfil'
-import { useState } from 'react'
 import Direcciones from './Direcciones'
 import MetodoPago from './MetodoPago'
 import MisOrdenes from './MisOrdenes'
