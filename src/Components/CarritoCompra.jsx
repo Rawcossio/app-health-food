@@ -16,8 +16,25 @@ function CarritoCompra({ abierto, cerrado }) {
   const total = carrito.reduce((acc, p) => acc + p.precio * p.cantidad, 0);
 
   const iralugar = () => {
-    console.log("Llevando al checkout...");
+  if (carrito.length === 0) return;
+
+  const nuevaOrden = {
+    id: Date.now(),
+    fecha: new Date().toLocaleDateString(),
+    productos: carrito,
+    total: carrito.reduce((acc, p) => acc + p.precio * p.cantidad, 0),
+    estado: "Pendiente"
   };
+
+  const ordenesExistentes = JSON.parse(localStorage.getItem("ordenes") || "[]");
+  const nuevasOrdenes = [...ordenesExistentes, nuevaOrden];
+  localStorage.setItem("ordenes", JSON.stringify(nuevasOrdenes));
+
+  localStorage.removeItem("carrito"); // Limpia el carrito
+  setCarrito([]); // Limpia visualmente
+
+  alert("✅ Orden registrada con éxito");
+};
 
   if (!abierto) return null;
 

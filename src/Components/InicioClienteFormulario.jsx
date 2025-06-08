@@ -33,7 +33,7 @@ const InicioClienteFormulario = () => {
         return response.json();
       })
       .then((data) => {
-        localStorage.setItem("isAuthenticated", "true");
+        localStorage.setItem("token", "true"); {/* Es token no isAuthenticated */}
         localStorage.setItem("usuario", JSON.stringify(data)); 
         Swal.fire("¡Bienvenido!", "Inicio de sesión exitoso", "success");
         navigate("/HomeUser");

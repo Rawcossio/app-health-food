@@ -42,5 +42,32 @@
     }
   ],
   "restaurantes": [],
-  "repartidor": []
+  "repartidor": [],
+  "direcciones": [
+    {
+      "id": "7584",
+      "ciudad": "Cartagena",
+      "direccion": "cll 30"
+    },
+    {
+      "id": "0a9e",
+      "ciudad": "Medellín",
+      "direccion": "cll 80"
+    },
+    {
+      "id": "1879",
+      "ciudad": "Cali",
+      "direccion": "cll 50"
+    },
+    {
+      "id": "0589",
+      "ciudad": "Bucaramanga",
+      "direccion": "cll 60"
+    },
+    {
+      "id": "0402",
+      "ciudad": "Cali",
+      "direccion": "cll 30"
+    }
+  ]
 }

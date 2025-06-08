@@ -1,7 +1,32 @@
 import { useEffect, useState } from "react";
 import "./Perfil.css";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
-function Perfil() {
+function Perfil({onClose}) {
+
+  const navigate = useNavigate();
+
+  const cerrarSesion = () => {
+    Swal.fire({
+      title: '¿Deseas cerrar sesión?',
+      icon: 'warning',
+      showCloseButton: true,
+      confirmButtonText: 'sí, cerrar',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        //Eliminar datos del local
+        localStorage.removeItem('token')
+        localStorage.removeItem('usuario')
+
+        //redirigir al login
+        navigate('/InicioSesion')
+      }
+    })
+  }
+    
+
   const [usuario, setUsuario] = useState([]);
 
   useEffect(() => {
@@ -50,7 +75,15 @@ function Perfil() {
             {/* Añade más filas según tus datos */}
           </tbody>
         </table>
-        <button>Cerrar</button>
+        <section className='contenedor-boton'>
+          <button onClick={cerrarSesion}>
+            Cerrar
+          </button>
+
+          <button onClick={onClose} >
+            Volver a inicio
+          </button>
+        </section>
       </div>
     </div>
   );
