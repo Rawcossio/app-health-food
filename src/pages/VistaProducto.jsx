@@ -6,6 +6,8 @@ function VistaProducto() {
   const { id } = useParams();
   const [producto, setProducto] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [cantidad, setCantidad] = useState(1);
+  
 
   useEffect(() => {
     fetch(`https://app-health-food-back-2.onrender.com/producto/${id}`)
@@ -32,6 +34,42 @@ function VistaProducto() {
       </div>
     );
   }
+
+  const incrementarCantidad = () => setCantidad(cantidad + 1);
+  
+  const disminuirCantidad = () => {
+    if (cantidad > 1) setCantidad(cantidad - 1);
+  };
+
+    const agregarAlCarrito = () => {
+    const carritoActual = JSON.parse(localStorage.getItem("carrito") || "[]");
+    const existe = carritoActual.find(item => item.id_producto === producto.id_producto);
+  
+    let nuevoCarrito;
+    if (existe) {
+      // Si ya existe, suma la cantidad
+      nuevoCarrito = carritoActual.map(item =>
+        item.id_producto === producto.id_producto
+          ? { ...item, cantidad: item.cantidad + cantidad }
+          : item
+      );
+    } else {
+      // Si no existe, agrega el producto con la cantidad seleccionada
+      nuevoCarrito = [
+        ...carritoActual,
+        {
+          id_producto: producto.id_producto,
+          nombre: producto.nombre,
+          precio: producto.precio,
+          imagenUrl: producto.imagenUrl,
+          cantidad: cantidad,
+        },
+      ];
+    }
+    localStorage.setItem("carrito", JSON.stringify(nuevoCarrito));
+    // Redirige o abre el modal del carrito según tu flujo
+   window.dispatchEvent(new Event("carritoActualizado"));
+  };
 
   return (
     <section className="vista">
@@ -64,11 +102,11 @@ function VistaProducto() {
 
         <footer className="vista__footer">
           <div className="vista__cantidad">
-            <div className="vista__cantidad-btn">-</div>
-            <div className="vista__cantidad-display">1</div>
-            <div className="vista__cantidad-btn">+</div>
+            <div className="vista__cantidad-btn" onClick={disminuirCantidad}>-</div>
+            <div className="vista__cantidad-display">{cantidad}</div>
+            <div className="vista__cantidad-btn" onClick={incrementarCantidad}>+</div>
           </div>
-          <button className="vista__cart-btn">Ir al carrito</button>
+          <buttom className="vista__cart-btn" onClick={agregarAlCarrito}>Ir al carrito</buttom>
         </footer>
       </div>
     </section>

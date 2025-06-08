@@ -319,13 +319,21 @@ text-align: center;
   top:20px;
 }
 .Populares section{
-  position: relative;
-  top: 70px;
-}
+  height: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+} 
 
 .Card-populares{
   width: 17%;
   height: 460px;
+}
+.Card-populares a	{
+  text-decoration: none;
+  color: black;
+  font-family: "Source Sans 3", sans-serif;
 }
 .Card-populares img{
 width: 100%;
@@ -344,10 +352,12 @@ border-radius: 20px;
   margin-bottom: 5px;
 }
 .Card-populares div h3{
-  text-decoration: none
+  text-decoration: none;
+  font-size: 18px;
 }
 .Card-populares div strong{
-  text-decoration: none
+  font-size: 18px;
+  color: #F26722;
 }
 
 .Card-populares div p{
@@ -366,6 +376,13 @@ border: transparent;
 border-radius: 10px;
 text-align: center; 
 cursor: pointer;
+position: relative;
+bottom:200px;
+}
+
+.Card-populares button:hover{
+  background-color:#FFAE00;
+  transition: background-color 0.3s ease;
 }
 /* Restaurantes Destacados */
 .Restaurantes{

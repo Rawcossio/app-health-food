@@ -15,7 +15,7 @@ function HeaderHome() {
     const [carritoAbierto, setCarritoAbierto] = useState(false)
 
     const toggleCarrito = () => {
-        setCarritoAbierto(!carritoAbierto)
+        setCarritoAbierto(!carritoAbierto);
     }
 
     const [mostrarPerfil, setMostrarPerfil] = useState(false)
@@ -61,7 +61,6 @@ function HeaderHome() {
                     <Perfil onClose={() => setMostrarPerfil(false)} />
                 )}
 
-            
                 {/* Botón del carrito */}
                 <div className="carrito-icono" onClick={toggleCarrito}>
                     <img src="./carrito.png" alt="" /> Carrito
