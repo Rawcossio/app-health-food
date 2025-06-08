@@ -1,17 +1,12 @@
 import { useState } from "react";
-
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
+let urlApiLogin = "https://app-health-food-back-2.onrender.com/usuario/login";
 
 const InicioClienteFormulario = () => {
-  const [form, setForm] = useState({ nombre: "", telefono: "" });
+  const [form, setForm] = useState({ correoElectronico: "", contrasena: "" });
   const navigate = useNavigate();
-
-  const usuarios = {
-    nombre: "Juan",
-    telefono: "3008244233",
-  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -21,17 +16,31 @@ const InicioClienteFormulario = () => {
   const handleLogin = (e) => {
     e.preventDefault();
 
-    if (
-      form.nombre === usuarios.nombre &&
-      form.telefono === usuarios.telefono
-    ) {
-      localStorage.setItem("isAuthenticated", "true");
-      localStorage.setItem("nombre", form.nombre);
-      Swal.fire("¡Bienvenido!", "Inicio de sesión exitoso", "success");
-      navigate("/HomeUser");
-    } else {
-      Swal.fire("Error", "Credenciales inválidas", "error");
-    }
+    fetch(urlApiLogin, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        correoElectronico: form.correoElectronico,
+        contrasena: form.contrasena,
+      }),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Credenciales inválidas");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        localStorage.setItem("isAuthenticated", "true");
+        localStorage.setItem("usuario", JSON.stringify(data)); // que el backend te mande el nombre
+        Swal.fire("¡Bienvenido!", "Inicio de sesión exitoso", "success");
+        navigate("/HomeUser");
+      })
+      .catch((err) => {
+        Swal.fire("Error", err.message, "error");
+      });
   };
 
   return (
@@ -40,17 +49,19 @@ const InicioClienteFormulario = () => {
         <h2>Inicio de Sesión</h2>
         <input
           type="text"
-          name="nombre"
-          placeholder="Ingresa tu nombre"
+          name="correoElectronico"
+          placeholder="Ingresa tu correo"
           onChange={handleChange}
           required
+          value={form.correoElectronico}
         />
         <input
-          type="text"
-          name="telefono"
-          placeholder="Ingresa tu telefono"
+          type="password"
+          name="contrasena"
+          placeholder="Ingresa tu contraseña"
           onChange={handleChange}
           required
+          value={form.contrasena}
         />
         <button type="submit" className="login-btn">
           Iniciar Sesión
