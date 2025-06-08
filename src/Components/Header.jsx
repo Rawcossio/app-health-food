@@ -7,17 +7,41 @@ function Header() {
   const [carritoItems, setCarritoItems] = useState([]);
   const [carritoAbierto, setCarritoAbierto] = useState(false);
   
-  useEffect(() => {
+  console.log("Carrito items en Header:", carritoItems);
   
-     const carritoGuardado = JSON.parse(localStorage.getItem("carrito") || "[]");
-     setCarritoItems(carritoGuardado);
 
-  }, [ carritoItems, carritoAbierto]);
+  useEffect(() => {
+    const actualizarCarrito = () => {
+      const carritoGuardado = JSON.parse(localStorage.getItem("carrito") || "[]");
+      setCarritoItems(carritoGuardado);
+    };
+    // Actualiza al abrir/cerrar el modal
+    actualizarCarrito();
+
+    // window.addEventListener('carritoActualizadoTarjeta', actualizarCarrito);
+  
+
+    // Escucha cambios en el carrito desde cualquier parte de la app
+    window.addEventListener("carritoActualizado", actualizarCarrito);
+    window.addEventListener("storage", actualizarCarrito);
+
+    return () => {
+      // window.removeEventListener("carritoActualizadoTarjeta", actualizarCarrito);
+      window.removeEventListener("carritoActualizado", actualizarCarrito);
+      window.removeEventListener("storage", actualizarCarrito);
+    };
+  }, [carritoAbierto]);
 
 
   const toggleCarrito = () => {
     setCarritoAbierto(!carritoAbierto);
   };
+
+    useEffect(() => {
+    const handleAbrirCarrito = () => setCarritoAbierto(true);
+    window.addEventListener("abrirCarrito", handleAbrirCarrito);
+    return () => window.removeEventListener("abrirCarrito", handleAbrirCarrito);
+  }, []);
 
   return (
     <>
@@ -48,7 +72,7 @@ function Header() {
           <img src="./carrito.png" alt="" /> Carrito
           {carritoItems.length > 0 && (
             <span className="carrito-contador">
-              {carritoItems.reduce((acc, item) => acc + item.cantidad, 0)}
+              {/* {carritoItems.reduce((acc, item) => acc + item.cantidad, 0)} */}
             </span>
           )}
         </div>

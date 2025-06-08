@@ -14,7 +14,7 @@ function CarritoCompra({ abierto, cerrado }) {
     }
   }, [abierto]);
 
-  const total = carrito.reduce((acc, p) => acc + p.precio * p.cantidad, 0);
+  // const total = carrito.reduce((acc, p) => acc + p.precio * p.cantidad, 0);
 
   const iralugar = () => {
   if (carrito.length === 0) return;
@@ -106,6 +106,17 @@ function CarritoCompra({ abierto, cerrado }) {
         </div>
         <div className="carrito-boton">
           <button className="boton-carrito" onClick={iralugar}>Ir al checkout</button>
+          <button className="boton-carrito" onClick={() => {
+            // Verifica si hay usuario logueado
+            const usuario = localStorage.getItem("usuario");
+            if (usuario) {
+              window.location.href = "/homeuser";
+            } else {
+              window.location.href = "/";
+            }
+          }}>
+            Seguir comprando
+          </button>
         </div>
       </div>
     </div>
