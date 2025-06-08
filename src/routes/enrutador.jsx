@@ -116,10 +116,8 @@ let enrutador = createBrowserRouter([
     {
       path: '/MisOrdenes',
       element: <MisOrdenes/>
-    }
-    
-
-    
+    },
+    {
 
       path: 'agregar-tarjeta',
       element: <AgregarTarjeta/>
