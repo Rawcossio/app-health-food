@@ -1,167 +1,127 @@
-import { Await, Link, useNavigate } from "react-router-dom"
-import HeaderRegistro from "../Components/HeaderRegistro"
-import "./RegistroCliente.css"
-import { useState } from "react"
+import { Link, useNavigate } from "react-router-dom";
+import HeaderRegistro from "../Components/HeaderRegistro";
+import "./RegistroCliente.css";
+import { useEffect, useState } from "react";
+import { alertaGenerica, alertaRedireccion } from "../helpers/funciones";
 
-import Swal from "sweetalert2"
+let urlApi = "https://app-health-food-back-2.onrender.com/usuario";
 
 const RegistroCliente = () => {
+  const [getNombre, setNombre] = useState("");
+  const [getcorreoElectronico, setcorreElectronico] = useState("");
+  const [getTelefono, setTelefono] = useState("");
+  const [getContrasena, setContrasena] = useState("");
+  const [getConfirmContrasena, setConfirmContrasena] = useState("");
+  const redireccion = useNavigate();
 
-    const [mostrarContraseña, setMostrarContraseña] = useState(false)
-    const navegar = useNavigate()
+  const registrarUsuario = (e) => {
+    e.preventDefault();
 
-    const [formDatos, setFormDatos] = useState({
-        nombre: '',
-        telefono: '',
-        correo: '',
-        contraseña: '',
-        confirmarContraseña: ''
+    if (getContrasena !== getConfirmContrasena) {
+      return alertaGenerica("Error", "Las contraseñas no coinciden", "error");
+    }
+
+    const nuevoUsuario = {
+      nombre: getNombre,
+      correoElectronico: getcorreoElectronico,
+      telefono: getTelefono,
+      contrasena: getContrasena,
+      tipoUsuario: "CLIENTE", // poner siempre
+    };
+
+    fetch(urlApi, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(nuevoUsuario),
     })
+      .then(() => {
+        alertaRedireccion(
+          redireccion,
+          "Usuario registrado",
+          "Será redireccionado al login",
+          "success",
+          "/InicioSesion"
+        );
+      })
+      .catch((error) => {
+        console.log(error);
+        alertaGenerica("Error", "No se pudo registrar", "error");
+      });
+  };
 
+  return (
+    <section className="contenedor">
+      <HeaderRegistro />
 
-    const manejarCambio = (e) => {
-        setFormDatos({
-            ...formDatos,
-            [e.target.name]: e.target.value
-        })
-    }
+      <main className="registro-container">
+        <section className="registro-form">
+          <h2>Crear Cuenta</h2>
+          <form onSubmit={registrarUsuario}>
+            <label htmlFor="nombre">Nombre:</label>
+            <input
+              onChange={(e) => setNombre(e.target.value)}
+              type="text"
+              id="nombre"
+              placeholder="Ingrese tu nombre"
+              required
+            />
 
-    const manejarEnvio = async (e) => {
-        e.preventDefault()
+            {/* Aquí eliminamos el input de usuario */}
 
-        //Validación básica
-        if (formDatos.contraseña != formDatos.confirmarContraseña) {
-            Swal.fire({
-                icon: 'error',
-                title: 'Error',
-                text: 'Las Contraseñas no coinciden'
-            })
-            return
-        }
-        
-        
+            <label htmlFor="telefono">Teléfono:</label>
+            <input
+              onChange={(e) => setTelefono(e.target.value)}
+              type="tel"
+              id="telefono"
+              placeholder="Ingrese su Teléfono"
+              required
+            />
 
-        //se cra objeto usuario
-        const nuevoUsuario = {
-            nombre: formDatos.nombre,
-            telefono: formDatos.telefono,
-            correo: formDatos.correo,
-            contraseña: formDatos.contraseña,
-            confirmarContraseña: formDatos.confirmarContraseña
-        }
+            <label htmlFor="email">Correo Electrónico:</label>
+            <input
+              onChange={(e) => setcorreElectronico(e.target.value)}
+              type="email"
+              id="email"
+              placeholder="Ingrese su Correo Electrónico"
+              required
+            />
 
-        try {
-            const respuesta = await fetch('http://localhost:3000/usuarios', {
-                method: 'POST',
-                Headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(nuevoUsuario)
-            })
+            <label htmlFor="password">Contraseña:</label>
+            <input
+              onChange={(e) => setContrasena(e.target.value)}
+              type="password"
+              id="password"
+              placeholder="Ingrese una Contraseña"
+              required
+            />
 
-            if (respuesta.ok) {
-                Swal.fire({
-                    icon: 'success',
-                    title: '¡Registrado!',
-                    text: 'Usuario registrado con exito'
-                }).then(() => {
-                    navegar('/InicioSesion')
-                })
+            <label htmlFor="confirm-password">Confirmar Contraseña:</label>
+            <input
+              onChange={(e) => setConfirmContrasena(e.target.value)}
+              type="password"
+              id="confirm-password"
+              placeholder="Confirme su Contraseña"
+              required
+            />
 
-                //Limpiar Formulario
-                setFormDatos({
-                    nombre: '',
-                    telefono: '',
-                    correo: '',
-                    contraseña: '',
-                    confirmarContraseña: ''
-                })
-            } else {
-                throw new error('Error al registrar')
-            }
-        } catch (error) {
-            Swal.fire({
-                icon: 'error',
-                title: 'Error',
-                text: 'Hubo un problema al registrar el usuario'
-            })
-        }
-    }
+            <button type="submit" className="btn-registrarse">
+              Registrarse
+            </button>
+          </form>
 
-
-    return (
-        <section className="contenedor">
-
-            <div>
-                <HeaderRegistro />
-            </div>
-
-            <main className="registro-container">
-                <section className="registro-form">
-                    <h2>Crear Cuenta</h2>
-                    <form onSubmit={manejarEnvio}>
-                        <label htmlFor="nombre">Nombre:</label>
-
-                        <input type="text" id="nombre"
-                            name="nombre"
-                            placeholder="Ingrese tu nombre"
-                            value={formDatos.nombre}
-                            onChange={manejarCambio}
-                            required
-                        />
-
-                        <label htmlFor="telefono">Teléfono:</label>
-                        <input type="tel" id="telefono"
-                            name="telefono"
-                            placeholder="Ingrese su Teléfono"
-                            value={formDatos.telefono}
-                            onChange={manejarCambio} required
-                        />
-
-                        <label htmlFor="email">Correo Electrónico:</label>
-                        <input type="email" id="email"
-                            name="correo"
-                            placeholder="Ingrese su Correo Electrónico"
-                            value={formDatos.correo}
-                            onChange={manejarCambio}
-                            required
-                        />
-
-                        <label htmlFor="password">Contraseña:</label>
-                        <input type={mostrarContraseña ? 'text' : 'password'} id="password"
-                            name="contraseña"
-                            placeholder="Ingrese una Contraseña"
-                            value={formDatos.contraseña}
-                            onChange={manejarCambio}
-                            required
-                        />
-
-                        <small>
-                            &#9679; La contraseña debe tener entre 6 a 10 caracteres. <br />
-                            &#9679; Debe incluir una minúscula, una mayúscula y caracteres especiales.
-                        </small>
-
-                        <label htmlFor="confirm-password">Confirmar Contraseña:</label>
-                        <input type={mostrarContraseña ? 'text' : 'password'} id="confirm-password"
-                            name="confirmarContraseña"
-                            placeholder="Ingrese una Contraseña"
-                            value={formDatos.confirmarContraseña}
-                            onChange={manejarCambio}
-                            required
-                        />
-                        <button type="button" 
-                        className="btn-vista"
-                        onClick={() => setMostrarContraseña(!mostrarContraseña)}>
-                            {mostrarContraseña ? 'Ocultar contraseñas' : 'Mostrar contraseñas'}
-                        </button>
-                        <button type="submit" className="btn-registrarse">Registrarse</button>
-                        
-                    </form>
-
-                    <p>Ya tengo una cuenta <Link className="link-login" to="/InicioSesion">Inicio de Sesión</Link></p>
-                </section>
-            </main>
+          <p>
+            Ya tengo una cuenta{" "}
+            <Link className="link-login" to="/InicioSesion">
+              Inicio de Sesión
+            </Link>
+          </p>
         </section>
-    )
-}
-export default RegistroCliente
+      </main>
+    </section>
+  );
+};
+
+export default RegistroCliente;
+
