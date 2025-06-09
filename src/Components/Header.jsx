@@ -5,19 +5,40 @@ import { use } from "react";
 
 function Header() {
   const [carritoItems, setCarritoItems] = useState([]);
-  const [carritoAbierto, setCarritoAbierto] = useState(false);
-  
-  useEffect(() => {
-  
-     const carritoGuardado = JSON.parse(localStorage.getItem("carrito") || "[]");
-     setCarritoItems(carritoGuardado);
+  const [carritoAbierto, setCarritoAbierto] = useState(false); 
 
-  }, [ carritoItems, carritoAbierto]);
+  useEffect(() => {
+    const actualizarCarrito = () => {
+      const carritoGuardado = JSON.parse(localStorage.getItem("carrito") || "[]");
+      setCarritoItems(carritoGuardado);
+    };
+    // Actualiza al abrir/cerrar el modal
+    actualizarCarrito();
+
+    window.addEventListener('carritoActualizadoTarjeta', actualizarCarrito);
+  
+
+    // Escucha cambios en el carrito desde cualquier parte de la app
+    window.addEventListener("carritoActualizado", actualizarCarrito);
+    window.addEventListener("storage", actualizarCarrito);
+
+    return () => {
+      window.removeEventListener("carritoActualizadoTarjeta", actualizarCarrito);
+      window.removeEventListener("carritoActualizado", actualizarCarrito);
+      window.removeEventListener("storage", actualizarCarrito);
+    };
+  }, [carritoAbierto]);
 
 
   const toggleCarrito = () => {
     setCarritoAbierto(!carritoAbierto);
   };
+
+    useEffect(() => {
+    const handleAbrirCarrito = () => setCarritoAbierto(true);
+    window.addEventListener("abrirCarrito", handleAbrirCarrito);
+    return () => window.removeEventListener("abrirCarrito", handleAbrirCarrito);
+  }, []);
 
   return (
     <>

@@ -107,11 +107,6 @@ let enrutador = createBrowserRouter([
       </ProtectedRoute>
     },
     {
-
-      path: '/producto/:id', // Cambiar esto para incluir el parámetro id
-      element: <VistaProducto />
-    },
-    {
       path: '/MisOrdenes',
       element: <MisOrdenes/>
     },

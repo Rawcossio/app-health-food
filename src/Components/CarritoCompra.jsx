@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { actualizarCarrito } from "../helpers/actualizarCarrito";
 import './CarritoCompra.css';
 
 function CarritoCompra({ abierto, cerrado }) {
@@ -42,7 +43,9 @@ function CarritoCompra({ abierto, cerrado }) {
     const eliminarDelCarrito = (id_producto) => {
     const nuevoCarrito = carrito.filter(item => item.id_producto !== id_producto);
     setCarrito(nuevoCarrito);
-    localStorage.setItem("carrito", JSON.stringify(nuevoCarrito));};
+    localStorage.setItem("carrito", JSON.stringify(nuevoCarrito));
+    actualizarCarrito();  
+  };
 
     const aumentarCantidad = (id_producto) => {
     const nuevoCarrito = carrito.map(item =>
@@ -50,7 +53,9 @@ function CarritoCompra({ abierto, cerrado }) {
         ? { ...item, cantidad: item.cantidad + 1 }
         : item);
     setCarrito(nuevoCarrito);
-    localStorage.setItem("carrito", JSON.stringify(nuevoCarrito));};
+    localStorage.setItem("carrito", JSON.stringify(nuevoCarrito));
+    actualizarCarrito(); 
+  };
   
   const disminuirCantidad = (id_producto) => {
     const nuevoCarrito = carrito
@@ -61,7 +66,9 @@ function CarritoCompra({ abierto, cerrado }) {
       )
       .filter(item => item.cantidad > 0); // Elimina si la cantidad llega a 0
     setCarrito(nuevoCarrito);
-    localStorage.setItem("carrito", JSON.stringify(nuevoCarrito));};
+    localStorage.setItem("carrito", JSON.stringify(nuevoCarrito));
+    actualizarCarrito(); 
+  };
 
     
 
@@ -106,6 +113,17 @@ function CarritoCompra({ abierto, cerrado }) {
         </div>
         <div className="carrito-boton">
           <button className="boton-carrito" onClick={iralugar}>Ir al checkout</button>
+          <button className="boton-carrito" onClick={() => {
+            // Verifica si hay usuario logueado
+            const usuario = localStorage.getItem("usuario");
+            if (!usuario) {
+              window.location.href = "/";
+            } else {
+              window.location.href = "/HomeUser";
+            }
+          }}>
+            Seguir comprando
+          </button>
         </div>
       </div>
     </div>
