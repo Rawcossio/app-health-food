@@ -334,6 +334,7 @@ text-align: center;
   text-decoration: none;
   color: black;
   font-family: "Source Sans 3", sans-serif;
+  margin-bottom: 100px;
 }
 .Card-populares img{
 width: 100%;
@@ -378,6 +379,7 @@ text-align: center;
 cursor: pointer;
 position: relative;
 bottom:200px;
+margin-top: 20px;
 }
 
 .Card-populares button:hover{

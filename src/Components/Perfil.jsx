@@ -3,29 +3,27 @@ import "./Perfil.css";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
-function Perfil({onClose}) {
-
+function Perfil({ onClose }) {
   const navigate = useNavigate();
 
   const cerrarSesion = () => {
     Swal.fire({
-      title: '¿Deseas cerrar sesión?',
-      icon: 'warning',
+      title: "¿Deseas cerrar sesión?",
+      icon: "warning",
       showCloseButton: true,
-      confirmButtonText: 'sí, cerrar',
-      cancelButtonText: 'Cancelar'
+      confirmButtonText: "sí, cerrar",
+      cancelButtonText: "Cancelar",
     }).then((result) => {
       if (result.isConfirmed) {
         //Eliminar datos del local
-        localStorage.removeItem('token')
-        localStorage.removeItem('usuario')
+        localStorage.removeItem("token");
+        localStorage.removeItem("usuario");
 
         //redirigir al login
-        navigate('/InicioSesion')
+        navigate("/InicioSesion");
       }
-    })
-  }
-    
+    });
+  };
 
   const [usuario, setUsuario] = useState([]);
 
@@ -75,12 +73,15 @@ function Perfil({onClose}) {
             {/* Añade más filas según tus datos */}
           </tbody>
         </table>
-        <section className='contenedor-boton'>
-          <button onClick={cerrarSesion}>
-            Cerrar
-          </button>
+        <section className="contenedor-boton">
+          <button onClick={cerrarSesion}>Cerrar</button>
 
-          <button onClick={onClose} >
+          <button
+            onClick={() => {
+              if (onClose) onClose();
+              navigate("/HomeUser");
+            }}
+          >
             Volver a inicio
           </button>
         </section>
