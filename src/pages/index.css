@@ -408,10 +408,13 @@ bottom:200px;
   align-items: center;
   justify-content:space-evenly;
   gap:5px;
-
+}
+.Restaurantes a{
+  text-decoration: none;
+  color: black;
 }
 .Card-restaurantes{
-max-width:22%;
+  width: 20%;
   height: 410px;
   display: flex;
   flex-direction: column;

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-const Restaurantes = () => {
+const Restaurantes = ({ inicio = 0, cantidad = 4 }) => {
   const [restaurantes, setRestaurantes] = useState([]);
 
   useEffect(() => {
@@ -14,21 +14,21 @@ const Restaurantes = () => {
       .catch((err) => console.error(err));
   }, []);
 
+    const restaurantesAMostrar = restaurantes.slice(inicio, inicio + cantidad);
+
+
   return (
     <div>
-      <h1>Lista de Restaurantes</h1>
       <div className="lista-restaurantes">
-        {restaurantes.map((restaurante) => (
+        {restaurantes((restaurante) => (
           <Link
             key={restaurante.id_restaurante}
             to={`/restaurante/${restaurante.id_restaurante}`}
-            className="Card-restaurantes"
-          >
-            <section className="Card-restaurantes">
+            className="Card-restaurantes">
+            <section>
               <div className="Img-restaurantes">
                 <img src={restaurante.portadaUrl} alt={restaurante.nombre} />
                 <button>{restaurante.oferta || "10%"} off</button>
-                <p>🕓Fast</p>
               </div>
 
               <div className="Card-restaurante-estrella">
