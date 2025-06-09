@@ -1,7 +1,6 @@
-import { useState } from "react"
-import { productos } from "../services/dataBase"
+import { useState } from "react";
 
-const ProductSlider = () => {
+const ProductSlider = ({ productos = [] }) => {
   const [startIndex, setStartIndex] = useState(0);
   const visibleCards = 4;
 
@@ -22,21 +21,35 @@ const ProductSlider = () => {
       <button onClick={handlePrev} className="nav-button">◀</button>
 
       <div className="cards-wrapper">
-        {visibles.map((producto) => (
-          <div className="card" key={producto.id}>
-            <img src={producto.imagen} alt={producto.nombre} />
-            <h3>{producto.nombre}</h3>
+        {visibles.length === 0 ? (
+          <p>No hay productos para mostrar</p>
+        ) : (
+          visibles.map((producto, index) => (
+            <div className="card" key={index}>
+              <img src={producto.imagenUrl} alt={producto.nombre} />
+              <h3>{producto.nombre}</h3>
 
-            <div className="precios">
-              <p className="precio">$ {producto.precio.toLocaleString()}</p>
-              <p className="precio-original">$ {producto.precioOriginal.toLocaleString()}</p>
+              <div className="precios">
+                <p className="precio">
+                  $ {producto.precio?.toLocaleString("es-CO")}
+                </p>
+                {producto.precioOriginal && (
+                  <p className="precio-original">
+                    $ {producto.precioOriginal.toLocaleString("es-CO")}
+                  </p>
+                )}
+              </div>
+
+              {producto.descuento && (
+                <div className="descuento">{producto.descuento}</div>
+              )}
+
+              <button className="comprar">
+                <a href="#">Comprar</a>
+              </button>
             </div>
-
-            <div className="descuento">{producto.descuento}</div>
-
-                <button className="comprar"><a href="">Comprar</a></button>
-            </div>
-        ))}
+          ))
+        )}
       </div>
 
       <button onClick={handleNext} className="nav-button">▶</button>

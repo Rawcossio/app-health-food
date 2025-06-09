@@ -117,6 +117,11 @@ let enrutador = createBrowserRouter([
     {
       path: '/Carrito',
       element: <CarritoCompra/>
+    },
+    {
+      path: '/restaurante/:id',
+      element: <Restaurante/>
+
     }
  
   ])
