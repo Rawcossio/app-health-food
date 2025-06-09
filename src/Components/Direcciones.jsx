@@ -1,65 +1,64 @@
-import { Await, Navigate, useNavigate } from 'react-router-dom';
-import './Direcciones.css';
-import AgregarDireccion from './AgregarDireccion';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import './Direcciones.css';
+import AgregarDireccion from './AgregarDireccion';
 
 const Direcciones = ({ onClose }) => {
-
-  const [mostrarAgregarDireccion, setMostrarAgregarDireccion] = useState(false)
-
+  const [mostrarAgregarDireccion, setMostrarAgregarDireccion] = useState(false);
   const [direcciones, setDirecciones] = useState([]);
+  const usuario = JSON.parse(localStorage.getItem("usuario"));
 
-  // Función para obtener las direcciones del usuario desde JSON Server
   const obtenerDirecciones = async () => {
     try {
-      const respuesta = await axios.get('https://app-health-food-back-2.onrender.com/direccion');
-      setDirecciones(respuesta.data);
+      const respuesta = await axios.get('https://app-health-food-back-2.onrender.com/usuario');
+      const usuarios = respuesta.data;
+      
+      // Encontrar el usuario actual por su ID
+      const usuarioActual = usuarios.find(u => u.id === usuario.id);
+      
+      if (usuarioActual && usuarioActual.direcciones) {
+        setDirecciones(usuarioActual.direcciones);
+        console.log('Direcciones cargadas:', usuarioActual.direcciones);
+      } else {
+        setDirecciones([]);
+      }
     } catch (error) {
       console.error('Error al obtener las direcciones:', error);
-    }
-  }
-
-  useEffect(() => {
-    obtenerDirecciones();
-  }, [])
-
-  const eliminarDireccion = async (id) => {
-    const resultado = await Swal.fire({
-      title: '¿Estás seguro?',
-      text: 'Esta acción eliminará la dirección de forma permanente.',
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#e74c3c',
-      cancelButtonColor: '#3085d6',
-      confirmButtonText: 'Sí, eliminar',
-      cancelButtonText: 'Cancelar',
-    });
-
-    if (resultado.isConfirmed) {
-      try {
-        await axios.delete(`https://app-health-food-back-2.onrender.com/direccion/${id}`);
-        obtenerDirecciones();
-
-        Swal.fire({
-          title: '¡Eliminado!',
-          text: 'La dirección ha sido eliminada correctamente.',
-          icon: 'success',
-          timer: 2000,
-          showConfirmButton: false
-        });
-      } catch (error) {
-        console.error('Error al eliminar la dirección:', error);
-        Swal.fire({
-          title: 'Error',
-          text: 'No se pudo eliminar la dirección. Intenta de nuevo.',
-          icon: 'error'
-        });
-      }
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'No se pudieron cargar las direcciones'
+      });
     }
   };
 
+  useEffect(() => {
+    if (usuario?.id) {
+      obtenerDirecciones();
+    }
+  }, [usuario]);
+
+  const eliminarDireccion = async (idDireccion) => {
+    try {
+      await axios.delete(`https://app-health-food-back-2.onrender.com/direccion/${idDireccion}`);
+      // Actualizar direcciones después de eliminar
+      obtenerDirecciones();
+      Swal.fire({
+        icon: 'success',
+        title: '¡Eliminada!',
+        text: 'Dirección eliminada correctamente',
+        timer: 1500
+      });
+    } catch (error) {
+      console.error('Error al eliminar:', error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'No se pudo eliminar la dirección'
+      });
+    }
+  };
 
   return (
     <section className="direcciones">
@@ -69,51 +68,58 @@ const Direcciones = ({ onClose }) => {
         </header>
 
         <section className="direcciones-lista">
-          {direcciones.map((direccion) => (
-            <div className="direccion-opcion" key={direccion.id}>
-              <div className="direccion-contenido">
-                <div className="direccion-info">
-                  <img src="/casa-direccion-img.png" alt="Casa" />
-                  <label htmlFor={`direccion-${direccion.id}`}>{direccion.tipo || 'Dirección'}</label>
+          {direcciones.length === 0 ? (
+            <p className="no-direcciones">No tienes direcciones guardadas</p>
+          ) : (
+            direcciones.map((direccion) => (
+              <div className="direccion-opcion" key={direccion.id_direccion}>
+                <div className="direccion-contenido">
+                  <div className="direccion-info">
+                    <img src="/casa-direccion-img.png" alt="Casa" />
+                    <label>{direccion.calle}</label>
+                  </div>
+                  <input 
+                    type="radio" 
+                    name="direccion" 
+                    id={`direccion-${direccion.id_direccion}`} 
+                  />
                 </div>
-                <input type="radio" name="direccion" id={`direccion-${direccion.id}`} />
+                <p>{direccion.ciudad}</p>
+                <button
+                  className="btn-eliminar"
+                  onClick={() => eliminarDireccion(direccion.id_direccion)}
+                >
+                  🗑 Eliminar
+                </button>
               </div>
-              <p>{direccion.calle}</p>
-
-              {/* Botón para eliminar */}
-              <button
-                className="btn-eliminar"
-                onClick={() => eliminarDireccion(direccion.id)}
-              >
-                🗑 Eliminar
-              </button>
-            </div>
-          ))}
-
+            ))
+          )}
         </section>
 
-        <button onClick={() => setMostrarAgregarDireccion(true)}>
+        <button 
+          className="btn-agregar"
+          onClick={() => setMostrarAgregarDireccion(true)}
+        >
           Agregar nueva Dirección
-        </button>{mostrarAgregarDireccion && (
+        </button>
+
+        {mostrarAgregarDireccion && (
           <div className="overlay">
-            <AgregarDireccion onClose={() => {
-              setMostrarAgregarDireccion(false);
-              obtenerDirecciones(); // recargar las direcciones al cerrar
-            }} />
+            <AgregarDireccion 
+              onClose={() => {
+                setMostrarAgregarDireccion(false);
+                obtenerDirecciones();
+              }} 
+            />
           </div>
         )}
-
 
         <button className="btn-volver" onClick={onClose}>
           Volver
         </button>
-
-
-
       </div>
     </section>
   );
-
 };
 
 export default Direcciones;
