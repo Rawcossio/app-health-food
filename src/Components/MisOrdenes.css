@@ -1,26 +1,28 @@
+
+
 .ordenes-modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.5);
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
   display: flex;
-  align-items: center;
   justify-content: center;
-  z-index: 999;
+  align-items: center;
+  z-index: 9999;
 }
 
 .ordenes-modal {
-  background: #fff;
-  width: 600px;
-  max-width: 90%;
-  border-radius: 10px;
-  padding: 1.5rem;
-  position: relative;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
   max-height: 80vh;
   overflow: hidden;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  position: relative;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
 .btn-cerrar {
@@ -55,34 +57,44 @@
 }
 
 .orden-card {
-  background: #fefefe;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 1rem;
-  height: 250px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  border: 2px solid #FFAE00;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #fdfdfd;
 }
 
-.estado.entregado {
-  color: green;
+.imagen-comida {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 5px;
 }
 
-.estado.en {
-  color: orange;
+.estado {
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-top: 5px;
 }
 
-.estado.cancelado {
-  color: red;
+.estado.Pago-exitoso {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.estado.Pendiente-de-pago {
+  background-color: #fff3cd;
+  color: #856404;
 }
 
 .orden-producto {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 0.5rem;
+ display: flex;
+  margin-top: 10px;
 }
 
 .orden-producto img {
