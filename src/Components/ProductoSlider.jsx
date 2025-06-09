@@ -1,6 +1,24 @@
 import { useState } from "react";
 
 const ProductSlider = ({ productos = [] }) => {
+  // Lógica para agregar al carrito (idéntica a PopularesCerca)
+  const agregarCarrito = (producto) => {
+    try {
+      let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+      const index = carrito.findIndex(
+        (p) => p.id_producto === producto.id_producto
+      );
+      if (index !== -1) {
+        carrito[index].cantidad = (carrito[index].cantidad || 1) + 1;
+      } else {
+        carrito.push({ ...producto, cantidad: 1 });
+      }
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+      window.dispatchEvent(new Event("carritoActualizado"));
+    } catch (error) {
+      console.error("Error al guardar en carrito:", error);
+    }
+  };
   const [startIndex, setStartIndex] = useState(0);
   const visibleCards = 4;
 
@@ -43,9 +61,8 @@ const ProductSlider = ({ productos = [] }) => {
               {producto.descuento && (
                 <div className="descuento">{producto.descuento}</div>
               )}
-
-              <button className="comprar">
-                <a href="#">Comprar</a>
+              <button className="comprar" onClick={() => agregarCarrito(producto)}>
+                Comprar
               </button>
             </div>
           ))
