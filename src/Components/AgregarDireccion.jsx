@@ -1,47 +1,55 @@
-import { useState } from 'react';
-import './AgregarDireccion.css';
-import axios from 'axios';
-import Swal from 'sweetalert2';
+import { useState } from "react";
+import "./AgregarDireccion.css";
+import axios from "axios";
+import Swal from "sweetalert2";
 
-const AgregarDireccion = ({onClose}) => {
+const AgregarDireccion = ({ onClose }) => {
+  const [ciudad, setCiudad] = useState("");
+  const [calle, setCalle] = useState("");
 
-  const [ciudad, setCiudad] = useState('');
-  const [direccion, setDireccion] = useState('');
+  // Saco el usuario logueado de localStorage
+  const usuario = JSON.parse(localStorage.getItem("usuario"));
 
- const guardarDireccion = async () => {
-  if (!ciudad || !direccion) {
-    Swal.fire({
-      icon: 'warning',
-      title: 'Campos incompletos',
-      text: 'Por favor, completa todos los campos.'
-    });
-    return;
-  }
+  const guardarDireccion = async () => {
+    if (!ciudad || !calle) {
+      Swal.fire({
+        icon: "warning",
+        title: "Campos incompletos",
+        text: "Por favor, completa ciudad y calle.",
+      });
+      return;
+    }
 
-  try {
-    await axios.post('https://app-health-food-back-2.onrender.com/direccion', {
-      ciudad,
-      direccion,
-    });
+    try {
+      await axios.post(
+        "https://app-health-food-back-2.onrender.com/direccion",
+        {
+          calle,
+          ciudad,
+          codigo_postal: "00000", // default fijo
+          pais: "Colombia", // default fijo
+          usuario: {
+            id: usuario.id, // tu usuario real del localStorage o donde lo guardes
+          },
+        }
+      );
 
-    Swal.fire({
-      icon: 'success',
-      title: 'Dirección guardada',
-      text: 'La dirección ha sido guardada exitosamente.',
-      timer: 2000,
-      showConfirmButton: false
-    });
-
-    onClose();
-  } catch (error) {
-    console.error('Error al guardar la dirección:', error);
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: 'Ocurrió un error al guardar la dirección. Por favor, inténtalo de nuevo.'
-    });
-  }
-};
+      Swal.fire({
+        icon: "success",
+        title: "Dirección guardada",
+        timer: 2000,
+        showConfirmButton: false,
+      });
+      onClose();
+    } catch (error) {
+      console.error("Error al guardar la dirección:", error);
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "No se pudo guardar la dirección, intenta de nuevo.",
+      });
+    }
+  };
 
   return (
     <section className="agregar-direccion">
@@ -57,8 +65,8 @@ const AgregarDireccion = ({onClose}) => {
         <div className="agregar-form">
           <div className="form-grupo">
             <label htmlFor="ciudad">Ciudad</label>
-            <select 
-              id="ciudad" 
+            <select
+              id="ciudad"
               name="ciudad"
               className="form-select"
               value={ciudad}
@@ -76,18 +84,18 @@ const AgregarDireccion = ({onClose}) => {
 
           <div className="form-grupo">
             <label htmlFor="direccion">Dirección</label>
-            <input 
-              type="text" 
-              id="direccion" 
-              placeholder="Ingresa tu dirección completa" 
-              value={direccion}
-              onChange={(e) => setDireccion(e.target.value)}
+            <input
+              type="text"
+              id="direccion"
+              placeholder="Ingresa tu dirección completa"
+              value={calle}
+              onChange={(e) => setCalle(e.target.value)}
             />
           </div>
         </div>
 
         <div className="agregar-footer">
-           <button onClick={guardarDireccion}>Guardar Dirección</button>
+          <button onClick={guardarDireccion}>Guardar Dirección</button>
           <button onClick={onClose}>Volver</button>
         </div>
       </div>
@@ -95,5 +103,4 @@ const AgregarDireccion = ({onClose}) => {
   );
 };
 
-
-export default AgregarDireccion
+export default AgregarDireccion;
