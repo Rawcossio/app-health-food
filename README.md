@@ -23,11 +23,13 @@ Una aplicación web moderna para conectar usuarios con restaurantes que ofrecen 
 - React Router DOM
 
 ### Backend
-- Node.js
-- Express
-- MongoDB
-- JWT Authentication
-- REST API
+- Java 17 ☕
+- Spring Boot 3.4 🚀
+- Spring Web (REST API)
+- Spring Data JPA + Hibernate
+- MySQL Database 🐬 (clever cloud despliegue en nube)
+- Maven 🧰
+- Docker 🐳 (opcional, para despliegue)
 
 ## Repositorios 📁
 
