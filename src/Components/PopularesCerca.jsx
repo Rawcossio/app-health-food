@@ -48,7 +48,8 @@ const PopularesCerca = () => {
     <section className="Populares">
       <h2>Populares cerca de ti</h2>
       {productos.length === 0 && <p>Cargando productos...</p>}
-      {productos.map((item, index) => (
+
+      {productos.slice(0, 4).map((item, index) => (
         <section className="Card-populares" key={item.id_producto}>
           <Link to={`/producto/${item.id_producto}`}>
           <img src={item.imagenUrl} alt={item.nombre} />

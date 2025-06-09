@@ -19,10 +19,9 @@ const AgregarDireccion = ({onClose}) => {
   }
 
   try {
-    await axios.post('http://localhost:3000/direcciones', {
+    await axios.post('https://app-health-food-back-2.onrender.com/direccion', {
       ciudad,
       direccion,
-      tipo: 'Casa',
     });
 
     Swal.fire({
