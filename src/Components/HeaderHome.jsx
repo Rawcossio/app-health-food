@@ -49,10 +49,9 @@ useEffect(() => {
         <section className="header">
             <div className="logo-header">
                 <h1>Nutri</h1>
-                <img src="public/go.png" alt=""/>
+                <img src="/go.png" alt=""/>
             </div>
             <nav className='nav-header'>
-
                 <button className='boton-header-HomeUser'
                 onClick={() => setMostrarOrdenes(true)}><img src={ordenes} alt="" />
                  Mis Ordenes
@@ -84,7 +83,7 @@ useEffect(() => {
 
                 {/* Botón del carrito */}
                 <div className="carrito-icono" onClick={toggleCarrito} style={{ cursor: "pointer" }} to="/Carrito">
-                <img src="./carrito.png" alt="" /> Carrito
+                <img src="/carrito.png" alt="" /> Carrito
                 {carritoItems.length > 0 && (
                 <span className="carrito-contador">
                 {carritoItems.reduce((acc, item) => acc + item.cantidad, 0)}
