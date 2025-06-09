@@ -94,7 +94,7 @@ function Pago({ onClose }) {
               <option value="">Selecciona una dirección</option>
               {direcciones.map(dir => (
                 <option key={dir.id} value={dir.calle}>
-                  {dir.direccion}
+                  {dir.calle}
                 </option>
               ))}
             </select>
@@ -123,7 +123,7 @@ function Pago({ onClose }) {
                 <option value="">Selecciona una tarjeta</option>
                 {tarjetas.map(tar => (
                   <option key={tar.id} value={tar.numero_tarjeta}>
-                    {tar.nombre} - **** {tar.numero?.slice(-4) || '****'}
+                    {tar.nombre} - **** {tar.numero_tarjeta?.slice(-4) || '****'}
                   </option>
                 ))}
               </select>
