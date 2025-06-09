@@ -115,13 +115,30 @@ function CarritoCompra({ abierto, cerrado }) {
         <div className="carrito-boton">
 
           <button className="boton-carrito" 
-          onClick={() => setMostrarPago(true)}>
+            onClick={() => {
+              const usuario = localStorage.getItem("usuario");
+              if (usuario) {
+                setMostrarPago(true);
+              } else {
+                window.location.href = "/InicioSesion";
+              }
+            }}>
             Ir al checkout
-          </button>{mostrarPago && (
+          </button>
+          {mostrarPago && (
             <Pago onClose={() => setMostrarPago(false)}/>
-          )
-
-          }
+          )}
+          <button className="boton-carrito" 
+            onClick={() => {
+              const usuario = localStorage.getItem("usuario");
+              if (!usuario) {
+                window.location.href = "/";
+              } else {
+                window.location.href = "/HomeUser";
+              }
+            }}>
+            Seguir comprando
+          </button>
 
           
 
