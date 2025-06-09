@@ -24,18 +24,7 @@ const AgregarTarjeta = ({ onClose, onTarjetaGuardada }) => {
     }
 
     try {
-      // Obtener usuario actual primero
-      const respuesta = await axios.get(
-        "https://app-health-food-back-2.onrender.com/usuario"
-      );
-      const usuarios = respuesta.data;
-      const usuarioActual = usuarios.find((u) => u.id === usuario.id);
-
-      if (!usuarioActual) {
-        throw new Error("Usuario no encontrado");
-      }
-
-      // Guardar nueva tarjeta
+      // Hacer directamente el POST sin consultar usuarios
       await axios.post("https://app-health-food-back-2.onrender.com/tarjeta", {
         titular,
         cvv,
@@ -48,18 +37,20 @@ const AgregarTarjeta = ({ onClose, onTarjetaGuardada }) => {
 
       Swal.fire({
         icon: "success",
-        title: "Tarjeta guardada",
-        text: "Tu tarjeta fue guardada exitosamente.",
+        title: "¡Éxito!",
+        text: "Tarjeta guardada correctamente",
         timer: 1500,
+        showConfirmButton: false,
       });
 
-      onTarjetaGuardada(); // Actualiza la lista en MetodoPago
+      onTarjetaGuardada();
+      onClose();
     } catch (error) {
-      console.error("Error al guardar la tarjeta:", error);
+      console.error("Error:", error);
       Swal.fire({
         icon: "error",
         title: "Error",
-        text: "Ocurrió un error al guardar la tarjeta.",
+        text: "No se pudo guardar la tarjeta",
       });
     }
   };
