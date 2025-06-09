@@ -5,14 +5,15 @@ import axios from "axios";
 import { useEffect } from "react";
 import Swal from "sweetalert2";
 
-const MetodoPago = ({onClose}) => {
-
+const MetodoPago = ({ onClose }) => {
   const [mostrarAgregarTarjeta, setMostrarAgregarTarjeta] = useState(false);
   const [tarjetas, setTarjetas] = useState([]);
 
   const obtenerTarjetas = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/tarjetas");
+      const res = await axios.get(
+        "https://app-health-food-back-2.onrender.com/tarjeta"
+      );
       setTarjetas(res.data);
     } catch (error) {
       console.error("Error al obtener las tarjetas:", error);
@@ -41,7 +42,7 @@ const MetodoPago = ({onClose}) => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          await axios.delete(`http://localhost:3000/tarjetas/${id}`);
+          await axios.delete(`https://app-health-food-back-2.onrender.com/tarjeta/${id}`);
           Swal.fire("Eliminada", "La tarjeta ha sido eliminada.", "success");
           obtenerTarjetas();
         } catch (error) {
@@ -50,7 +51,6 @@ const MetodoPago = ({onClose}) => {
       }
     });
   };
-
 
   return (
     <section className="metodo-pago">
@@ -65,17 +65,13 @@ const MetodoPago = ({onClose}) => {
               <div className="metodo-contenido-tarjeta">
                 <img src="/tarjeta-img.png" alt="Tarjeta" />
                 <label htmlFor={`tarjeta-${tarjeta.id}`}>
-                  **** **** **** {tarjeta.numero.slice(-4)}
+                  **** **** **** {tarjeta.numero_tarjeta}
                 </label>
-                <input
-                  type="radio"
-                  name="pago"
-                  id={`tarjeta-${tarjeta.id}`}
-                />
+                <input type="radio" name="pago" id={`tarjeta-${tarjeta.id}`} />
               </div>
               <button
                 className="btn-eliminar"
-                onClick={() => eliminarTarjeta(tarjeta.id)}
+                onClick={() => eliminarTarjeta(tarjeta.id_tarjeta)}
               >
                 🗑 Eliminar
               </button>
@@ -97,8 +93,6 @@ const MetodoPago = ({onClose}) => {
       </div>
     </section>
   );
-
-
 };
 
 export default MetodoPago;

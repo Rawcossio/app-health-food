@@ -4,7 +4,6 @@ import EncuentraComida from "../Components/EncuentraComida";
 import ComoFunciona from "../Components/ComoFunciona";
 import { entregas, pedidos, restaurantes } from "../services/dataBase";
 import { funciona } from "../services/dataBase";
-import Restaurantes from "../Components/Restarantes";
 import { tiendas } from "../services/dataBase";
 import InstalarApp from "../Components/InstalarApp";
 import TipoComida from "../Components/TipoComida";
@@ -51,7 +50,7 @@ const HomeUser = () => {
       <section className="Restaurantes">
         <h2>Restaurantes Destacados</h2>
         <div>
-          <Restaurantes/>
+          <restaurantes/>
         </div>
         <button className="verTodo">Ver todo</button>
       </section>

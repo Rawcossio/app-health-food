@@ -60,7 +60,7 @@ const Restaurante = () => {
 
           <h1>Favoritos</h1>
           <section className="favoritos">
-            <NumeroCardSlider />
+            <NumeroCardSlider productos={restaurante.productos}/>
           </section>
         </div>
 
