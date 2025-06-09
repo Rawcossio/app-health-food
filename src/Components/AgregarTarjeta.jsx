@@ -1,7 +1,36 @@
+import { useState } from "react";
 import "./AgregarTarjeta.css";
+let urlApiTarjeta = "https://app-health-food-back-2.onrender.com/tarjeta";
 
 const AgregarTarjeta = ({onClose}) => {
 
+  const  [titular, setTitular] = useState("")
+  const  [cvv, setCvv] = useState("")
+  const  [numeroTarjeta, setNumeroTarjeta] = useState("")
+  const  [fecha_vencimiento, setFecha_vencimiento] = useState("")
+
+
+  const registrarTarjeta = (e) => {
+    e.preventDefault(); 
+
+
+    const nuevaTarjeta  = {
+      titular: titular,
+      cvv: cvv,
+      numeroTarjeta: numeroTarjeta,
+      fecha_vencimiento:fecha_vencimiento
+    }
+
+    fetch(urlApiTarjeta,{
+      method: "POST",
+      headers:{
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(nuevaTarjeta)
+    })
+    .catch()
+  
+  }
   return (
     <section className="tarjeta">
       <div className="tarjeta__contenido">
