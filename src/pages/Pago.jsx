@@ -6,31 +6,54 @@ import { useNavigate } from 'react-router-dom';
 
 function Pago({ onClose }) {
   const navigate = useNavigate();
-
   const [carrito, setCarrito] = useState([]);
   const [direcciones, setDirecciones] = useState([]);
   const [tarjetas, setTarjetas] = useState([]);
   const [direccionSeleccionada, setDireccionSeleccionada] = useState('');
   const [metodoPago, setMetodoPago] = useState('');
   const [tarjetaSeleccionada, setTarjetaSeleccionada] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
+
+  const usuario = JSON.parse(localStorage.getItem("usuario"));
 
   useEffect(() => {
-    const carritoGuardado = JSON.parse(localStorage.getItem('carrito') || '[]');
-    setCarrito(carritoGuardado);
+    const obtenerDatos = async () => {
+      if (!usuario?.id) {
+        setIsLoading(false);
+        return;
+      }
 
-    axios
-      .get('https://app-health-food-back-2.onrender.com/direccion')
-      .then(res => setDirecciones(res.data))
-      .catch(() => setDirecciones([]));
+      try {
+        // Obtener carrito del localStorage
+        const carritoGuardado = JSON.parse(localStorage.getItem('carrito') || '[]');
+        setCarrito(carritoGuardado);
 
-    axios
-      .get('https://app-health-food-back-2.onrender.com/tarjeta')
-      .then(res => setTarjetas(res.data))
-      .catch(() => setTarjetas([]));
-  }, []);
+        // Obtener usuario específico por ID
+        const respuesta = await axios.get(`https://app-health-food-back-2.onrender.com/usuario/${usuario.id}`);
+        const usuarioData = respuesta.data;
+
+        if (usuarioData) {
+          setDirecciones(usuarioData.direcciones || []);
+          setTarjetas(usuarioData.tarjetas || []);
+        }
+
+      } catch (error) {
+        console.error('Error al cargar datos:', error);
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: 'No se pudieron cargar los datos del usuario'
+        });
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    obtenerDatos();
+  }, [usuario?.id]); // Solo se ejecuta cuando cambia el ID del usuario
 
   const calcularTotal = () => {
-    return carrito.reduce((acc, item) => acc + item.precio * item.cantidad, 0);
+    return carrito.reduce((acc, item) => acc + (item.precio * item.cantidad), 0);
   };
 
   const handlePagar = () => {
@@ -90,11 +113,14 @@ function Pago({ onClose }) {
               <button onClick={() => navigate('/agregar-direccion')}>Agregar Dirección</button>
             </div>
           ) : (
-            <select value={direccionSeleccionada} onChange={e => setDireccionSeleccionada(e.target.value)}>
+            <select 
+              value={direccionSeleccionada} 
+              onChange={e => setDireccionSeleccionada(e.target.value)}
+            >
               <option value="">Selecciona una dirección</option>
               {direcciones.map(dir => (
-                <option key={dir.id_usuario} value={dir.calle}>
-                  {dir.calle}
+                <option key={dir.id_direccion} value={dir.calle}>
+                  {dir.calle} - {dir.ciudad}
                 </option>
               ))}
             </select>
@@ -119,11 +145,14 @@ function Pago({ onClose }) {
                 <button onClick={() => navigate('/agregar-tarjeta')}>Agregar Tarjeta</button>
               </div>
             ) : (
-              <select value={tarjetaSeleccionada} onChange={e => setTarjetaSeleccionada(e.target.value)}>
+              <select 
+                value={tarjetaSeleccionada} 
+                onChange={e => setTarjetaSeleccionada(e.target.value)}
+              >
                 <option value="">Selecciona una tarjeta</option>
                 {tarjetas.map(tar => (
-                  <option key={tar.id} value={tar.numero_tarjeta}>
-                    {tar.nombre} - **** {tar.numero_tarjeta?.slice(-4) || '****'}
+                  <option key={tar.id_tarjeta} value={tar.numero_tarjeta}>
+                    {tar.titular} - **** {tar.numero_tarjeta?.slice(-4) || '****'}
                   </option>
                 ))}
               </select>
