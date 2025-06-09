@@ -20,7 +20,7 @@ const Restaurantes = ({ inicio = 0, cantidad = 4 }) => {
   return (
     <div>
       <div className="lista-restaurantes">
-        {restaurantes((restaurante) => (
+        {restaurantes.map((restaurante) => (
           <Link
             key={restaurante.id_restaurante}
             to={`/restaurante/${restaurante.id_restaurante}`}
