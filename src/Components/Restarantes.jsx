@@ -33,7 +33,7 @@ const Restaurantes = ({ inicio = 0, cantidad = 4 }) => {
 
               <div className="Card-restaurante-estrella">
                 <section className="Card-estrella">
-                  <img src={restaurante.logo} alt="logo restaurante" />
+                  <img src={restaurante.logoUrl} alt="logo restaurante" />
                   <h3>{restaurante.nombre}</h3>
                   <p>⭐{restaurante.estrellas || "4.5"}</p>
                 </section>
