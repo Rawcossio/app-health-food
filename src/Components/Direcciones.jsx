@@ -78,7 +78,7 @@ const Direcciones = ({ onClose }) => {
                 </div>
                 <input type="radio" name="direccion" id={`direccion-${direccion.id}`} />
               </div>
-              <p>{direccion.direccion}</p>
+              <p>{direccion.calle}</p>
 
               {/* Botón para eliminar */}
               <button
