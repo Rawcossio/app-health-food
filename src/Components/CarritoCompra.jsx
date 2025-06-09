@@ -123,18 +123,7 @@ function CarritoCompra({ abierto, cerrado }) {
 
           }
 
-          <button className="boton-carrito" onClick={iralugar}>Ir al checkout</button>
-          <button className="boton-carrito" onClick={() => {
-            // Verifica si hay usuario logueado
-            const usuario = localStorage.getItem("usuario");
-            if (!usuario) {
-              window.location.href = "/";
-            } else {
-              window.location.href = "/HomeUser";
-            }
-          }}>
-            Seguir comprando
-          </button>
+          
 
         </div>
       </div>
