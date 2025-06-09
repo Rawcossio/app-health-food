@@ -116,10 +116,10 @@ function CarritoCompra({ abierto, cerrado }) {
           <button className="boton-carrito" onClick={() => {
             // Verifica si hay usuario logueado
             const usuario = localStorage.getItem("usuario");
-            if (usuario) {
+            if (!usuario) {
               window.location.href = "/";
             } else {
-              window.location.href = "/homeuser";
+              window.location.href = "/HomeUser";
             }
           }}>
             Seguir comprando
