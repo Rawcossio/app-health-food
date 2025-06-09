@@ -20,12 +20,26 @@ const Restaurantes = () => {
       <div className="lista-restaurantes">
         {restaurantes.map((restaurante) => (
           <Link
-            key={restaurante.id_restaurante} // aquí el id correcto
+            key={restaurante.id_restaurante}
             to={`/restaurante/${restaurante.id_restaurante}`}
             className="Card-restaurantes"
           >
-            <h2>{restaurante.nombre}</h2>
-            <p>{restaurante.categoria}</p>
+            <section className="Card-restaurantes">
+              <div className="Img-restaurantes">
+                <img src={restaurante.portadaUrl} alt={restaurante.nombre} />
+                <button>{restaurante.oferta || "10%"} off</button>
+                <p>🕓Fast</p>
+              </div>
+
+              <div className="Card-restaurante-estrella">
+                <section className="Card-estrella">
+                  <img src={restaurante.logoUrl} alt="logo restaurante" />
+                  <h3>{restaurante.nombre}</h3>
+                  <p>⭐{restaurante.estrellas || "4.5"}</p>
+                </section>
+                <button>{restaurante.boton || "Ver más"}</button>
+              </div>
+            </section>
           </Link>
         ))}
       </div>
