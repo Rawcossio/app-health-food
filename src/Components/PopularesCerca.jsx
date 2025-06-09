@@ -37,7 +37,7 @@ const PopularesCerca = () => {
         carrito.push({ ...producto, cantidad: 1 });
       }
       localStorage.setItem("carrito", JSON.stringify(carrito));
-      // actualizarCarrito("carrito");
+      actualizarCarrito("carrito");
       console.log("Guardado en localStorage:", carrito);
     } catch (error) {
       console.error("Error al guardar en carrito:", error);

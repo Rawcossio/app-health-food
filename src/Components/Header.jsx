@@ -5,10 +5,7 @@ import { use } from "react";
 
 function Header() {
   const [carritoItems, setCarritoItems] = useState([]);
-  const [carritoAbierto, setCarritoAbierto] = useState(false);
-  
-  console.log("Carrito items en Header:", carritoItems);
-  
+  const [carritoAbierto, setCarritoAbierto] = useState(false); 
 
   useEffect(() => {
     const actualizarCarrito = () => {
@@ -18,7 +15,7 @@ function Header() {
     // Actualiza al abrir/cerrar el modal
     actualizarCarrito();
 
-    // window.addEventListener('carritoActualizadoTarjeta', actualizarCarrito);
+    window.addEventListener('carritoActualizadoTarjeta', actualizarCarrito);
   
 
     // Escucha cambios en el carrito desde cualquier parte de la app
@@ -26,7 +23,7 @@ function Header() {
     window.addEventListener("storage", actualizarCarrito);
 
     return () => {
-      // window.removeEventListener("carritoActualizadoTarjeta", actualizarCarrito);
+      window.removeEventListener("carritoActualizadoTarjeta", actualizarCarrito);
       window.removeEventListener("carritoActualizado", actualizarCarrito);
       window.removeEventListener("storage", actualizarCarrito);
     };
@@ -72,7 +69,7 @@ function Header() {
           <img src="./carrito.png" alt="" /> Carrito
           {carritoItems.length > 0 && (
             <span className="carrito-contador">
-              {/* {carritoItems.reduce((acc, item) => acc + item.cantidad, 0)} */}
+              {carritoItems.reduce((acc, item) => acc + item.cantidad, 0)}
             </span>
           )}
         </div>
