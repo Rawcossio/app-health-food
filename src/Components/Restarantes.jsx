@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-const Restaurantes = () => {
+const Restaurantes = ({ inicio = 0, cantidad = 4 }) => {
   const [restaurantes, setRestaurantes] = useState([]);
 
   useEffect(() => {
@@ -13,6 +13,9 @@ const Restaurantes = () => {
       })
       .catch((err) => console.error(err));
   }, []);
+
+    const restaurantesAMostrar = restaurantes.slice(inicio, inicio + cantidad);
+
 
   return (
     <div>
@@ -30,7 +33,7 @@ const Restaurantes = () => {
 
               <div className="Card-restaurante-estrella">
                 <section className="Card-estrella">
-                  <img src={restaurante.logoUrl} alt="logo restaurante" />
+                  <img src={restaurante.logo} alt="logo restaurante" />
                   <h3>{restaurante.nombre}</h3>
                   <p>⭐{restaurante.estrellas || "4.5"}</p>
                 </section>

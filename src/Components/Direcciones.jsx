@@ -14,7 +14,7 @@ const Direcciones = ({ onClose }) => {
   // Función para obtener las direcciones del usuario desde JSON Server
   const obtenerDirecciones = async () => {
     try {
-      const respuesta = await axios.get('http://localhost:3000/direcciones');
+      const respuesta = await axios.get('https://app-health-food-back-2.onrender.com/direccion');
       setDirecciones(respuesta.data);
     } catch (error) {
       console.error('Error al obtener las direcciones:', error);
@@ -39,7 +39,7 @@ const Direcciones = ({ onClose }) => {
 
     if (resultado.isConfirmed) {
       try {
-        await axios.delete(`http://localhost:3000/direcciones/${id}`);
+        await axios.delete(`https://app-health-food-back-2.onrender.com/direccion/${id}`);
         obtenerDirecciones();
 
         Swal.fire({
