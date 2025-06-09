@@ -8,21 +8,37 @@ import Swal from "sweetalert2";
 const MetodoPago = ({ onClose }) => {
   const [mostrarAgregarTarjeta, setMostrarAgregarTarjeta] = useState(false);
   const [tarjetas, setTarjetas] = useState([]);
+  const usuario = JSON.parse(localStorage.getItem("usuario"));
 
   const obtenerTarjetas = async () => {
     try {
-      const res = await axios.get(
-        "https://app-health-food-back-2.onrender.com/tarjeta"
-      );
-      setTarjetas(res.data);
+      const respuesta = await axios.get('https://app-health-food-back-2.onrender.com/usuario');
+      const usuarios = respuesta.data;
+      
+      // Encontrar el usuario actual por su ID
+      const usuarioActual = usuarios.find(u => u.id === usuario.id);
+      
+      if (usuarioActual && usuarioActual.tarjetas) {
+        setTarjetas(usuarioActual.tarjetas);
+        console.log('Tarjetas cargadas:', usuarioActual.tarjetas);
+      } else {
+        setTarjetas([]);
+      }
     } catch (error) {
-      console.error("Error al obtener las tarjetas:", error);
+      console.error('Error al obtener las tarjetas:', error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'No se pudieron cargar las tarjetas'
+      });
     }
   };
 
   useEffect(() => {
-    obtenerTarjetas();
-  }, []);
+    if (usuario?.id) {
+      obtenerTarjetas();
+    }
+  }, [usuario]);
 
   const handleTarjetaAgregada = () => {
     obtenerTarjetas();

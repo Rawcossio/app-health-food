@@ -93,7 +93,7 @@ function Pago({ onClose }) {
             <select value={direccionSeleccionada} onChange={e => setDireccionSeleccionada(e.target.value)}>
               <option value="">Selecciona una dirección</option>
               {direcciones.map(dir => (
-                <option key={dir.id} value={dir.calle}>
+                <option key={dir.id_usuario} value={dir.calle}>
                   {dir.calle}
                 </option>
               ))}
