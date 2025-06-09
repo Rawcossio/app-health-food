@@ -5,58 +5,60 @@ const MisOrdenes = ({ onClose }) => {
 
     const [ordenes, setOrdenes] = useState([]);
 
-    useEffect(() => {
-        const ordenesGuardadas = JSON.parse(localStorage.getItem("ordenes") || "[]");
-        setOrdenes(ordenesGuardadas);
-    }, []);
+  useEffect(() => {
+    const ordenesGuardadas = JSON.parse(localStorage.getItem("ordenes") || "[]");
+    setOrdenes(ordenesGuardadas);
+  }, []);
+
 
     return (
-        <section className="ordenes-contenedor">
+    <section className="ordenes-contenedor">
+      <div className="ordenes-modal-overlay">
+        <section className="ordenes-modal">
+          <button onClick={onClose} className="btn-cerrar">✖</button>
+          <h2 className="ordenes-titulo">Mis Órdenes</h2>
 
-            <div className="ordenes-modal-overlay">
-                <section className="ordenes-modal">
-                    <button onClick={onClose} className="btn-cerrar">✖</button>
-                    <h2 className="ordenes-titulo">Mis Órdenes</h2>
+          <div className="ordenes-scroll">
+            <section className="ordenes-grid">
+              {ordenes.length === 0 ? (
+                <p>No tienes órdenes registradas aún.</p>
+              ) : (
+                ordenes.map((orden) => (
+                  <div className="orden-card" key={orden.id}>
+                    <h3>Pedido #{orden.id}</h3>
+                    <p><strong>Fecha:</strong> {orden.fecha}</p>
+                    <p><strong>Dirección:</strong> {orden.direccion}</p>
+                    <p><strong>Método de Pago:</strong> {orden.metodoPago}</p>
+                    {orden.metodoPago === "tarjeta" && (
+                      <p><strong>Tarjeta:</strong> **** {orden.tarjeta.slice(-4)}</p>
+                    )}
+                    <p><strong>Tiempo estimado:</strong> {orden.tiempoEntrega}</p>
 
+                    {orden.productos.map((producto, index) => (
+                      <div key={index} className="orden-producto">
+                        <img src={producto.imagenUrl} alt={producto.nombre} className="imagen-comida" />
+                        <div className="producto-detalles">
+                          <h4>{producto.nombre}</h4>
+                          <p>Precio: ${producto.precio.toLocaleString("es-CO")}</p>
+                          <p>Cantidad: {producto.cantidad}</p>
+                        </div>
+                      </div>
+                    ))}
 
-                    <div className="ordenes-scroll">
-                        <section className="ordenes-grid">
-                            {ordenes.length === 0 ? (
-                                <p>No tienes órdenes registradas aún.</p>
-                            ) : (
-                                ordenes.map((orden) => (
-                                    <div className="orden-card" key={orden.id}>
-                                        <h3>Pedido #{orden.id}</h3>
-                                        <p><strong>Fecha:</strong> {orden.fecha}</p>
-
-                                        {orden.productos.map((producto, index) => (
-                                            <div key={index} className="orden-producto">
-                                                <img src={producto.imagenUrl} alt={producto.nombre} className="imagen-comida" />
-                                                <div className="producto-detalles">
-                                                    <h4>{producto.nombre}</h4>
-                                                    <p>Precio: ${producto.precio.toLocaleString("es-CO")}</p>
-                                                    <p>Cantidad: {producto.cantidad}</p>
-                                                </div>
-                                            </div>
-                                        ))
-                                        }
-
-                                        <p><strong>Tota:</strong> ${orden.total.toLocaleString("es-CO")}</p>
-                                        <p><strong>Estado:</strong>
-                                            <span className={`estado ${orden.estado.toLowerCase()}`}>
-                                                {orden.estado}
-                                            </span>
-                                        </p>
-                                    </div>
-                                ))
-                            )}
-                        </section>
-
-                    </div>
-                </section>
-            </div >
-
-        </section >
-    );
+                    <p><strong>Total:</strong> ${orden.total.toLocaleString("es-CO")}</p>
+                    <p><strong>Estado:</strong>
+                      <span className={`estado ${orden.estado.toLowerCase().replace(/\s/g, "-")}`}>
+                        {orden.estado}
+                      </span>
+                    </p>
+                  </div>
+                ))
+              )}
+            </section>
+          </div>
+        </section>
+      </div>
+    </section>
+  );
 }
 export default MisOrdenes;

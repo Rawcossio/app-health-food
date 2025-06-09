@@ -45,29 +45,32 @@
   "repartidor": [],
   "direcciones": [
     {
-      "id": "7584",
+      "id": "5eb3",
+      "ciudad": "Bogotá",
+      "direccion": "cll 80",
+      "tipo": "Casa"
+    },
+    {
+      "id": "d983",
       "ciudad": "Cartagena",
-      "direccion": "cll 30"
+      "direccion": "cll 60",
+      "tipo": "Casa"
+    }
+  ],
+  "tarjetas": [
+    {
+      "id": "8315",
+      "propietario": "Estefany",
+      "numero": "2512573487132659813",
+      "fecha": "2025-11",
+      "cvv": "2"
     },
     {
-      "id": "0a9e",
-      "ciudad": "Medellín",
-      "direccion": "cll 80"
-    },
-    {
-      "id": "1879",
-      "ciudad": "Cali",
-      "direccion": "cll 50"
-    },
-    {
-      "id": "0589",
-      "ciudad": "Bucaramanga",
-      "direccion": "cll 60"
-    },
-    {
-      "id": "0402",
-      "ciudad": "Cali",
-      "direccion": "cll 30"
+      "id": "c5fa",
+      "propietario": "Juan Escobar",
+      "numero": "397643642826581212",
+      "fecha": "2025-11",
+      "cvv": "7"
     }
   ]
 }

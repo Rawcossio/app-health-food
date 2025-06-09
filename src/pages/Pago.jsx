@@ -1,97 +1,120 @@
+import { useState, useEffect } from 'react';
 import '../pages/Pago.css'
+import Swal from 'sweetalert2';
+import axios from 'axios';
 
-function Pago({ infor }) {
+function Pago({ onClose }) {
+
+    const [carrito, setCarrito] = useState([]);
+    const [direcciones, setDirecciones] = useState([]);
+    const [tarjetas, setTarjetas] = useState([]);
+    const [direccionSeleccionada, setDireccionSeleccionada] = useState("");
+    const [metodoPago, setMetodoPago] = useState("");
+    const [tarjetaSeleccionada, setTarjetaSeleccionada] = useState("");
+
+    useEffect(() => {
+        const carritoGuardado = JSON.parse(localStorage.getItem("carrito") || "[]");
+        setCarrito(carritoGuardado);
+
+        axios.get("http://localhost:3000/direcciones")
+            .then(res => setDirecciones(res.data))
+            .catch(() => setDirecciones([]));
+
+        axios.get("http://localhost:3000/tarjetas")
+            .then(res => setTarjetas(res.data))
+            .catch(() => setTarjetas([]));
+    }, []);
+
+    const calcularTotal = () => {
+        return carrito.reduce((acc, item) => acc + item.precio * item.cantidad, 0);
+    };
+
+    const handlePagar = () => {
+        if (!direccionSeleccionada || !metodoPago || (metodoPago === "tarjeta" && !tarjetaSeleccionada)) {
+            Swal.fire("Faltan datos", "Completa todos los campos antes de pagar", "warning");
+            return;
+        }
+
+        const orden = {
+            id: Date.now(),
+            productos: carrito,
+            total: calcularTotal(),
+            direccion: direccionSeleccionada,
+            metodoPago: metodoPago,
+            tarjeta: metodoPago === "tarjeta" ? tarjetaSeleccionada : null,
+            estado: metodoPago === "tarjeta" ? "Pagado" : "Pendiente de pago",
+            fecha: new Date().toLocaleString(),
+            tiempoEntrega: "30 minutos"
+        };
+
+        const ordenesPrevias = JSON.parse(localStorage.getItem("ordenes") || "[]");
+        ordenesPrevias.push(orden);
+        localStorage.setItem("ordenes", JSON.stringify(ordenesPrevias));
+        localStorage.removeItem("carrito");
+
+        Swal.fire("¡Orden confirmada!", "Tu pedido está en camino.", "success").then(() => {
+            onClose();
+        });
+    };
+
     return (
         <section className="pago">
-            <div className="pago-contenido">
+            <div className="pago-contenedor">
 
-                <header className="pago-header">
-                    <h1>Pago</h1>
-                </header>
+                <h2 className="pago-titulo">Resumen del Pedido</h2>
+                <button onClick={onClose} className="btn-cerrar">✖</button>
 
-                <section className='pago-editar'>
-                    <h2>Dirección de envio</h2>
-                    <img src="public\Write icon.png" alt="" />
-                </section>
-
-                <div className='pago-direccion'>
-                    <p>Calle 78 #77-8, Barrio El Poblado,medellin</p>
+                <div className="pago-listado-productos">
+                    {carrito.map((item, idx) => (
+                        <div key={idx} className="pago-producto">
+                            <img src={item.imagenUrl} alt={item.nombre} className="pago-img" />
+                            <div>
+                                <h4>{item.nombre}</h4>
+                                <p>Precio: ${item.precio}</p>
+                                <p>Cantidad: {item.cantidad}</p>
+                            </div>
+                        </div>
+                    ))}
                 </div>
 
+                <h3 className="pago-total">Total: ${calcularTotal().toLocaleString("es-CO")}</h3>
 
-                <section className='pago-objeto'>
-                    <div className='pago-order'>
-                        <h2>Order Summary</h2>
+                <div className="pago-seleccion">
+                    <label>Dirección de envío:</label>
+                    <select value={direccionSeleccionada} onChange={e => setDireccionSeleccionada(e.target.value)}>
+                        <option value="">Selecciona una dirección</option>
+                        {direcciones.map(dir => (
+                            <option key={dir.id} value={dir.direccion}>
+                                {dir.direccion}
+                            </option>
+                        ))}
+                    </select>
+                </div>
 
-                        <div className='pago-precio'>
-                            <button>editar</button>
-                            <h2>$40.000</h2>
-                        </div>
+                <div className="pago-seleccion">
+                    <label>Método de pago:</label>
+                    <select value={metodoPago} onChange={e => setMetodoPago(e.target.value)}>
+                        <option value="">Selecciona un método</option>
+                        <option value="efectivo">Efectivo</option>
+                        <option value="tarjeta">Tarjeta</option>
+                    </select>
+                </div>
 
+                {metodoPago === "tarjeta" && (
+                    <div className="pago-seleccion">
+                        <label>Selecciona tarjeta:</label>
+                        <select value={tarjetaSeleccionada} onChange={e => setTarjetaSeleccionada(e.target.value)}>
+                            <option value="">Selecciona una tarjeta</option>
+                            {tarjetas.map(tar => (
+                                <option key={tar.id} value={tar.numero}>
+                                    {tar.nombre} - **** {tar.numero.slice(-4)}
+                                </option>
+                            ))}
+                        </select>
                     </div>
+                )}
 
-                    <div className='pago-producto'>
-
-                        <div className='pago-articulo'>
-                            <p>Hamburgesa con queso</p>
-                            <p>Broccoli <br />
-                                Lasagna</p>
-                        </div>
-
-                        <div className='pago-articulos'>
-                            <p>2 artículos</p>
-                            <p>1 artículos</p>
-                        </div>
-                    </div>
-                </section>
-
-
-
-
-                <section className='pago-tarjeta'>
-                    <div className='tarjeta-texto'>
-                        <h2>Payment Method</h2>
-                        <div className='tarjeta-boton'>
-                            <button>editar</button>
-                        </div>
-                    </div>
-
-                    <div className='tarjeta-metodo'>
-                        <div className='tarjeta-logo'>
-                            <img src="public\vector.png" alt="logo" />
-                            <p>tarjeta credito</p>
-                        </div>
-
-                        <div className='tarjeta-numero'>
-                            <p>*** *** *** 43 /00 /000</p>
-                        </div>
-                    </div>
-                </section>
-
-                <section className='pago-pedido'>
-
-                    <div className='pedido-texto-titulo'>
-                    <h2>Delivery Time</h2>
-                    </div>
-
-                    <div className='pedido-texto'>
-                        <p>Estimated Delivery</p>
-
-
-                        <div className='pedido-texto-parrafo'>
-                            <h2>25 mins</h2>
-                        </div>
-
-
-
-                    </div>
-
-                </section>
-                <section className='boton-pago'>
-                <button >Paga ahora</button>
-                </section>
-
-                
+                <button className="btn-pagar" onClick={handlePagar}>Pagar</button>
 
             </div>
         </section>

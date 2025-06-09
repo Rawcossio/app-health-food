@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import './CarritoCompra.css';
+import Pago from '../pages/Pago.jsx';
 
 function CarritoCompra({ abierto, cerrado }) {
   const [carrito, setCarrito] = useState([]);
-
+  const [mostrarPago, setMostrarPago] = useState(false);
 
   useEffect(() => {
     if (abierto) {
@@ -105,7 +106,14 @@ function CarritoCompra({ abierto, cerrado }) {
           <h1>${total.toLocaleString("es-CO")}</h1>
         </div>
         <div className="carrito-boton">
-          <button className="boton-carrito" onClick={iralugar}>Ir al checkout</button>
+          <button className="boton-carrito" 
+          onClick={() => setMostrarPago(true)}>
+            Ir al checkout
+          </button>{mostrarPago && (
+            <Pago onClose={() => setMostrarPago(false)}/>
+          )
+
+          }
         </div>
       </div>
     </div>
@@ -115,3 +123,4 @@ function CarritoCompra({ abierto, cerrado }) {
 }
 
 export default CarritoCompra;
+

@@ -1,33 +1,48 @@
 import { useState } from 'react';
 import './AgregarDireccion.css';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
-const AgregarDireccion = ({onClose, onDireccionGuardada}) => {
+const AgregarDireccion = ({onClose}) => {
 
   const [ciudad, setCiudad] = useState('');
   const [direccion, setDireccion] = useState('');
 
-  const handleGuardar = async () => {
-    if (!ciudad || !direccion) {
-      alert('Por favor completa todos los campos');
-      return;
-    }
+ const guardarDireccion = async () => {
+  if (!ciudad || !direccion) {
+    Swal.fire({
+      icon: 'warning',
+      title: 'Campos incompletos',
+      text: 'Por favor, completa todos los campos.'
+    });
+    return;
+  }
 
-     const nuevaDireccion = {
+  try {
+    await axios.post('http://localhost:3000/direcciones', {
       ciudad,
-      direccion
-    };
+      direccion,
+      tipo: 'Casa',
+    });
 
-    try {
-      const response = await axios.post('http://localhost:3000/direcciones', nuevaDireccion);
-      onDireccionGuardada(response.data); // Llama al padre para actualizar lista
-      onClose(); // Cierra el formulario
-    } catch (error) {
-      console.error('Error al guardar dirección:', error);
-    }
-  };
+    Swal.fire({
+      icon: 'success',
+      title: 'Dirección guardada',
+      text: 'La dirección ha sido guardada exitosamente.',
+      timer: 2000,
+      showConfirmButton: false
+    });
 
-  
+    onClose();
+  } catch (error) {
+    console.error('Error al guardar la dirección:', error);
+    Swal.fire({
+      icon: 'error',
+      title: 'Error',
+      text: 'Ocurrió un error al guardar la dirección. Por favor, inténtalo de nuevo.'
+    });
+  }
+};
 
   return (
     <section className="agregar-direccion">
@@ -73,7 +88,7 @@ const AgregarDireccion = ({onClose, onDireccionGuardada}) => {
         </div>
 
         <div className="agregar-footer">
-          <button onClick={handleGuardar}>Guardar Dirección</button>
+           <button onClick={guardarDireccion}>Guardar Dirección</button>
           <button onClick={onClose}>Volver</button>
         </div>
       </div>
@@ -81,4 +96,5 @@ const AgregarDireccion = ({onClose, onDireccionGuardada}) => {
   );
 };
 
-export default AgregarDireccion;
+
+export default AgregarDireccion
