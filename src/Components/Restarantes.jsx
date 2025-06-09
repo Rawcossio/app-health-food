@@ -16,19 +16,16 @@ const Restaurantes = () => {
 
   return (
     <div>
-      <h1>Lista de Restaurantes</h1>
       <div className="lista-restaurantes">
         {restaurantes.map((restaurante) => (
           <Link
             key={restaurante.id_restaurante}
             to={`/restaurante/${restaurante.id_restaurante}`}
-            className="Card-restaurantes"
-          >
-            <section className="Card-restaurantes">
+            className="Card-restaurantes">
+            <section>
               <div className="Img-restaurantes">
                 <img src={restaurante.portadaUrl} alt={restaurante.nombre} />
                 <button>{restaurante.oferta || "10%"} off</button>
-                <p>🕓Fast</p>
               </div>
 
               <div className="Card-restaurante-estrella">
