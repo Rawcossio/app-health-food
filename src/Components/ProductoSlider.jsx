@@ -61,6 +61,7 @@ const ProductSlider = ({ productos = [] }) => {
               {producto.descuento && (
                 <div className="descuento">{producto.descuento}</div>
               )}
+
               <button className="comprar" onClick={() => agregarCarrito(producto)}>
                 Comprar
               </button>

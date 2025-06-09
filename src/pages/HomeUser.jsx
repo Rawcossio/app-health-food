@@ -21,6 +21,7 @@ import facebook from "/facebook.png";
 import equis from "/equis.png";
 import "./HomeUser.css";
 import PopularesCerca from "../Components/PopularesCerca";
+import Restaurantes from "../Components/Restarantes";
 
 
 const HomeUser = () => {
@@ -50,7 +51,7 @@ const HomeUser = () => {
       <section className="Restaurantes">
         <h2>Restaurantes Destacados</h2>
         <div>
-          <restaurantes/>
+          <Restaurantes/>
         </div>
         <button className="verTodo">Ver todo</button>
       </section>
