@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { actualizarCarrito } from "../helpers/actualizarCarrito";
 
 const apiUrl = "https://app-health-food-back-2.onrender.com/producto";
 
@@ -27,7 +28,6 @@ const PopularesCerca = () => {
 
     try {
       let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
       const index = carrito.findIndex(
         (p) => p.id_producto === producto.id_producto
       );
@@ -36,8 +36,8 @@ const PopularesCerca = () => {
       } else {
         carrito.push({ ...producto, cantidad: 1 });
       }
-
       localStorage.setItem("carrito", JSON.stringify(carrito));
+      actualizarCarrito("carrito");
       console.log("Guardado en localStorage:", carrito);
     } catch (error) {
       console.error("Error al guardar en carrito:", error);

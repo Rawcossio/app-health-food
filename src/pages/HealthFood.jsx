@@ -22,6 +22,7 @@ import facebook from '/facebook.png'
 import equis from '/equis.png'
 import './index.css'
 import PopularesCerca from "../Components/PopularesCerca"
+import Restaurante from "./Restaurante"
 
 
 const HealthFood=()=>{
@@ -48,12 +49,10 @@ const HealthFood=()=>{
         <section className="Restaurantes">
             <h2>Restaurantes Destacados</h2>
             <div>
-                {tiendas.map((tienda)=>{
-                    return<Restaurantes destacado={tienda}/>})}
+                <Restaurantes/>
             </div>
             <div>
-                {restaurantes.map((restaurante)=>{
-                    return<Restaurantes destacado={restaurante}/>})}
+              {/* <Restaurantes/> */}
             </div>
             <button className="verTodo">Ver todo</button>
         </section>

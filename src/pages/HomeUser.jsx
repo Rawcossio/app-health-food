@@ -51,14 +51,7 @@ const HomeUser = () => {
       <section className="Restaurantes">
         <h2>Restaurantes Destacados</h2>
         <div>
-          {tiendas.map((tienda) => {
-            return <Restaurantes destacado={tienda} />;
-          })}
-        </div>
-        <div>
-          {restaurantes.map((restaurante) => {
-            return <Restaurantes destacado={restaurante} />;
-          })}
+          <Restaurantes/>
         </div>
         <button className="verTodo">Ver todo</button>
       </section>

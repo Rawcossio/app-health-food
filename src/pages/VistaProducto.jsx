@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import CarritoCompra from "../Components/CarritoCompra";
 import "./VistaProducto.css";
 
 function VistaProducto() {
@@ -7,7 +8,7 @@ function VistaProducto() {
   const [producto, setProducto] = useState(null);
   const [loading, setLoading] = useState(true);
   const [cantidad, setCantidad] = useState(1);
-  
+  const [carritoAbierto, setCarritoAbierto] = useState(false);
 
   useEffect(() => {
     fetch(`https://app-health-food-back-2.onrender.com/producto/${id}`)
@@ -36,40 +37,45 @@ function VistaProducto() {
   }
 
   const incrementarCantidad = () => setCantidad(cantidad + 1);
-  
+
   const disminuirCantidad = () => {
-    if (cantidad > 1) setCantidad(cantidad - 1);
+    if (cantidad > 1) {
+      setCantidad(cantidad - 1);
+    } else {
+      // Si la cantidad llega a 1 y se intenta bajar, cerrar el modal si existe
+      if (window && window.closeModalProducto) {
+        window.closeModalProducto();
+      }
+    }
   };
 
-    const agregarAlCarrito = () => {
-    const carritoActual = JSON.parse(localStorage.getItem("carrito") || "[]");
-    const existe = carritoActual.find(item => item.id_producto === producto.id_producto);
-  
-    let nuevoCarrito;
-    if (existe) {
-      // Si ya existe, suma la cantidad
-      nuevoCarrito = carritoActual.map(item =>
-        item.id_producto === producto.id_producto
-          ? { ...item, cantidad: item.cantidad + cantidad }
-          : item
-      );
-    } else {
-      // Si no existe, agrega el producto con la cantidad seleccionada
-      nuevoCarrito = [
-        ...carritoActual,
-        {
-          id_producto: producto.id_producto,
-          nombre: producto.nombre,
-          precio: producto.precio,
-          imagenUrl: producto.imagenUrl,
-          cantidad: cantidad,
-        },
-      ];
-    }
-    localStorage.setItem("carrito", JSON.stringify(nuevoCarrito));
-    // Redirige o abre el modal del carrito según tu flujo
-   window.dispatchEvent(new Event("carritoActualizado"));
-  };
+        const agregarAlCarrito = () => {
+          const carritoActual = JSON.parse(localStorage.getItem("carrito") || "[]");
+          const existe = carritoActual.find(item => item.id_producto === producto.id_producto);
+        
+          let nuevoCarrito;
+          if (existe) {
+            nuevoCarrito = carritoActual.map(item =>
+              item.id_producto === producto.id_producto
+                ? { ...item, cantidad: item.cantidad + cantidad }
+                : item
+            );
+          } else {
+            nuevoCarrito = [
+              ...carritoActual,
+              {
+                id_producto: producto.id_producto,
+                nombre: producto.nombre,
+                precio: producto.precio,
+                imagenUrl: producto.imagenUrl,
+                cantidad: cantidad,
+              },
+            ];
+          }
+          localStorage.setItem("carrito", JSON.stringify(nuevoCarrito));
+          window.dispatchEvent(new Event("carritoActualizado"));
+          setCarritoAbierto(true); // <--- Abre el modal localmente
+        };
 
   return (
     <section className="vista">
@@ -96,7 +102,7 @@ function VistaProducto() {
           <h1 className="vista__titulo">{producto.nombre}</h1>
           <p className="vista__ingredientes">{producto.descripcion}</p>
           <div className="vista__precio">
-            <h3>${producto.precio}</h3>
+            <h3>${(producto.precio * cantidad).toLocaleString("es-CO")}</h3>
           </div>
         </main>
 
@@ -106,9 +112,15 @@ function VistaProducto() {
             <div className="vista__cantidad-display">{cantidad}</div>
             <div className="vista__cantidad-btn" onClick={incrementarCantidad}>+</div>
           </div>
-          <buttom className="vista__cart-btn" onClick={agregarAlCarrito}>Ir al carrito</buttom>
+          <button className="vista__cart-btn" onClick={agregarAlCarrito}>Ir al carrito</button>
         </footer>
       </div>
+      {carritoAbierto && (
+        <CarritoCompra
+          abierto={carritoAbierto}
+          cerrado={() => setCarritoAbierto(false)}
+        />
+      )}
     </section>
   );
 }
