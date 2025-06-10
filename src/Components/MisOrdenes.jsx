@@ -2,22 +2,22 @@ import { useEffect, useState } from "react";
 import './MisOrdenes.css'
 
 const MisOrdenes = ({ onClose }) => {
-
-    const [ordenes, setOrdenes] = useState([]);
+  const [ordenes, setOrdenes] = useState([]);
+  const usuarioLogueado = JSON.parse(localStorage.getItem("usuario"));
 
   useEffect(() => {
-    const ordenesGuardadas = JSON.parse(localStorage.getItem("ordenes") || "[]");
-    setOrdenes(ordenesGuardadas);
-  }, []);
+    if (!usuarioLogueado) return;
+    fetch(`http://localhost:3000/orders?userId=${usuarioLogueado.id}`)
+      .then(res => res.json())
+      .then(data => setOrdenes(data));
+  }, [usuarioLogueado]);
 
-
-    return (
+  return (
     <section className="ordenes-contenedor">
       <div className="ordenes-modal-overlay">
         <section className="ordenes-modal">
           <button onClick={onClose} className="btn-cerrar">✖</button>
           <h2 className="ordenes-titulo">Mis Órdenes</h2>
-
           <div className="ordenes-scroll">
             <section className="ordenes-grid">
               {ordenes.length === 0 ? (
@@ -33,7 +33,6 @@ const MisOrdenes = ({ onClose }) => {
                       <p><strong>Tarjeta:</strong> **** {orden.tarjeta.slice(-4)}</p>
                     )}
                     <p><strong>Tiempo estimado:</strong> {orden.tiempoEntrega}</p>
-
                     {orden.productos.map((producto, index) => (
                       <div key={index} className="orden-producto">
                         <img src={producto.imagenUrl} alt={producto.nombre} className="imagen-comida" />
@@ -44,7 +43,6 @@ const MisOrdenes = ({ onClose }) => {
                         </div>
                       </div>
                     ))}
-
                     <p><strong>Total:</strong> ${orden.total.toLocaleString("es-CO")}</p>
                     <p><strong>Estado:</strong>
                       <span className={`estado ${orden.estado.toLowerCase().replace(/\s/g, "-")}`}>
@@ -61,4 +59,5 @@ const MisOrdenes = ({ onClose }) => {
     </section>
   );
 }
+
 export default MisOrdenes;
