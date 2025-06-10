@@ -4,7 +4,6 @@ import EncuentraComida from "../Components/EncuentraComida";
 import ComoFunciona from "../Components/ComoFunciona";
 import { entregas, pedidos, restaurantes } from "../services/dataBase";
 import { funciona } from "../services/dataBase";
-import Restaurantes from "../Components/Restarantes";
 import { tiendas } from "../services/dataBase";
 import InstalarApp from "../Components/InstalarApp";
 import TipoComida from "../Components/TipoComida";
@@ -22,6 +21,7 @@ import facebook from "/facebook.png";
 import equis from "/equis.png";
 import "./HomeUser.css";
 import PopularesCerca from "../Components/PopularesCerca";
+import Restaurantes from "../Components/Restarantes";
 
 
 const HomeUser = () => {

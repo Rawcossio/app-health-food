@@ -1,4 +1,3 @@
-import Restaurantes from "../Components/Restarantes";
 
 export let pedidos = [
   {

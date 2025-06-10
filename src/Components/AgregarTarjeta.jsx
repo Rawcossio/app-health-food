@@ -1,19 +1,20 @@
+import { useState } from "react";
 import Swal from "sweetalert2";
 import "./AgregarTarjeta.css";
 import axios from "axios";
-import { useState } from "react";
 
 const AgregarTarjeta = ({ onClose, onTarjetaGuardada }) => {
-
-  const [propietario, setPropietario] = useState("");
-  const [numero, setNumero] = useState("");
-  const [fecha, setFecha] = useState("");
+  const [titular, setTitular] = useState("");
   const [cvv, setCvv] = useState("");
+  const [numero_tarjeta, setnumero_tarjeta] = useState("");
+  const [fecha_vencimiento, setFecha_vencimiento] = useState("");
+  const usuario = JSON.parse(localStorage.getItem("usuario"));
+  const fecha_final = fecha_vencimiento + "-01"; // Ej: "2025-07" → "2025-07-01"
 
   const guardarTarjeta = async (e) => {
     e.preventDefault();
 
-    if (!propietario || !numero || !fecha || !cvv) {
+    if (!titular || !cvv || !fecha_vencimiento || !numero_tarjeta) {
       Swal.fire({
         icon: "warning",
         title: "Campos incompletos",
@@ -23,32 +24,36 @@ const AgregarTarjeta = ({ onClose, onTarjetaGuardada }) => {
     }
 
     try {
-      await axios.post("http://localhost:3000/tarjetas", {
-        propietario,
-        numero,
-        fecha,
+      // Hacer directamente el POST sin consultar usuarios
+      await axios.post("https://app-health-food-back-2.onrender.com/tarjeta", {
+        titular,
         cvv,
+        fecha_vencimiento: fecha_final,
+        numero_tarjeta,
+        usuario: {
+          id: usuario.id,
+        },
       });
 
       Swal.fire({
         icon: "success",
-        title: "Tarjeta guardada",
-        text: "Tu tarjeta fue guardada exitosamente.",
+        title: "¡Éxito!",
+        text: "Tarjeta guardada correctamente",
+        timer: 1500,
+        showConfirmButton: false,
       });
 
-      onTarjetaGuardada(); // Actualiza la lista en MetodoPago
+      onTarjetaGuardada();
+      onClose();
     } catch (error) {
-      console.error("Error al guardar la tarjeta:", error);
+      console.error("Error:", error);
       Swal.fire({
         icon: "error",
         title: "Error",
-        text: "Ocurrió un error al guardar la tarjeta. Intenta de nuevo.",
+        text: "No se pudo guardar la tarjeta",
       });
     }
   };
-
-
-
 
   return (
     <section className="tarjeta">
@@ -68,8 +73,8 @@ const AgregarTarjeta = ({ onClose, onTarjetaGuardada }) => {
               type="text"
               id="propietario"
               placeholder="Nombre como aparece en la tarjeta"
-              value={propietario}
-              onChange={(e) => setPropietario(e.target.value)}
+              value={titular}
+              onChange={(e) => setTitular(e.target.value)}
             />
           </div>
 
@@ -79,8 +84,8 @@ const AgregarTarjeta = ({ onClose, onTarjetaGuardada }) => {
               type="text"
               id="numero"
               placeholder="0000 0000 0000 0000"
-              value={numero}
-              onChange={(e) => setNumero(e.target.value)}
+              value={numero_tarjeta}
+              onChange={(e) => setnumero_tarjeta(e.target.value)}
               maxLength={19}
             />
           </div>
@@ -92,8 +97,8 @@ const AgregarTarjeta = ({ onClose, onTarjetaGuardada }) => {
                 type="month"
                 id="fecha"
                 placeholder="MM/AA"
-                value={fecha}
-                onChange={(e) => setFecha(e.target.value)}
+                value={fecha_vencimiento}
+                onChange={(e) => setFecha_vencimiento(e.target.value)}
               />
             </div>
             <div className="tarjeta__grupo">
@@ -104,7 +109,7 @@ const AgregarTarjeta = ({ onClose, onTarjetaGuardada }) => {
                 placeholder="000"
                 value={cvv}
                 onChange={(e) => setCvv(e.target.value)}
-                maxLength={4}
+                maxLength={3}
               />
             </div>
           </div>
@@ -113,11 +118,7 @@ const AgregarTarjeta = ({ onClose, onTarjetaGuardada }) => {
             <button className="tarjeta__boton" type="submit">
               Guardar Tarjeta
             </button>
-            <button
-              className="tarjeta__boton"
-              type="button"
-              onClick={onClose}
-            >
+            <button className="tarjeta__boton" type="button" onClick={onClose}>
               Volver
             </button>
           </div>
