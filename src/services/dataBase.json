@@ -481,6 +481,49 @@
       "estado": "Pagado",
       "fecha": "10/6/2025, 2:13:16 p. m.",
       "tiempoEntrega": "30 minutos"
+    },
+    {
+      "id": "9369",
+      "userId": 6,
+      "productos": [
+        {
+          "id_producto": 30,
+          "nombre": "Malteada de Chocolate y Avellanas",
+          "precio": 18000,
+          "precioDescuento": 15500,
+          "descripcion": "Refrescante malteada cremosa con sabor a chocolate y avellanas, decorada con crema batida y trozos de galleta.",
+          "ubicacion": "Carrera 13 #82-55, Bogotá, Colombia",
+          "imagenUrl": "https://i.postimg.cc/T192rHnS/joao-socola.jpg",
+          "cantidad": 2
+        }
+      ],
+      "total": 36000,
+      "direccion": "Cr 52 #10 b sur 33",
+      "metodoPago": "tarjeta",
+      "tarjeta": "1111444422222555",
+      "estado": "Pagado",
+      "fecha": "10/6/2025, 2:16:02 p. m.",
+      "tiempoEntrega": "30 minutos"
+    },
+    {
+      "id": "84b1",
+      "userId": 2,
+      "productos": [
+        {
+          "id_producto": 29,
+          "nombre": "Hamburguesa de Res Clásica",
+          "precio": 25000,
+          "imagenUrl": "https://i.postimg.cc/6pb4vT0K/julieaagaard.jpg",
+          "cantidad": 2
+        }
+      ],
+      "total": 50000,
+      "direccion": "cll 50 #21-20",
+      "metodoPago": "tarjeta",
+      "tarjeta": "10325872465987246",
+      "estado": "Pagado",
+      "fecha": "10/6/2025, 2:35:49 p. m.",
+      "tiempoEntrega": "30 minutos"
     }
   ]
 }
