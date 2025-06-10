@@ -48,7 +48,7 @@ function Pago({ onClose }) {
       }
     };
     obtenerDatos();
-  },[usuario?.id]); // Solo se ejecuta cuando cambia el ID del usuario
+  }, [usuario?.id]); // Solo se ejecuta cuando cambia el ID del usuario
 
   const calcularTotal = () => {
     return carrito.reduce((acc, item) => acc + (item.precio * item.cantidad), 0);
@@ -83,8 +83,8 @@ function Pago({ onClose }) {
       .then(() => {
         Swal.fire('¡Orden confirmada!', 'Tu pedido está en camino.', 'success').then(() => {
           onClose();
-        });
-      });
+        
+      })});
   };
 
   return (
