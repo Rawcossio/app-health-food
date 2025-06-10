@@ -83,8 +83,8 @@ function Pago({ onClose }) {
       .then(() => {
         Swal.fire('¡Orden confirmada!', 'Tu pedido está en camino.', 'success').then(() => {
           onClose();
-        });
-      });
+        
+      })});
   };
 
   return (
