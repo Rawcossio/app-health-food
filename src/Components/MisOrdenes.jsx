@@ -7,9 +7,18 @@ const MisOrdenes = ({ onClose }) => {
 
   useEffect(() => {
     if (!usuarioLogueado) return;
+
+    // 1. Obtener órdenes del backend
     fetch(`http://localhost:3000/orders?userId=${usuarioLogueado.id}`)
       .then(res => res.json())
-      .then(data => setOrdenes(data));
+      .then(ordenesBackend => {
+        // 2. Obtener órdenes del localStorage (anteriores)
+        const ordenesLocal = JSON.parse(localStorage.getItem("ordenes") || "[]")
+          .filter(o => o.userId === usuarioLogueado.id);
+
+        // 3. Combinar ambas listas
+        setOrdenes([...ordenesLocal, ...ordenesBackend]);
+      });
   }, [usuarioLogueado]);
 
   return (
@@ -23,29 +32,29 @@ const MisOrdenes = ({ onClose }) => {
               {ordenes.length === 0 ? (
                 <p>No tienes órdenes registradas aún.</p>
               ) : (
-                ordenes.map((orden) => (
-                  <div className="orden-card" key={orden.id}>
-                    <h3>Pedido #{orden.id}</h3>
+                ordenes.map((orden, idx) => (
+                  <div className="orden-card" key={orden.id || idx}>
+                    <h3>Pedido #{orden.id || idx + 1}</h3>
                     <p><strong>Fecha:</strong> {orden.fecha}</p>
                     <p><strong>Dirección:</strong> {orden.direccion}</p>
                     <p><strong>Método de Pago:</strong> {orden.metodoPago}</p>
-                    {orden.metodoPago === "tarjeta" && (
+                    {orden.metodoPago === "tarjeta" && orden.tarjeta && (
                       <p><strong>Tarjeta:</strong> **** {orden.tarjeta.slice(-4)}</p>
                     )}
                     <p><strong>Tiempo estimado:</strong> {orden.tiempoEntrega}</p>
-                    {orden.productos.map((producto, index) => (
+                    {orden.productos && orden.productos.map((producto, index) => (
                       <div key={index} className="orden-producto">
                         <img src={producto.imagenUrl} alt={producto.nombre} className="imagen-comida" />
                         <div className="producto-detalles">
                           <h4>{producto.nombre}</h4>
-                          <p>Precio: ${producto.precio.toLocaleString("es-CO")}</p>
+                          <p>Precio: ${producto.precio?.toLocaleString("es-CO")}</p>
                           <p>Cantidad: {producto.cantidad}</p>
                         </div>
                       </div>
                     ))}
-                    <p><strong>Total:</strong> ${orden.total.toLocaleString("es-CO")}</p>
+                    <p><strong>Total:</strong> ${orden.total?.toLocaleString("es-CO")}</p>
                     <p><strong>Estado:</strong>
-                      <span className={`estado ${orden.estado.toLowerCase().replace(/\s/g, "-")}`}>
+                      <span className={`estado ${orden.estado?.toLowerCase().replace(/\s/g, "-")}`}>
                         {orden.estado}
                       </span>
                     </p>

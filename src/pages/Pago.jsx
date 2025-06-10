@@ -36,62 +36,17 @@ function Pago({ onClose }) {
           setDirecciones(usuarioData.direcciones || []);
           setTarjetas(usuarioData.tarjetas || []);
         }
-
-
-        const orden = {
-            id: Date.now(),
-            productos: carrito,
-            total: calcularTotal(),
-            direccion: direccionSeleccionada,
-            metodoPago: metodoPago,
-            tarjeta: metodoPago === "tarjeta" ? tarjetaSeleccionada : null,
-            estado: metodoPago === "tarjeta" ? "Pagado" : "Pendiente de pago",
-            fecha: new Date().toLocaleString(),
-            tiempoEntrega: "30 minutos"
-        };
-
-        const ordenesPrevias = JSON.parse(localStorage.getItem("ordenes") || "[]");
-        ordenesPrevias.push(orden);
-        localStorage.setItem("ordenes", JSON.stringify(ordenesPrevias));
-        localStorage.removeItem("carrito");
-
-        const usuarioLogueado = JSON.parse(localStorage.getItem("usuario"));
-
-        const nuevaOrden = {
-            userId: usuarioLogueado.id,
-            fecha: new Date().toISOString().slice(0, 10),
-            direccion: direccionSeleccionada, // Dirección elegida por el usuario
-            metodoPago: metodoPago,           // Método de pago elegido
-            tarjeta: metodoPago === "tarjeta" ? tarjetaSeleccionada : null, // Solo si es tarjeta
-            tiempoEntrega: "30 minutos",
-            productos: carrito,
-            total: calcularTotal(),
-            estado: metodoPago === "tarjeta" ? "Pagado" : "Pendiente de pago"
-        };
-
-        fetch('http://localhost:3000/orders', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(nuevaOrden)
-        })
-            .then(res => res.json());
-
-        Swal.fire("¡Orden confirmada!", "Tu pedido está en camino.", "success").then(() => {
-            onClose();
-
-          }
-        }catch(error){
-          console.error('Error al cargar datos:', error);
-          Swal.fire({
-            icon: 'error',
-            title: 'Error',
-            text: 'No se pudieron cargar los datos del usuario'
-  
-          });
-        } finally {
-          setIsLoading(false);
-        }
-
+      } catch (error) {
+        console.error('Error al cargar datos:', error);
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: 'No se pudieron cargar los datos del usuario'
+        });
+      } finally {
+        setIsLoading(false);
+      }
+    };
     obtenerDatos();
   },[usuario?.id]); // Solo se ejecuta cuando cambia el ID del usuario
 
@@ -105,26 +60,31 @@ function Pago({ onClose }) {
       return;
     }
 
-    const orden = {
-      id: Date.now(),
+    const usuarioLogueado = JSON.parse(localStorage.getItem("usuario"));
+
+    const nuevaOrden = {
+      userId: usuarioLogueado.id,
       productos: carrito,
       total: calcularTotal(),
       direccion: direccionSeleccionada,
       metodoPago: metodoPago,
-      tarjeta: metodoPago === 'tarjeta' ? tarjetaSeleccionada : null,
-      estado: metodoPago === 'tarjeta' ? 'Pagado' : 'Pendiente de pago',
+      tarjeta: metodoPago === "tarjeta" ? tarjetaSeleccionada : null,
+      estado: metodoPago === "tarjeta" ? "Pagado" : "Pendiente de pago",
       fecha: new Date().toLocaleString(),
-      tiempoEntrega: '30 minutos'
+      tiempoEntrega: "30 minutos"
     };
 
-    const ordenesPrevias = JSON.parse(localStorage.getItem('ordenes') || '[]');
-    ordenesPrevias.push(orden);
-    localStorage.setItem('ordenes', JSON.stringify(ordenesPrevias));
-    localStorage.removeItem('carrito');
-
-    Swal.fire('¡Orden confirmada!', 'Tu pedido está en camino.', 'success').then(() => {
-      onClose();
-    });
+    fetch('http://localhost:3000/orders', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(nuevaOrden)
+    })
+      .then(res => res.json())
+      .then(() => {
+        Swal.fire('¡Orden confirmada!', 'Tu pedido está en camino.', 'success').then(() => {
+          onClose();
+        });
+      });
   };
 
   return (

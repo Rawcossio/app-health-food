@@ -234,6 +234,230 @@
       ],
       "total": 20000,
       "estado": "Pendiente de pago"
+    },
+    {
+      "id": "8b29",
+      "userId": 12,
+      "productos": [
+        {
+          "id_producto": 30,
+          "nombre": "Malteada de Chocolate y Avellanas",
+          "precio": 18000,
+          "precioDescuento": 15500,
+          "descripcion": "Refrescante malteada cremosa con sabor a chocolate y avellanas, decorada con crema batida y trozos de galleta.",
+          "ubicacion": "Carrera 13 #82-55, Bogotá, Colombia",
+          "imagenUrl": "https://i.postimg.cc/T192rHnS/joao-socola.jpg",
+          "cantidad": 1
+        }
+      ],
+      "total": 18000,
+      "direccion": "cll 60",
+      "metodoPago": "efectivo",
+      "tarjeta": null,
+      "estado": "Pendiente de pago",
+      "fecha": "9/6/2025, 20:08:55",
+      "tiempoEntrega": "30 minutos"
+    },
+    {
+      "id": "1df4",
+      "userId": 12,
+      "productos": [
+        {
+          "id_producto": 23,
+          "nombre": "Ensalada de Pavo con Albahaca",
+          "precio": 31900,
+          "precioDescuento": 28710,
+          "descripcion": "Pechuga de pavo con ajonjolí y albahaca, lechugas, rúgula, apio, champiñones, pimentón, tomate cherry, cebollas crocantes y vinagreta oriental.",
+          "ubicacion": "Carrera 7 #85-20, Bogotá, Colombia",
+          "imagenUrl": "https://i.postimg.cc/jqmpbyLW/tmp-Imgd8fa4ab3-5bd8-4692-8333-fad347ac4116.webp",
+          "cantidad": 1
+        },
+        {
+          "id_producto": 29,
+          "nombre": "Hamburguesa de Res Clásica",
+          "precio": 25000,
+          "precioDescuento": 21900,
+          "descripcion": "Jugosa hamburguesa de carne de res, queso cheddar, lechuga fresca y pan artesanal. Una experiencia clásica y deliciosa.",
+          "ubicacion": "Calle 93 #12-34, Bogotá, Colombia",
+          "imagenUrl": "https://i.postimg.cc/6pb4vT0K/julieaagaard.jpg",
+          "cantidad": 1
+        },
+        {
+          "id_producto": 30,
+          "nombre": "Malteada de Chocolate y Avellanas",
+          "precio": 18000,
+          "precioDescuento": 15500,
+          "descripcion": "Refrescante malteada cremosa con sabor a chocolate y avellanas, decorada con crema batida y trozos de galleta.",
+          "ubicacion": "Carrera 13 #82-55, Bogotá, Colombia",
+          "imagenUrl": "https://i.postimg.cc/T192rHnS/joao-socola.jpg",
+          "cantidad": 1
+        }
+      ],
+      "total": 74900,
+      "direccion": "cll 60",
+      "metodoPago": "efectivo",
+      "tarjeta": null,
+      "estado": "Pendiente de pago",
+      "fecha": "9/6/2025, 20:09:37",
+      "tiempoEntrega": "30 minutos"
+    },
+    {
+      "id": "0d51",
+      "userId": 12,
+      "productos": [
+        {
+          "id_producto": 23,
+          "nombre": "Ensalada de Pavo con Albahaca",
+          "precio": 31900,
+          "precioDescuento": 28710,
+          "descripcion": "Pechuga de pavo con ajonjolí y albahaca, lechugas, rúgula, apio, champiñones, pimentón, tomate cherry, cebollas crocantes y vinagreta oriental.",
+          "ubicacion": "Carrera 7 #85-20, Bogotá, Colombia",
+          "imagenUrl": "https://i.postimg.cc/jqmpbyLW/tmp-Imgd8fa4ab3-5bd8-4692-8333-fad347ac4116.webp",
+          "cantidad": 1
+        },
+        {
+          "id_producto": 29,
+          "nombre": "Hamburguesa de Res Clásica",
+          "precio": 25000,
+          "precioDescuento": 21900,
+          "descripcion": "Jugosa hamburguesa de carne de res, queso cheddar, lechuga fresca y pan artesanal. Una experiencia clásica y deliciosa.",
+          "ubicacion": "Calle 93 #12-34, Bogotá, Colombia",
+          "imagenUrl": "https://i.postimg.cc/6pb4vT0K/julieaagaard.jpg",
+          "cantidad": 1
+        }
+      ],
+      "total": 56900,
+      "direccion": "cll 60",
+      "metodoPago": "tarjeta",
+      "tarjeta": "1234567876897",
+      "estado": "Pagado",
+      "fecha": "9/6/2025, 20:10:36",
+      "tiempoEntrega": "30 minutos"
+    },
+    {
+      "id": "3fea",
+      "userId": 12,
+      "productos": [
+        {
+          "id_producto": 23,
+          "nombre": "Ensalada de Pavo con Albahaca",
+          "precio": 31900,
+          "precioDescuento": 28710,
+          "descripcion": "Pechuga de pavo con ajonjolí y albahaca, lechugas, rúgula, apio, champiñones, pimentón, tomate cherry, cebollas crocantes y vinagreta oriental.",
+          "ubicacion": "Carrera 7 #85-20, Bogotá, Colombia",
+          "imagenUrl": "https://i.postimg.cc/jqmpbyLW/tmp-Imgd8fa4ab3-5bd8-4692-8333-fad347ac4116.webp",
+          "cantidad": 1
+        }
+      ],
+      "total": 31900,
+      "direccion": "cll 60",
+      "metodoPago": "efectivo",
+      "tarjeta": null,
+      "estado": "Pendiente de pago",
+      "fecha": "9/6/2025, 20:11:42",
+      "tiempoEntrega": "30 minutos"
+    },
+    {
+      "id": "b7ca",
+      "userId": 2,
+      "productos": [
+        {
+          "id_producto": 29,
+          "nombre": "Hamburguesa de Res Clásica",
+          "precio": 25000,
+          "precioDescuento": 21900,
+          "descripcion": "Jugosa hamburguesa de carne de res, queso cheddar, lechuga fresca y pan artesanal. Una experiencia clásica y deliciosa.",
+          "ubicacion": "Calle 93 #12-34, Bogotá, Colombia",
+          "imagenUrl": "https://i.postimg.cc/6pb4vT0K/julieaagaard.jpg",
+          "cantidad": 1
+        },
+        {
+          "id_producto": 30,
+          "nombre": "Malteada de Chocolate y Avellanas",
+          "precio": 18000,
+          "precioDescuento": 15500,
+          "descripcion": "Refrescante malteada cremosa con sabor a chocolate y avellanas, decorada con crema batida y trozos de galleta.",
+          "ubicacion": "Carrera 13 #82-55, Bogotá, Colombia",
+          "imagenUrl": "https://i.postimg.cc/T192rHnS/joao-socola.jpg",
+          "cantidad": 1
+        }
+      ],
+      "total": 43000,
+      "direccion": "calle 323 # 06-22",
+      "metodoPago": "efectivo",
+      "tarjeta": null,
+      "estado": "Pendiente de pago",
+      "fecha": "9/6/2025, 20:17:00",
+      "tiempoEntrega": "30 minutos"
+    },
+    {
+      "id": "26fb",
+      "userId": 2,
+      "productos": [
+        {
+          "id_producto": 30,
+          "nombre": "Malteada de Chocolate y Avellanas",
+          "precio": 18000,
+          "precioDescuento": 15500,
+          "descripcion": "Refrescante malteada cremosa con sabor a chocolate y avellanas, decorada con crema batida y trozos de galleta.",
+          "ubicacion": "Carrera 13 #82-55, Bogotá, Colombia",
+          "imagenUrl": "https://i.postimg.cc/T192rHnS/joao-socola.jpg",
+          "cantidad": 1
+        }
+      ],
+      "total": 18000,
+      "direccion": "calle 201 # 90-55",
+      "metodoPago": "efectivo",
+      "tarjeta": null,
+      "estado": "Pendiente de pago",
+      "fecha": "9/6/2025, 20:27:53",
+      "tiempoEntrega": "30 minutos"
+    },
+    {
+      "id": "5926",
+      "userId": 2,
+      "productos": [
+        {
+          "id_producto": 30,
+          "nombre": "Malteada de Chocolate y Avellanas",
+          "precio": 18000,
+          "precioDescuento": 15500,
+          "descripcion": "Refrescante malteada cremosa con sabor a chocolate y avellanas, decorada con crema batida y trozos de galleta.",
+          "ubicacion": "Carrera 13 #82-55, Bogotá, Colombia",
+          "imagenUrl": "https://i.postimg.cc/T192rHnS/joao-socola.jpg",
+          "cantidad": 1
+        }
+      ],
+      "total": 18000,
+      "direccion": "calle 323 # 06-22",
+      "metodoPago": "efectivo",
+      "tarjeta": null,
+      "estado": "Pendiente de pago",
+      "fecha": "9/6/2025, 20:41:05",
+      "tiempoEntrega": "30 minutos"
+    },
+    {
+      "id": "886e",
+      "userId": 2,
+      "productos": [
+        {
+          "id_producto": 30,
+          "nombre": "Malteada de Chocolate y Avellanas",
+          "precio": 18000,
+          "precioDescuento": 15500,
+          "descripcion": "Refrescante malteada cremosa con sabor a chocolate y avellanas, decorada con crema batida y trozos de galleta.",
+          "ubicacion": "Carrera 13 #82-55, Bogotá, Colombia",
+          "imagenUrl": "https://i.postimg.cc/T192rHnS/joao-socola.jpg",
+          "cantidad": 1
+        }
+      ],
+      "total": 18000,
+      "direccion": "cll 50 #21-20",
+      "metodoPago": "efectivo",
+      "tarjeta": null,
+      "estado": "Pendiente de pago",
+      "fecha": "9/6/2025, 21:22:58",
+      "tiempoEntrega": "30 minutos"
     }
   ]
 }
