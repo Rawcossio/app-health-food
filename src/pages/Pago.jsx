@@ -79,21 +79,21 @@ function Pago({ onClose }) {
         Swal.fire("¡Orden confirmada!", "Tu pedido está en camino.", "success").then(() => {
             onClose();
 
-      } catch (error) {
-        console.error('Error al cargar datos:', error);
-        Swal.fire({
-          icon: 'error',
-          title: 'Error',
-          text: 'No se pudieron cargar los datos del usuario'
-
-        });
-      } finally {
-        setIsLoading(false);
-      }
-    };
+          }
+        }catch(error){
+          console.error('Error al cargar datos:', error);
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'No se pudieron cargar los datos del usuario'
+  
+          });
+        } finally {
+          setIsLoading(false);
+        }
 
     obtenerDatos();
-  }, [usuario?.id]); // Solo se ejecuta cuando cambia el ID del usuario
+  },[usuario?.id]); // Solo se ejecuta cuando cambia el ID del usuario
 
   const calcularTotal = () => {
     return carrito.reduce((acc, item) => acc + (item.precio * item.cantidad), 0);
