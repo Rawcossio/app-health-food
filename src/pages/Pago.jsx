@@ -52,6 +52,27 @@ function Pago({ onClose }) {
         localStorage.setItem("ordenes", JSON.stringify(ordenesPrevias));
         localStorage.removeItem("carrito");
 
+        const usuarioLogueado = JSON.parse(localStorage.getItem("usuario"));
+
+        const nuevaOrden = {
+            userId: usuarioLogueado.id,
+            fecha: new Date().toISOString().slice(0, 10),
+            direccion: direccionSeleccionada, // Dirección elegida por el usuario
+            metodoPago: metodoPago,           // Método de pago elegido
+            tarjeta: metodoPago === "tarjeta" ? tarjetaSeleccionada : null, // Solo si es tarjeta
+            tiempoEntrega: "30 minutos",
+            productos: carrito,
+            total: calcularTotal(),
+            estado: metodoPago === "tarjeta" ? "Pagado" : "Pendiente de pago"
+        };
+
+        fetch('http://localhost:3000/orders', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(nuevaOrden)
+        })
+            .then(res => res.json());
+
         Swal.fire("¡Orden confirmada!", "Tu pedido está en camino.", "success").then(() => {
             onClose();
         });

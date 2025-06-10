@@ -45,32 +45,195 @@
   "repartidor": [],
   "direcciones": [
     {
-      "id": "5eb3",
-      "ciudad": "Bogotá",
-      "direccion": "cll 80",
+      "id": "dc19",
+      "ciudad": "Cartagena",
+      "direccion": "cll 50",
       "tipo": "Casa"
     },
     {
-      "id": "d983",
-      "ciudad": "Cartagena",
-      "direccion": "cll 60",
+      "id": "0afb",
+      "ciudad": "Medellín",
+      "direccion": "cll 30",
       "tipo": "Casa"
     }
   ],
   "tarjetas": [
-    {
-      "id": "8315",
-      "propietario": "Estefany",
-      "numero": "2512573487132659813",
-      "fecha": "2025-11",
-      "cvv": "2"
-    },
     {
       "id": "c5fa",
       "propietario": "Juan Escobar",
       "numero": "397643642826581212",
       "fecha": "2025-11",
       "cvv": "7"
+    }
+  ],
+  "orders": [
+    {
+      "id": "3086",
+      "userId": 10,
+      "fecha": "2025-06-09",
+      "direccion": "Calle 123",
+      "metodoPago": "tarjeta",
+      "tarjeta": "1234567890123456",
+      "tiempoEntrega": "30 min",
+      "productos": [
+        {
+          "id_producto": 31,
+          "nombre": "Ensalada Mediterránea Vegana",
+          "precio": 20000,
+          "precioDescuento": 17900,
+          "descripcion": "Mezcla fresca de vegetales orgánicos, aceitunas negras, garbanzos y aderezo de limón. Saludable y llena de sabor.",
+          "ubicacion": "Calle 45 #10-22, Bogotá, Colombia",
+          "imagenUrl": "https://i.postimg.cc/GmPKvFfD/pexels-cleireny.jpg",
+          "cantidad": 1
+        }
+      ],
+      "total": 20000,
+      "estado": "En camino"
+    },
+    {
+      "id": "61da",
+      "userId": 10,
+      "fecha": "2025-06-09",
+      "direccion": "Calle 123",
+      "metodoPago": "tarjeta",
+      "tarjeta": "1234567890123456",
+      "tiempoEntrega": "30 min",
+      "productos": [
+        {
+          "id_producto": 31,
+          "nombre": "Ensalada Mediterránea Vegana",
+          "precio": 20000,
+          "precioDescuento": 17900,
+          "descripcion": "Mezcla fresca de vegetales orgánicos, aceitunas negras, garbanzos y aderezo de limón. Saludable y llena de sabor.",
+          "ubicacion": "Calle 45 #10-22, Bogotá, Colombia",
+          "imagenUrl": "https://i.postimg.cc/GmPKvFfD/pexels-cleireny.jpg",
+          "cantidad": 1
+        }
+      ],
+      "total": 20000,
+      "estado": "En camino"
+    },
+    {
+      "id": "910c",
+      "userId": 2,
+      "fecha": "2025-06-09",
+      "direccion": "Calle 123",
+      "metodoPago": "tarjeta",
+      "tarjeta": "1234567890123456",
+      "tiempoEntrega": "30 min",
+      "productos": [
+        {
+          "id_producto": 31,
+          "nombre": "Ensalada Mediterránea Vegana",
+          "precio": 20000,
+          "precioDescuento": 17900,
+          "descripcion": "Mezcla fresca de vegetales orgánicos, aceitunas negras, garbanzos y aderezo de limón. Saludable y llena de sabor.",
+          "ubicacion": "Calle 45 #10-22, Bogotá, Colombia",
+          "imagenUrl": "https://i.postimg.cc/GmPKvFfD/pexels-cleireny.jpg",
+          "cantidad": 1
+        }
+      ],
+      "total": 20000,
+      "estado": "En camino"
+    },
+    {
+      "id": "4df6",
+      "userId": 10,
+      "fecha": "2025-06-09",
+      "direccion": "cll 50",
+      "metodoPago": "tarjeta",
+      "tarjeta": "397643642826581212",
+      "tiempoEntrega": "30 minutos",
+      "productos": [
+        {
+          "id_producto": 30,
+          "nombre": "Malteada de Chocolate y Avellanas",
+          "precio": 18000,
+          "precioDescuento": 15500,
+          "descripcion": "Refrescante malteada cremosa con sabor a chocolate y avellanas, decorada con crema batida y trozos de galleta.",
+          "ubicacion": "Carrera 13 #82-55, Bogotá, Colombia",
+          "imagenUrl": "https://i.postimg.cc/T192rHnS/joao-socola.jpg",
+          "cantidad": 1
+        },
+        {
+          "id_producto": 31,
+          "nombre": "Ensalada Mediterránea Vegana",
+          "precio": 20000,
+          "precioDescuento": 17900,
+          "descripcion": "Mezcla fresca de vegetales orgánicos, aceitunas negras, garbanzos y aderezo de limón. Saludable y llena de sabor.",
+          "ubicacion": "Calle 45 #10-22, Bogotá, Colombia",
+          "imagenUrl": "https://i.postimg.cc/GmPKvFfD/pexels-cleireny.jpg",
+          "cantidad": 1
+        }
+      ],
+      "total": 38000,
+      "estado": "Pagado"
+    },
+    {
+      "id": "a7ef",
+      "userId": 12,
+      "fecha": "2025-06-09",
+      "direccion": "cll 50",
+      "metodoPago": "tarjeta",
+      "tarjeta": "397643642826581212",
+      "tiempoEntrega": "30 minutos",
+      "productos": [
+        {
+          "id_producto": 23,
+          "nombre": "Ensalada de Pavo con Albahaca",
+          "precio": 31900,
+          "precioDescuento": 28710,
+          "descripcion": "Pechuga de pavo con ajonjolí y albahaca, lechugas, rúgula, apio, champiñones, pimentón, tomate cherry, cebollas crocantes y vinagreta oriental.",
+          "ubicacion": "Carrera 7 #85-20, Bogotá, Colombia",
+          "imagenUrl": "https://i.postimg.cc/jqmpbyLW/tmp-Imgd8fa4ab3-5bd8-4692-8333-fad347ac4116.webp",
+          "cantidad": 1
+        },
+        {
+          "id_producto": 29,
+          "nombre": "Hamburguesa de Res Clásica",
+          "precio": 25000,
+          "precioDescuento": 21900,
+          "descripcion": "Jugosa hamburguesa de carne de res, queso cheddar, lechuga fresca y pan artesanal. Una experiencia clásica y deliciosa.",
+          "ubicacion": "Calle 93 #12-34, Bogotá, Colombia",
+          "imagenUrl": "https://i.postimg.cc/6pb4vT0K/julieaagaard.jpg",
+          "cantidad": 1
+        },
+        {
+          "id_producto": 30,
+          "nombre": "Malteada de Chocolate y Avellanas",
+          "precio": 18000,
+          "precioDescuento": 15500,
+          "descripcion": "Refrescante malteada cremosa con sabor a chocolate y avellanas, decorada con crema batida y trozos de galleta.",
+          "ubicacion": "Carrera 13 #82-55, Bogotá, Colombia",
+          "imagenUrl": "https://i.postimg.cc/T192rHnS/joao-socola.jpg",
+          "cantidad": 1
+        }
+      ],
+      "total": 74900,
+      "estado": "Pagado"
+    },
+    {
+      "id": "1494",
+      "userId": 12,
+      "fecha": "2025-06-09",
+      "direccion": "cll 30",
+      "metodoPago": "efectivo",
+      "tarjeta": null,
+      "tiempoEntrega": "30 minutos",
+      "productos": [
+        {
+          "id_producto": 31,
+          "nombre": "Ensalada Mediterránea Vegana",
+          "precio": 20000,
+          "precioDescuento": 17900,
+          "descripcion": "Mezcla fresca de vegetales orgánicos, aceitunas negras, garbanzos y aderezo de limón. Saludable y llena de sabor.",
+          "ubicacion": "Calle 45 #10-22, Bogotá, Colombia",
+          "imagenUrl": "https://i.postimg.cc/GmPKvFfD/pexels-cleireny.jpg",
+          "cantidad": 1
+        }
+      ],
+      "total": 20000,
+      "estado": "Pendiente de pago"
     }
   ]
 }
