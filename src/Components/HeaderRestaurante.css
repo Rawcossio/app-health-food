@@ -1,0 +1,53 @@
+.header-restaurante {
+  background-color: #ffffff;
+  padding: 20px 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__titulo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.header__cerrarSesion {
+  background-color: #e53935;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.header__cerrarSesion:hover {
+  background-color: #c62828;
+}
+.boton-cerrar {
+  width: 180px;
+  height: 46px;
+  background-color: #fc7054;
+  color: white;
+  border-radius: 8px;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  box-shadow: 0 5px 15px #fc7054;
+  text-decoration: none;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.boton-cerrar img {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+}
