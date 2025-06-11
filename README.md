@@ -54,6 +54,8 @@ git clone https://github.com/Chala-java/app-health-food-back.git
 # Frontend
 cd app-health-food
 npm install
+npm install react-icons
+npm install axios
 
 # Backend
 cd app-health-food-back
