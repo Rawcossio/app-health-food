@@ -85,12 +85,15 @@ const TarjetaProducto = () => {
           <h2 className="tarjeta__precio">
             $ {producto.precio.toLocaleString()}
           </h2>
+          <div className="tarjeta-boton">
+
           <button
             className="eliminar-btn"
             onClick={() => eliminarProducto(producto.id_producto)}
           >
             🗑️ Eliminar
           </button>
+          </div>
         </div>
       ))}
     </div>
