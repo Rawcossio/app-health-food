@@ -33,8 +33,8 @@ function CarritoCompra({ abierto, cerrado }) {
   const nuevasOrdenes = [...ordenesExistentes, nuevaOrden];
   localStorage.setItem("ordenes", JSON.stringify(nuevasOrdenes));
 
-  localStorage.removeItem("carrito"); // Limpia el carrito
-  setCarrito([]); // Limpia visualmente
+  localStorage.removeItem("carrito"); // Limpia el carrito en localStorage
+  setCarrito([]); // Limpia el estado visual del carrito
 
   alert("✅ Orden registrada con éxito");
 };
@@ -69,6 +69,11 @@ function CarritoCompra({ abierto, cerrado }) {
     setCarrito(nuevoCarrito);
     localStorage.setItem("carrito", JSON.stringify(nuevoCarrito));
     actualizarCarrito(); 
+  };
+
+  const vaciarCarrito = () => {
+    localStorage.removeItem("carrito");
+    setCarrito([]);
   };
 
     
@@ -126,7 +131,7 @@ function CarritoCompra({ abierto, cerrado }) {
             Ir al checkout
           </button>
           {mostrarPago && (
-            <Pago onClose={() => setMostrarPago(false)}/>
+            <Pago onClose={() => setMostrarPago(false)} onVaciarCarrito={vaciarCarrito} />
           )}
           <button className="boton-carrito" 
             onClick={() => {
@@ -139,9 +144,6 @@ function CarritoCompra({ abierto, cerrado }) {
             }}>
             Seguir comprando
           </button>
-
-          
-
         </div>
       </div>
     </div>

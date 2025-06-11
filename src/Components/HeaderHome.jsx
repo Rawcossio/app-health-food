@@ -45,42 +45,56 @@ useEffect(() => {
       const toggleCarrito = () => {
           setCarritoAbierto(!carritoAbierto)}
 
+    const isLoggedIn = !!localStorage.getItem("token");
+
+    const handleLogoClick = (e) => {
+        e.preventDefault();
+        if (isLoggedIn) {
+            window.location.href = "/HomeUser";
+        }else{
+            window.location.href = "/";
+        }
+    };
+
     return(
         <section className="header">
-            <div className="logo-header">
+            <a className="logo-header" href="/HomeUser" onClick={handleLogoClick} style={{cursor: isLoggedIn ? 'pointer' : 'default'}}>
                 <h1>Nutri</h1>
                 <img src="/go.png" alt=""/>
-            </div>
+            </a>
             <nav className='nav-header'>
-                <button className='boton-header-HomeUser'
-                onClick={() => setMostrarOrdenes(true)}><img src={ordenes} alt="" />
-                 Mis Ordenes
-                 </button>{mostrarOrdenes &&(
-                    <MisOrdenes onClose={() => setMostrarOrdenes(false)}/>
-                 )}
+                {isLoggedIn && (
+                  <>
+                    <button className='boton-header-HomeUser'
+                      onClick={() => setMostrarOrdenes(true)}><img src={ordenes} alt="" />
+                      Mis Ordenes
+                    </button>{mostrarOrdenes &&(
+                        <MisOrdenes onClose={() => setMostrarOrdenes(false)}/>
+                    )}
 
-                <button className='boton-header-HomeUser' 
-                onClick={() => setMostrarDireccion(true)}><img src={direccion} alt="" /> 
-                Dirección de envio
-                </button>{mostrarDireccion &&(
-                    <Direcciones onClose={() => setMostrarDireccion(false)} />
+                    <button className='boton-header-HomeUser' 
+                      onClick={() => setMostrarDireccion(true)}><img src={direccion} alt="" /> 
+                      Dirección de envio
+                    </button>{mostrarDireccion &&(
+                        <Direcciones onClose={() => setMostrarDireccion(false)} />
+                    )}
+                    <button className='boton-header-HomeUser' 
+                      onClick={() => setMostrarMetodoPago(true)}><img src={metodos} alt="" /> 
+                      Metodos de pago
+                    </button>{mostrarMetodoPago &&(
+                        <MetodoPago onClose={()=> setMostrarMetodoPago(false)}/>
+                    )}
+
+                    <Link to="https://web.whatsapp.com/"><img src={contactenos} alt="" /> Contactenos</Link>
+
+                    <button className='boton-header-HomeUser'
+                        onClick={() => setMostrarPerfil(true)}><img src={perfil} alt="" />
+                        Mi perfil
+                    </button> {mostrarPerfil && (
+                        <Perfil onClose={() => setMostrarPerfil(false)} />
+                    )}
+                  </>
                 )}
-                <button className='boton-header-HomeUser' 
-                onClick={() => setMostrarMetodoPago(true)}><img src={metodos} alt="" /> 
-                Metodos de pago
-                </button>{mostrarMetodoPago &&(
-                    <MetodoPago onClose={()=> setMostrarMetodoPago(false)}/>
-                )}
-
-                <Link to="https://web.whatsapp.com/"><img src={contactenos} alt="" /> Contactenos</Link>
-
-                <button className='boton-header-HomeUser'
-                    onClick={() => setMostrarPerfil(true)}><img src={perfil} alt="" />
-                    Mi perfil
-                </button> {mostrarPerfil && (
-                    <Perfil onClose={() => setMostrarPerfil(false)} />
-                )}
-
                 {/* Botón del carrito */}
                 <div className="carrito-icono" onClick={toggleCarrito} style={{ cursor: "pointer" }} to="/Carrito">
                 <img src="/carrito.png" alt="" /> Carrito
