@@ -557,6 +557,66 @@
       "estado": "Pagado",
       "fecha": "10/6/2025, 13:55:55",
       "tiempoEntrega": "30 minutos"
+    },
+    {
+      "id": "cbfa",
+      "userId": 12,
+      "productos": [
+        {
+          "id_producto": 23,
+          "nombre": "Ensalada de Pavo con Albahaca",
+          "precio": 31900,
+          "imagenUrl": "https://i.postimg.cc/jqmpbyLW/tmp-Imgd8fa4ab3-5bd8-4692-8333-fad347ac4116.webp",
+          "cantidad": 3
+        }
+      ],
+      "total": 95700,
+      "direccion": "cll 60",
+      "metodoPago": "efectivo",
+      "tarjeta": null,
+      "estado": "Pendiente de pago",
+      "fecha": "10/6/2025, 21:00:23",
+      "tiempoEntrega": "30 minutos"
+    },
+    {
+      "id": "db8e",
+      "userId": 12,
+      "productos": [
+        {
+          "id_producto": 23,
+          "nombre": "Ensalada de Pavo con Albahaca",
+          "precio": 31900,
+          "imagenUrl": "https://i.postimg.cc/jqmpbyLW/tmp-Imgd8fa4ab3-5bd8-4692-8333-fad347ac4116.webp",
+          "cantidad": 3
+        }
+      ],
+      "total": 95700,
+      "direccion": "cll 60",
+      "metodoPago": "efectivo",
+      "tarjeta": null,
+      "estado": "Pendiente de pago",
+      "fecha": "10/6/2025, 21:02:55",
+      "tiempoEntrega": "30 minutos"
+    },
+    {
+      "id": "39e3",
+      "userId": 12,
+      "productos": [
+        {
+          "id_producto": 32,
+          "nombre": "Wrap de Pollo al Curry",
+          "precio": 19500,
+          "imagenUrl": "https://i.postimg.cc/MTJj5NjK/drmkhawarnazir.jpg",
+          "cantidad": 1
+        }
+      ],
+      "total": 19500,
+      "direccion": "cll 60",
+      "metodoPago": "efectivo",
+      "tarjeta": null,
+      "estado": "Pendiente de pago",
+      "fecha": "10/6/2025, 21:04:31",
+      "tiempoEntrega": "30 minutos"
     }
   ]
 }

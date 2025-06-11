@@ -1,7 +1,10 @@
 .vista {
   width: 100%;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
+  /* Sombreado oscuro sobre la imagen */
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../public/fondo-nutrigo.png');
+  background-size: cover;
+  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -164,4 +167,21 @@
 
 .vista__cart-btn:hover {
   background-color: #FF8C00;
+}
+
+.vista__close-btn {
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  color: #888;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  z-index: 2;
+  transition: color 0.2s;
+}
+
+.vista__close-btn:hover {
+  color: #FC7054;
 }
