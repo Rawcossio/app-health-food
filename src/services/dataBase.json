@@ -740,6 +740,34 @@
       "estado": "Pendiente de pago",
       "fecha": "11/6/2025, 11:28:11 a. m.",
       "tiempoEntrega": "30 minutos"
+    },
+    {
+      "id": "faa7",
+      "userId": 2,
+      "productos": [
+        {
+          "id_producto": 32,
+          "nombre": "Wrap de Pollo al Curry",
+          "precio": 19500,
+          "precioDescuento": 17500,
+          "descripcion": "Tortilla rellena con tiras de pollo al curry, vegetales crocantes y salsa de yogur. Perfecto para una comida ligera.",
+          "ubicacion": "Avenida Suba #105-15, Bogotá, Colombia",
+          "imagenUrl": "https://i.postimg.cc/MTJj5NjK/drmkhawarnazir.jpg",
+          "tienda": {
+            "id_restaurante": 11,
+            "nombre": "PizzaHub"
+          },
+          "cantidad": 3,
+          "id_restaurante": 11
+        }
+      ],
+      "total": 58500,
+      "direccion": "calle 323 # 06-22",
+      "metodoPago": "tarjeta",
+      "tarjeta": "10325872465987246",
+      "estado": "Pagado",
+      "fecha": "11/6/2025, 16:50:09",
+      "tiempoEntrega": "30 minutos"
     }
   ]
 }
