@@ -18,6 +18,7 @@ function Perfil({ onClose }) {
         //Eliminar datos del local
         localStorage.removeItem("token");
         localStorage.removeItem("usuario");
+        localStorage.removeItem("carrito");
 
         //redirigir al login
         navigate("/InicioSesion");

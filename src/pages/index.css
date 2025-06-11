@@ -82,6 +82,7 @@ font-weight: 600;
 .logo-header{
 display: flex;
 height: 46px;
+text-decoration: none;
 }
 .titulo{
   font-weight: 700;

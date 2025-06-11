@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom"; // <-- Agrega useNavigate
 import { useEffect, useState } from "react";
 import CarritoCompra from "../Components/CarritoCompra";
 import "./VistaProducto.css";
@@ -9,6 +9,7 @@ function VistaProducto() {
   const [loading, setLoading] = useState(true);
   const [cantidad, setCantidad] = useState(1);
   const [carritoAbierto, setCarritoAbierto] = useState(false);
+  const navigate = useNavigate(); // <-- Hook para navegar
 
   useEffect(() => {
     fetch(`https://app-health-food-back-2.onrender.com/producto/${id}`)
@@ -92,6 +93,14 @@ function VistaProducto() {
               <p>⭐ 4.5 (200 reseñas)</p>
             </div>
           </div>
+          {/* Botón modo equis */}
+          <button
+            className="vista__close-btn"
+            onClick={() => navigate("/homeUser")}
+            aria-label="Cerrar"
+          >
+            ×
+          </button>
         </header>
 
         <div className="vista__imagen">
