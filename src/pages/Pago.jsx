@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-function Pago({ onClose }) {
+function Pago({ onClose, onVaciarCarrito }) {
   const navigate = useNavigate();
   const [carrito, setCarrito] = useState([]);
   const [direcciones, setDirecciones] = useState([]);
@@ -48,7 +48,7 @@ function Pago({ onClose }) {
       }
     };
     obtenerDatos();
-  }, [usuario?.id]); // Solo se ejecuta cuando cambia el ID del usuario
+  },[usuario?.id]); // Solo se ejecuta cuando cambia el ID del usuario
 
   const calcularTotal = () => {
     return carrito.reduce((acc, item) => acc + (item.precio * item.cantidad), 0);
@@ -82,9 +82,10 @@ function Pago({ onClose }) {
       .then(res => res.json())
       .then(() => {
         Swal.fire('¡Orden confirmada!', 'Tu pedido está en camino.', 'success').then(() => {
+          if (onVaciarCarrito) onVaciarCarrito();
           onClose();
-        
-      })});
+        });
+      });
   };
 
   return (
@@ -151,7 +152,7 @@ function Pago({ onClose }) {
               <select 
                 value={tarjetaSeleccionada} 
                 onChange={e => setTarjetaSeleccionada(e.target.value)}
-              >
+                >
                 <option value="">Selecciona una tarjeta</option>
                 {tarjetas.map(tar => (
                   <option key={tar.id_tarjeta} value={tar.numero_tarjeta}>

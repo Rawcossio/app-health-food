@@ -524,6 +524,122 @@
       "estado": "Pagado",
       "fecha": "10/6/2025, 2:35:49 p. m.",
       "tiempoEntrega": "30 minutos"
+    },
+    {
+      "id": "be74",
+      "userId": 2,
+      "productos": [
+        {
+          "id_producto": 29,
+          "nombre": "Hamburguesa de Res Clásica",
+          "precio": 25000,
+          "imagenUrl": "https://i.postimg.cc/6pb4vT0K/julieaagaard.jpg",
+          "cantidad": 1
+        },
+        {
+          "id_producto": 30,
+          "nombre": "Malteada de Chocolate y Avellanas",
+          "precio": 18000,
+          "imagenUrl": "https://i.postimg.cc/T192rHnS/joao-socola.jpg",
+          "cantidad": 1
+        }
+      ],
+      "total": 43000,
+      "direccion": "cll 50 #21-20",
+      "metodoPago": "efectivo",
+      "tarjeta": null,
+      "estado": "Pendiente de pago",
+      "fecha": "10/6/2025, 3:06:32 p. m.",
+      "tiempoEntrega": "30 minutos"
+    },
+    {
+      "id": "3a14",
+      "userId": 6,
+      "productos": [
+        {
+          "id_producto": 31,
+          "nombre": "Ensalada Mediterránea Vegana",
+          "precio": 20000,
+          "precioDescuento": 17900,
+          "descripcion": "Mezcla fresca de vegetales orgánicos, aceitunas negras, garbanzos y aderezo de limón. Saludable y llena de sabor.",
+          "ubicacion": "Calle 45 #10-22, Bogotá, Colombia",
+          "imagenUrl": "https://i.postimg.cc/GmPKvFfD/pexels-cleireny.jpg",
+          "cantidad": 1
+        }
+      ],
+      "total": 20000,
+      "direccion": "Cr 52 #10 b sur 33",
+      "metodoPago": "efectivo",
+      "tarjeta": null,
+      "estado": "Pendiente de pago",
+      "fecha": "10/6/2025, 9:16:33 p. m.",
+      "tiempoEntrega": "30 minutos"
+    },
+    {
+      "id": "e47f",
+      "userId": 6,
+      "productos": [
+        {
+          "id_producto": 31,
+          "nombre": "Ensalada Mediterránea Vegana",
+          "precio": 20000,
+          "precioDescuento": 17900,
+          "descripcion": "Mezcla fresca de vegetales orgánicos, aceitunas negras, garbanzos y aderezo de limón. Saludable y llena de sabor.",
+          "ubicacion": "Calle 45 #10-22, Bogotá, Colombia",
+          "imagenUrl": "https://i.postimg.cc/GmPKvFfD/pexels-cleireny.jpg",
+          "cantidad": 1
+        }
+      ],
+      "total": 20000,
+      "direccion": "Cr 52 #10 b sur 33",
+      "metodoPago": "efectivo",
+      "tarjeta": null,
+      "estado": "Pendiente de pago",
+      "fecha": "10/6/2025, 9:19:26 p. m.",
+      "tiempoEntrega": "30 minutos"
+    },
+    {
+      "id": "5142",
+      "userId": 6,
+      "productos": [
+        {
+          "id_producto": 31,
+          "nombre": "Ensalada Mediterránea Vegana",
+          "precio": 20000,
+          "precioDescuento": 17900,
+          "descripcion": "Mezcla fresca de vegetales orgánicos, aceitunas negras, garbanzos y aderezo de limón. Saludable y llena de sabor.",
+          "ubicacion": "Calle 45 #10-22, Bogotá, Colombia",
+          "imagenUrl": "https://i.postimg.cc/GmPKvFfD/pexels-cleireny.jpg",
+          "cantidad": 3
+        }
+      ],
+      "total": 60000,
+      "direccion": "Cr 52 #10 b sur 33",
+      "metodoPago": "efectivo",
+      "tarjeta": null,
+      "estado": "Pendiente de pago",
+      "fecha": "10/6/2025, 9:20:02 p. m.",
+      "tiempoEntrega": "30 minutos"
+    },
+    {
+      "id": "3f3e",
+      "userId": 6,
+      "productos": [
+        {
+          "id_producto": 31,
+          "nombre": "Ensalada Mediterránea Vegana",
+          "precio": 20000,
+          "imagenUrl": "https://i.postimg.cc/GmPKvFfD/pexels-cleireny.jpg",
+          "cantidad": 2
+        }
+      ],
+      "total": 40000,
+      "direccion": "Cr 52 #10 b sur 33",
+      "metodoPago": "efectivo",
+      "tarjeta": null,
+      "estado": "Pendiente de pago",
+      "fecha": "10/6/2025, 9:22:49 p. m.",
+      "tiempoEntrega": "30 minutos"
     }
   ]
 }
