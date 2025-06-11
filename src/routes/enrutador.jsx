@@ -21,6 +21,7 @@ import Orden from "../pages/Orden";
 import MisOrdenes from "../Components/MisOrdenes";
 import CarritoCompra from "../Components/CarritoCompra";
 import AgregarTarjeta from "../Components/AgregarTarjeta";
+import RestauranteAdmin from "../pages/RestauranteAdmin";
 
 
 let enrutador = createBrowserRouter([
@@ -122,6 +123,10 @@ let enrutador = createBrowserRouter([
       path: '/restaurante/:id',
       element: <Restaurante/>
 
+    },
+    {
+      path: 'admin-restaurante',
+      element: <RestauranteAdmin/>
     }
  
   ])
