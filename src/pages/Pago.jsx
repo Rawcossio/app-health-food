@@ -84,6 +84,7 @@ function Pago({ onClose, onVaciarCarrito }) {
         Swal.fire('¡Orden confirmada!', 'Tu pedido está en camino.', 'success').then(() => {
           if (onVaciarCarrito) onVaciarCarrito();
           onClose();
+          navigate('/HomeUser');
         });
       });
   };
