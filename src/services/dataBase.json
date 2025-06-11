@@ -460,8 +460,13 @@
       "tiempoEntrega": "30 minutos"
     },
     {
+
+      "id": "5532",
+      "userId": 2,
+
       "id": "b1bf",
       "userId": 6,
+
       "productos": [
         {
           "id_producto": 30,
@@ -471,6 +476,22 @@
           "descripcion": "Refrescante malteada cremosa con sabor a chocolate y avellanas, decorada con crema batida y trozos de galleta.",
           "ubicacion": "Carrera 13 #82-55, Bogotá, Colombia",
           "imagenUrl": "https://i.postimg.cc/T192rHnS/joao-socola.jpg",
+
+          "cantidad": 1
+        }
+      ],
+      "total": 18000,
+      "direccion": "calle 323 # 06-22",
+      "metodoPago": "tarjeta",
+      "tarjeta": "10325872465987246",
+      "estado": "Pagado",
+      "fecha": "10/6/2025, 10:48:43",
+      "tiempoEntrega": "30 minutos"
+    },
+    {
+      "id": "b31e",
+      "userId": 2,
+
           "cantidad": 2
         }
       ],
@@ -485,6 +506,7 @@
     {
       "id": "9369",
       "userId": 6,
+
       "productos": [
         {
           "id_producto": 30,
@@ -495,6 +517,129 @@
           "ubicacion": "Carrera 13 #82-55, Bogotá, Colombia",
           "imagenUrl": "https://i.postimg.cc/T192rHnS/joao-socola.jpg",
           "cantidad": 2
+
+        },
+        {
+          "id_producto": 31,
+          "nombre": "Ensalada Mediterránea Vegana",
+          "precio": 20000,
+          "precioDescuento": 17900,
+          "descripcion": "Mezcla fresca de vegetales orgánicos, aceitunas negras, garbanzos y aderezo de limón. Saludable y llena de sabor.",
+          "ubicacion": "Calle 45 #10-22, Bogotá, Colombia",
+          "imagenUrl": "https://i.postimg.cc/GmPKvFfD/pexels-cleireny.jpg",
+          "cantidad": 1
+        },
+        {
+          "id_producto": 32,
+          "nombre": "Wrap de Pollo al Curry",
+          "precio": 19500,
+          "precioDescuento": 17500,
+          "descripcion": "Tortilla rellena con tiras de pollo al curry, vegetales crocantes y salsa de yogur. Perfecto para una comida ligera.",
+          "ubicacion": "Avenida Suba #105-15, Bogotá, Colombia",
+          "imagenUrl": "https://i.postimg.cc/MTJj5NjK/drmkhawarnazir.jpg",
+          "cantidad": 2
+        }
+      ],
+      "total": 95000,
+      "direccion": "calle 323 # 06-22",
+      "metodoPago": "efectivo",
+      "tarjeta": null,
+      "estado": "Pendiente de pago",
+      "fecha": "10/6/2025, 10:49:12",
+      "tiempoEntrega": "30 minutos"
+    },
+    {
+      "id": "a18a",
+      "userId": 2,
+      "productos": [
+        {
+          "id_producto": 23,
+          "nombre": "Ensalada de Pavo con Albahaca",
+          "precio": 31900,
+          "precioDescuento": 28710,
+          "descripcion": "Pechuga de pavo con ajonjolí y albahaca, lechugas, rúgula, apio, champiñones, pimentón, tomate cherry, cebollas crocantes y vinagreta oriental.",
+          "ubicacion": "Carrera 7 #85-20, Bogotá, Colombia",
+          "imagenUrl": "https://i.postimg.cc/jqmpbyLW/tmp-Imgd8fa4ab3-5bd8-4692-8333-fad347ac4116.webp",
+          "cantidad": 1
+        },
+        {
+          "id_producto": 29,
+          "nombre": "Hamburguesa de Res Clásica",
+          "precio": 25000,
+          "precioDescuento": 21900,
+          "descripcion": "Jugosa hamburguesa de carne de res, queso cheddar, lechuga fresca y pan artesanal. Una experiencia clásica y deliciosa.",
+          "ubicacion": "Calle 93 #12-34, Bogotá, Colombia",
+          "imagenUrl": "https://i.postimg.cc/6pb4vT0K/julieaagaard.jpg",
+          "cantidad": 1
+        }
+      ],
+      "total": 56900,
+      "direccion": "calle 323 # 06-22",
+      "metodoPago": "tarjeta",
+      "tarjeta": "10325872465987246",
+      "estado": "Pagado",
+      "fecha": "10/6/2025, 13:55:55",
+      "tiempoEntrega": "30 minutos"
+    },
+    {
+      "id": "cbfa",
+      "userId": 12,
+      "productos": [
+        {
+          "id_producto": 23,
+          "nombre": "Ensalada de Pavo con Albahaca",
+          "precio": 31900,
+          "imagenUrl": "https://i.postimg.cc/jqmpbyLW/tmp-Imgd8fa4ab3-5bd8-4692-8333-fad347ac4116.webp",
+          "cantidad": 3
+        }
+      ],
+      "total": 95700,
+      "direccion": "cll 60",
+      "metodoPago": "efectivo",
+      "tarjeta": null,
+      "estado": "Pendiente de pago",
+      "fecha": "10/6/2025, 21:00:23",
+      "tiempoEntrega": "30 minutos"
+    },
+    {
+      "id": "db8e",
+      "userId": 12,
+      "productos": [
+        {
+          "id_producto": 23,
+          "nombre": "Ensalada de Pavo con Albahaca",
+          "precio": 31900,
+          "imagenUrl": "https://i.postimg.cc/jqmpbyLW/tmp-Imgd8fa4ab3-5bd8-4692-8333-fad347ac4116.webp",
+          "cantidad": 3
+        }
+      ],
+      "total": 95700,
+      "direccion": "cll 60",
+      "metodoPago": "efectivo",
+      "tarjeta": null,
+      "estado": "Pendiente de pago",
+      "fecha": "10/6/2025, 21:02:55",
+      "tiempoEntrega": "30 minutos"
+    },
+    {
+      "id": "39e3",
+      "userId": 12,
+      "productos": [
+        {
+          "id_producto": 32,
+          "nombre": "Wrap de Pollo al Curry",
+          "precio": 19500,
+          "imagenUrl": "https://i.postimg.cc/MTJj5NjK/drmkhawarnazir.jpg",
+          "cantidad": 1
+        }
+      ],
+      "total": 19500,
+      "direccion": "cll 60",
+      "metodoPago": "efectivo",
+      "tarjeta": null,
+      "estado": "Pendiente de pago",
+      "fecha": "10/6/2025, 21:04:31",
+
         }
       ],
       "total": 36000,
@@ -523,6 +668,7 @@
       "tarjeta": "10325872465987246",
       "estado": "Pagado",
       "fecha": "10/6/2025, 2:35:49 p. m.",
+
       "tiempoEntrega": "30 minutos"
     },
     {
