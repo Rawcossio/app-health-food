@@ -43,16 +43,30 @@
 
 .tarjeta__precio {
   font-size: 18px;
-  color: #557C3E;
+  color: #F26722;
   font-weight: 600;
 }
 
-.tarjeta__boton {
-  margin-top: auto;
-  background-color: #d9534f;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 4px;
-  cursor: pointer;
+
+.eliminar-btn{
+  width: 80%;
+  height: 50px;
+    background-color: #F65900;
+    color: white;
+    border-radius: 8px;
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    border: transparent;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+.tarjeta-boton{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

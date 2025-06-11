@@ -2,6 +2,7 @@ import { useState } from "react";
 import FormularioProducto from "../Components/FormularioProducto";
 import HeaderRestaurante from "../Components/HeaderRestaurante";
 import TarjetaProducto from "../Components/TarjetaProducto";
+import './RestauranteAdmin.css'
 
 const RestauranteAdmin = () => {
   const [mostrarFormulario, setMostrarFormulario] = useState(false);
@@ -11,12 +12,13 @@ const RestauranteAdmin = () => {
 
   return (
     <div className="admin">
-      <HeaderRestaurante />
+         <HeaderRestaurante />
+      <div className="admin-contenedor">
       <section className="admin-agregar">
           <h2>Agregar nuevo producto</h2>
 
           {!mostrarFormulario && (
-            <button onClick={abrirFormulario} className="admin-agregar__boton">
+            <button className="admin-agregar__boton" onClick={abrirFormulario} >
               + Agregar producto
             </button>
           )}
@@ -34,6 +36,8 @@ const RestauranteAdmin = () => {
 
 
       </main>
+      </div>
+     
     </div>
   );
 };
