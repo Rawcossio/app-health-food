@@ -720,6 +720,26 @@
       "estado": "Pendiente de pago",
       "fecha": "10/6/2025, 9:42:43 p. m.",
       "tiempoEntrega": "30 minutos"
+    },
+    {
+      "id": "619e",
+      "userId": 6,
+      "productos": [
+        {
+          "id_producto": 31,
+          "nombre": "Ensalada Mediterránea Vegana",
+          "precio": 20000,
+          "imagenUrl": "https://i.postimg.cc/GmPKvFfD/pexels-cleireny.jpg",
+          "cantidad": 2
+        }
+      ],
+      "total": 40000,
+      "direccion": "Cr 52 #10 b sur 33",
+      "metodoPago": "efectivo",
+      "tarjeta": null,
+      "estado": "Pendiente de pago",
+      "fecha": "11/6/2025, 11:28:11 a. m.",
+      "tiempoEntrega": "30 minutos"
     }
   ]
 }
