@@ -10,6 +10,9 @@ const MetodoPago = ({ onClose }) => {
   const [tarjetas, setTarjetas] = useState([]);
   const usuario = JSON.parse(localStorage.getItem("usuario"));
 
+  console.log("Render");
+  
+
   const obtenerTarjetas = async () => {
     try {
       const respuesta = await axios.get('https://app-health-food-back-2.onrender.com/usuario');
